@@ -11,6 +11,15 @@ describe('JitEngine', () => {
 
 	const htmlPath0 = '/tmp/mlut-test0.html';
 	const htmlPath1 = '/tmp/mlut-test1.html';
+
+	const tplContent0 = '<section class="W80p md_W100p lg_P10u">...</section>';
+	const tplContent1 = '<footer class="W95p sm_W60p md_W100p">Copyright mlut</footer>';
+	const tplContent2 = '<aside class="P3u sm_P4u">Additional content</aside>';
+
+	const tplPath0 = 'section.ejs';
+	const tplPath1 = 'footer.ejs';
+	const tplPath2 = 'aside.ejs';
+
 	const sassInputPath = '/tmp/mlut-input.scss';
 
 	const sassInputContent = `
@@ -66,38 +75,49 @@ const wrapperCss = "M1u	 -Myvar=block \\"Ps\\" d-g";
 			//@ts-expect-error
 			jit.extractUtils(extractUtilsContent),
 			[
-				'D-n',
-				'Pb6u',
-				'Ps',
-				'^one_Bgc-$bgColor?#c06_h',
-				//eslint-disable-next-line
-				"Ct-'id:';attr(id)_b",
-				'M1u',
-				'-Myvar=block',
-				'D-f',
-				'Gap5u',
-				'Bgc#f00',
-				'D-ib',
-				'sm_Gc-s1',
-				'md_Mxh130vh',
-				'xl_D',
-				'md:lg_D-t',
-				'@:pfrm_-Try0',
+				[
+					'D-n',
+					'Pb6u',
+					'Ps',
+					'^one_Bgc-$bgColor?#c06_h',
+					//eslint-disable-next-line
+					"Ct-'id:';attr(id)_b",
+					'M1u',
+					'-Myvar=block',
+					'D-f',
+					'Gap5u',
+					'Bgc#f00',
+					'D-ib',
+				],
+				[
+					'xl_D',
+					'@:pfrm_-Try0',
+					'md:lg_D-t',
+					'md_Mxh130vh',
+					'sm_Gc-s1',
+				],
 			],
 		);
 
+		//@ts-expect-error
+		const [utils, arUtils] = jit.extractUtils(utilsWithAtRules);
+
 		assert.deepEqual(
 			//@ts-expect-error
-			jit.extractUtils(utilsWithAtRules),
+			[utils, arUtils.sort(jit.compareUtilsWithAtRule)],
 			[
-				'D',
-				'C-cc_h',
-				'<sm_D',
-				'lg_D',
-				'<xl_D',
-				'xxl_D',
-				'lg:<xxl_D',
-				'@:o_D',
+				[
+					'D',
+					'C-cc_h',
+				],
+				[
+					'<sm_D',
+					'lg_D',
+					'<xl_D',
+					'xxl_D',
+					'lg:<xxl_D',
+					'@:o_D',
+				],
 			],
 		);
 	});
@@ -132,5 +152,24 @@ const wrapperCss = "M1u	 -Myvar=block \\"Ps\\" d-g";
 			await jit.generateCss(),
 			cssOutput,
 		);
+	});
+
+	it('generate utils in the correct order from several files', async () => {
+		const jit = new JitEngine();
+		await jit.init();
+
+		jit.putContent(tplPath0, tplContent0);
+		jit.putContent(tplPath1, tplContent1);
+		jit.putContent(tplPath2, tplContent2);
+
+		const result = await jit.generateCss();
+		const wUtilOnMdPos = result.indexOf('md_W100p');
+		const wUtilOnSmPos = result.indexOf('sm_W60p');
+		const pUtilOnMdPos = result.indexOf('lg_P10u');
+		const pUtilOnSmPos = result.indexOf('sm_P4u');
+
+		assert.isTrue(wUtilOnSmPos > -1 && pUtilOnSmPos > -1);
+		assert.isAbove(wUtilOnMdPos, wUtilOnSmPos);
+		assert.isAbove(pUtilOnMdPos, pUtilOnSmPos);
 	});
 });
