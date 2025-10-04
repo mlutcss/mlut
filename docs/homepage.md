@@ -6,7 +6,7 @@
 [![](https://img.shields.io/npm/v/mlut.svg)](https://www.npmjs.com/package/mlut)
 [![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/mlutcss)](https://x.com/mlutcss)
 
-Atomic CSS toolkit with Sass and ergonomics for creating styles of any complexity <br> Get almost all power of CSS in one utility!
+Atomic CSS toolkit with Sass and ergonomics for creating styles of any complexity. <br> Make CSS exciting again!
 
 <img class="D Mb4gg" alt="GIF animation with usage example" src="kss-assets/jit-demo.gif"/>
 
