@@ -5,7 +5,7 @@
 	"author": "mr150",
 	"type": "module",
 	"license": "MIT",
-	"homepage": "https://mlutcss.github.io/mlut/",
+	"homepage": "https://mlut.style/",
 	"types": "dist/index.d.ts",
 	"keywords": [
 		"mlut",
@@ -41,8 +41,8 @@
 	],
 	"devDependencies": {
 		"@types/node": "^20.10.5",
-		"sass-embedded": "^1.71.0",
-		"sass": "^1.71.0",
+		"sass": "^1.93.0",
+		"sass-embedded": "^1.93.0",
 		"typescript": "^4.8.0"
 	}
 }
