@@ -5,7 +5,7 @@
 	"author": "mr150",
 	"type": "module",
 	"license": "MIT",
-	"homepage": "https://mlutcss.github.io/mlut/",
+	"homepage": "https://mlut.style/",
 	"types": "dist/index.d.ts",
 	"keywords": [
 		"mlut",
@@ -54,7 +54,7 @@
 		"arg": "^5.0.2",
 		"csso": "^5.0.5",
 		"fast-glob": "^3.3.2",
-		"sass-embedded": "^1.71.0",
+		"sass-embedded": "^1.93.0",
 		"watcher": "^2.3.0"
 	}
 }
