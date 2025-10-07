@@ -41,8 +41,9 @@
 	],
 	"devDependencies": {
 		"@types/node": "^20.10.5",
-		"sass-embedded": "^1.71.0",
+		"path-browserify-esm": "^1.0.6",
 		"sass": "^1.71.0",
-		"typescript": "^4.8.0"
+		"sass-embedded": "^1.71.0",
+		"typescript": "^5.8.0"
 	}
 }

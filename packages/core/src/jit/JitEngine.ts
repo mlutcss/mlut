@@ -1,6 +1,5 @@
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-
+import { fileURLToPath } from '../utils/fileURLToPath.js';
+import { path } from '../utils/path.js';
 import { logger } from '../utils/index.js';
 
 const sass = await import('sass-embedded')
