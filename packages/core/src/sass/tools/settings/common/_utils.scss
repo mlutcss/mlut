@@ -1760,7 +1760,7 @@ $utils-db: (
 			'blend-mode':(
 				'nm': normal,
 				'm': multiply,
-				's': saturation,
+				's': screen,
 				'o': overlay,
 				'd': darken,
 				'l': lighten,
@@ -1769,7 +1769,7 @@ $utils-db: (
 				'hl': hard-light,
 				'e': exclusion,
 				'h': hue,
-				'sc': screen,
+				'st': saturation,
 				'c': color,
 				'lm': luminosity,
 			),
