@@ -575,6 +575,27 @@ $utils-db: (
 				),
 			),
 			'Txuo': text-underline-offset,
+			'Txwm': (
+				'properties': text-wrap-mode,
+				'keywords': (
+					'': nowrap,
+					'w': wrap,
+					'n': nowrap,
+				),
+			),
+			'Txws': (
+				'properties': text-wrap-style,
+				'keywords': (
+					'b': balance,
+					's': stable,
+					'p': pretty,
+				),
+			),
+			'Txw': (
+				'properties': text-wrap,
+				'keywords': (Txwm, Txws),
+			),
+
 			'Txi': (
 				'properties': text-indent,
 				'keywords': (
@@ -754,6 +775,11 @@ $utils-db: (
 					'l': local,
 					's': scroll,
 				),
+			),
+			'Bgbm': (
+				'properties': background-blend-mode,
+				'keywords': 'blend-mode',
+				'multi-list-separator': ml.$tULs1,
 			),
 			'Bgcl': (
 				'properties': background-clip,
@@ -1373,6 +1399,15 @@ $utils-db: (
 				'multi-list-separator': ml.$tULs1,
 				'keywords': 'transition-props'
 			),
+			'Tsb':(
+				'properties':'transition-behavior',
+				'multi-list-separator':ml.$tULs1,
+        'keywords':(
+					'': allow-discrete,
+          'n': normal,
+					'ad': allow-discrete,
+				),
+      ),
 			'Tsd': (
 				'properties': transition-duration,
 				'multi-list-separator': ml.$tULs1,
@@ -1469,6 +1504,10 @@ $utils-db: (
 				'keywords': (
 					'': none,
 				),
+			),
+			'Mibm': (
+				'properties': mix-blend-mode,
+				'keywords': 'blend-mode'
 			),
 			'Us': (
 				'properties': user-select,
@@ -1711,6 +1750,26 @@ $utils-db: (
 				'cb': content-box,
 				'pb': padding-box,
 				't': text,
+			),
+			'blend-mode': (
+				'n': normal,
+				'm': multiply,
+				's': screen,
+				'o': overlay,
+				'd': darken,
+				'l': lighten,
+				'cd': color-dodge,
+				'cb': color-burn,
+				'hrl': hard-light,
+				'sfl': soft-light,
+				'e': exclusion,
+				'h': hue,
+				'st': saturation,
+				'c': color,
+				'lm': luminosity,
+				'pl': plus-lighter,
+				'pd': plus-darker,
+
 			),
 			'grid-area': (
 				's': span,
