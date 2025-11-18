@@ -575,7 +575,7 @@ $utils-db: (
 				),
 			),
 			'Txuo': text-underline-offset,
-			'Txwm':(
+			'Txwm': (
 				'properties': text-wrap-mode,
 				'keywords': (
 					'': nowrap,
@@ -583,7 +583,7 @@ $utils-db: (
 					'n': nowrap,
 				),
 			),
-			'Txws':(
+			'Txws': (
 				'properties': text-wrap-style,
 				'keywords': (
 					'b': balance,
@@ -591,7 +591,7 @@ $utils-db: (
 					'p': pretty,
 				),
 			),
-			'Txw':(
+			'Txw': (
 				'properties': text-wrap,
 				'keywords': (Txwm, Txws),
 			),
@@ -1505,7 +1505,7 @@ $utils-db: (
 					'': none,
 				),
 			),
-			'Mbm': (
+			'Mibm': (
 				'properties': mix-blend-mode,
 				'keywords': 'blend-mode'
 			),
@@ -1751,7 +1751,7 @@ $utils-db: (
 				'pb': padding-box,
 				't': text,
 			),
-			'blend-mode':(
+			'blend-mode': (
 				'n': normal,
 				'm': multiply,
 				's': screen,
