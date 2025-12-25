@@ -36,7 +36,6 @@ async function loadSourcesRecursive(
 		return map;
 	};
 
-
 	return doLoadRecursive(sassSourcesLoader.initPath, result);
 }
 

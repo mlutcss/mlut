@@ -28,7 +28,6 @@ const __dirname = isNode ?
 	path.dirname(fileURLToPath(import.meta.url)) :
 	globalThis.location?.origin ?? 'http://localhost';
 
-
 export class JitEngine {
 	private utils = new Set<string>();
 	private breakpoints: string[] = [];

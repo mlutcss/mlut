@@ -1,15 +1,16 @@
-import type { Octokit } from "@octokit/rest";
+import type { Octokit } from '@octokit/rest';
 
 declare global {
+	//eslint-disable-next-line
 	var mlut: {
 		githubToken?: string,
-	}
+	};
 }
 
 //@ts-expect-error - for run in browser
 const retryPromise = import('https://esm.sh/@octokit/plugin-retry')
 	.catch(() => import('@octokit/plugin-retry'))
-	.then((r) => r.retry as typeof import('@octokit/plugin-retry').retry);
+	.then((r: typeof import('@octokit/plugin-retry')) => r.retry);
 
 //@ts-expect-error - for run in browser
 const octokit = await import('https://esm.sh/@octokit/rest')
@@ -17,6 +18,7 @@ const octokit = await import('https://esm.sh/@octokit/rest')
 	.then(async (r: typeof import('@octokit/rest')) => {
 		const retry = await retryPromise;
 		const ctr = r.Octokit.plugin(retry);
+
 		return new ctr({
 			auth: globalThis.mlut?.githubToken ?? process.env.GITHUB_TOKEN,
 		});
@@ -56,11 +58,11 @@ export class SassSourcesLoader {
 
 			return result;
 		});
-	};
+	}
 
 	isDir(dirPath: string): boolean {
 		return this.dirs.has(dirPath);
-	};
+	}
 
 	async loadFile(filePath: string): Promise<string> {
 		return this.kit.repos.getContent({
@@ -74,7 +76,7 @@ export class SassSourcesLoader {
 
 			return globalThis.atob(r.data.content);
 		});
-	};
+	}
 }
 
 export const sassSourcesLoader = new SassSourcesLoader();
