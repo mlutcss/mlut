@@ -126,6 +126,7 @@ export class JitEngine {
 			{
 				loadPaths: [ this.inputFileDir, 'node_modules' ],
 				importers: sassImporters,
+				silenceDeprecations: [ 'if-function', ]
 			}
 		).then(
 			({ css }) => css,
@@ -261,6 +262,7 @@ export class JitEngine {
 				style: 'compressed',
 				loadPaths: [ __dirname, 'node_modules' ],
 				importers: sassImporters,
+				silenceDeprecations: [ 'if-function', ]
 			}
 		));
 
