@@ -1,26 +1,26 @@
 import type { Importer, ImporterResult } from 'sass';
 
 import { path } from '../utils/path.js';
-import { sassModuleLoader, SassModuleLoader } from './sassModuleLoader.js';
+import { sassSourcesLoader, SassSourcesLoader } from './SassSourcesLoader.js';
 
 const locationOrigin = globalThis.location?.origin ?? 'http://localhost';
 const sassIndexFileName = '_index.scss';
 
-async function readModulesRecursive(
-	loader: SassModuleLoader
+async function loadSourcesRecursive(
+	loader: SassSourcesLoader
 ): Promise<Map<string, string>> {
 	const result = new Map<string, string>();
 	const pathPrefix = locationOrigin + '/';
 
-	const doReadRecursive = async (entry: string, map: Map<string, string>) => {
+	const doLoadRecursive = async (entry: string, map: Map<string, string>) => {
 		const files = await loader.loadDir(entry);
 
 		await Promise.all(files.map(async (item) => {
 			const itemPath = path.join(entry, item);
-			const isDir = await loader.isDir(itemPath);
+			const isDir = loader.isDir(itemPath);
 
 			if (isDir) {
-				await doReadRecursive(itemPath, map);
+				await doLoadRecursive(itemPath, map);
 			} else {
 				const pathObj = path.parse(itemPath);
 
@@ -37,10 +37,10 @@ async function readModulesRecursive(
 	};
 
 
-	return doReadRecursive(sassModuleLoader.initPath, result);
+	return doLoadRecursive(sassSourcesLoader.initPath, result);
 }
 
-const modulesMap = await readModulesRecursive(sassModuleLoader);
+const modulesMap = await loadSourcesRecursive(sassSourcesLoader);
 
 export class ModuleImporter implements Importer<'async'> {
 	private modules = modulesMap;
@@ -67,7 +67,7 @@ export class ModuleImporter implements Importer<'async'> {
 		if (isEntryUrl) {
 			newUrl = new URL(path.join(
 				locationOrigin,
-				sassModuleLoader.initPath,
+				sassSourcesLoader.initPath,
 				url.split('sass')[1],
 			) + '.scss').href;
 		}

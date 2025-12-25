@@ -1,9 +1,9 @@
 import path from 'node:path';
 import { assert } from 'chai';
 import * as sass from 'sass-embedded';
-import type { ModuleImporter } from '../../packages/core/src/jit/importer.js';
+import type { ModuleImporter } from '../../packages/core/src/jit/importerFromMemory.js';
 
-describe('importer', () => {
+describe('importerFromMemory', () => {
 	// check only in a full test run
 	if (process.env.NODE_ENV !== 'test') {
 		return;
@@ -12,7 +12,7 @@ describe('importer', () => {
 	let importer: ModuleImporter | null = null;
 
 	before(async () => {
-		importer = await import('../../packages/core/src/jit/importer.js')
+		importer = await import('../../packages/core/src/jit/importerFromMemory.js')
 			.then((r) => r.importer);
 	});
 

@@ -16,7 +16,7 @@ const sass = await import('sass-embedded')
 	}) as AsyncCompiler;
 
 const sassImporters = !isTestEnv && isNode ? [] :
-	await import('./importer.js')
+	await import('./importerFromMemory.js')
 		.then((r) => [r.importer])
 		.catch(() => []);
 

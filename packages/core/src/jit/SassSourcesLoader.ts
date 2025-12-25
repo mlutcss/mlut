@@ -2,7 +2,7 @@ import type { Octokit } from "@octokit/rest";
 
 declare global {
 	var mlut: {
-		GITHUB_TOKEN?: string,
+		githubToken?: string,
 	}
 }
 
@@ -18,11 +18,11 @@ const octokit = await import('https://esm.sh/@octokit/rest')
 		const retry = await retryPromise;
 		const ctr = r.Octokit.plugin(retry);
 		return new ctr({
-			auth: globalThis.mlut?.GITHUB_TOKEN ?? process.env.GITHUB_TOKEN,
+			auth: globalThis.mlut?.githubToken ?? process.env.GITHUB_TOKEN,
 		});
 	}) as Octokit;
 
-export class SassModuleLoader {
+export class SassSourcesLoader {
 	private readonly kit = octokit;
 	private readonly owner = 'mlutcss';
 	private readonly repo = 'mlut';
@@ -77,4 +77,4 @@ export class SassModuleLoader {
 	};
 }
 
-export const sassModuleLoader = new SassModuleLoader();
+export const sassSourcesLoader = new SassSourcesLoader();
