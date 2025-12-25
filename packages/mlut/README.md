@@ -278,7 +278,6 @@ Available [here](https://mlutcss.github.io/mlut/) or can be run locally. Documen
 - Interactive lesson: [EN](https://htmlacademy.org/tutorials/17), [RU](https://htmlacademy.ru/demos/183)
 
 ## What next? ##
-- ability to run in a browser
 - first-class pseudoselectors with arguments like `has()`
 - performance optimization
 - plugins for editors and IDEs with hints and autocompletion
