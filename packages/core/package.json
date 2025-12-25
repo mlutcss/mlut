@@ -1,6 +1,6 @@
 {
 	"name": "@mlut/core",
-	"version": "2.2.0",
+	"version": "2.3.0",
 	"description": "Atomic CSS toolkit with Sass and ergonomics for creating styles of any complexity",
 	"author": "mr150",
 	"type": "module",
@@ -40,9 +40,12 @@
 		"dist"
 	],
 	"devDependencies": {
+		"@octokit/plugin-retry": "^8.0.1",
+		"@octokit/rest": "^22.0.0",
 		"@types/node": "^20.10.5",
+		"path-browserify-esm": "^1.0.6",
 		"sass": "^1.93.0",
 		"sass-embedded": "^1.93.0",
-		"typescript": "^4.8.0"
+		"typescript": "^5.8.0"
 	}
 }

@@ -1,17 +1,32 @@
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-
+import { path } from '../utils/path.js';
 import { logger } from '../utils/index.js';
+import type { AsyncCompiler } from 'sass';
+
+const isNode = globalThis.process?.env != undefined;
+const isTestEnv = globalThis.process?.env?.NODE_ENV === 'test';
 
 const sass = await import('sass-embedded')
 	.catch(() => import('sass'))
+	//@ts-expect-error - for run in browser
+	.catch(() => import('https://jspm.dev/sass'))
 	.catch(() => {
 		throw new Error(
 			'The Sass package is not installed. You can do this with `npm i -D sass-embedded`'
 		);
-	});
+	}) as AsyncCompiler;
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const sassImporters = !isTestEnv && isNode ? [] :
+	await import('./importerFromMemory.js')
+		.then((r) => [r.importer])
+		.catch(() => []);
+
+export const fileURLToPath = isNode ?
+	await import('node:url').then((r) => r.fileURLToPath) :
+	((str) => str.toString()) as typeof import('node:url').fileURLToPath;
+
+const __dirname = isNode ?
+	path.dirname(fileURLToPath(import.meta.url)) :
+	globalThis.location?.origin ?? 'http://localhost';
 
 export class JitEngine {
 	private utils = new Set<string>();
@@ -49,7 +64,10 @@ export class JitEngine {
 		let sassConfig: string | undefined = this.defaultSassConfig;
 
 		if (inputPath && inputContent) {
-			this.inputFileDir = path.dirname(path.resolve(process.cwd(), inputPath));
+			if (isNode) {
+				this.inputFileDir = path.dirname(path.resolve(process.cwd(), inputPath));
+			}
+
 			this.inputFileCache = inputContent;
 			sassConfig = this.extractUserSassConfig(inputContent);
 		}
@@ -105,7 +123,11 @@ export class JitEngine {
 		// `compileStringAsync` is almost always faster than `compile` in sass-embedded
 		return sass.compileStringAsync(
 			this.inputFileCache + applyStr,
-			{ loadPaths: [ this.inputFileDir, 'node_modules' ] }
+			{
+				loadPaths: [ this.inputFileDir, 'node_modules' ],
+				importers: sassImporters,
+				silenceDeprecations: [ 'if-function', ]
+			}
 		).then(
 			({ css }) => css,
 			(e) => (logger.error('Sass compilation error.', e), ''),
@@ -239,6 +261,8 @@ export class JitEngine {
 			{
 				style: 'compressed',
 				loadPaths: [ __dirname, 'node_modules' ],
+				importers: sassImporters,
+				silenceDeprecations: [ 'if-function', ]
 			}
 		));
 

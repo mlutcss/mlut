@@ -178,7 +178,6 @@ Addons may contains any tools, settings and styles. Addons now at the **preview*
 <section class="Mb4gg">
 
 ## What next? ##
-- ability to run in a browser
 - first-class pseudoselectors with arguments like `has()`
 - performance optimization
 - plugins for editors and IDEs with hints and autocompletion

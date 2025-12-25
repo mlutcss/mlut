@@ -279,7 +279,6 @@ Available [here](https://mlutcss.github.io/mlut/) or can be run locally. Documen
 - I hired a junior dev for my open source project. This is what happened: [RU](https://habr.com/ru/articles/962468/)
 
 ## What next? ##
-- ability to run in a browser
 - first-class pseudoselectors with arguments like `has()`
 - performance optimization
 - plugins for editors and IDEs with hints and autocompletion

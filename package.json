@@ -17,7 +17,7 @@
 		"build:plugins": "npm run build --workspace=@mlut/plugins",
 		"test:plugins": "vite build -c test/plugins/vite/vite.config.js && webpack -c test/plugins/webpack/webpack.config.js && rollup --config test/plugins/rollup/rollup.config.js",
 		"lint": "npx eslint packages/*/src/ && npx stylelint packages/core/src/sass --ip packages/core/src/sass/tools/mixins/base/_mk-ar.scss",
-		"test": "mocha test/sass/index.js && mocha"
+		"test": "export NODE_ENV=test && mocha test/sass/index.js && mocha"
 	},
 	"devDependencies": {
 		"@types/chai": "^4.3.11",
@@ -25,6 +25,7 @@
 		"@types/node": "^20.10.5",
 		"@typescript-eslint/eslint-plugin": "^6.16.0",
 		"@typescript-eslint/parser": "^6.16.0",
+		"@web/dev-server": "^0.4.6",
 		"browser-sync": "^2.29.0",
 		"chai": "^5.0.3",
 		"eslint": "^8.56.0",
@@ -44,6 +45,7 @@
 		"kss": "^3.0.1",
 		"mocha": "^10.0.0",
 		"mocha-clean": "^1.0.0",
+		"path-browserify-esm": "^1.0.6",
 		"rollup": "^4.18.0",
 		"rollup-plugin-generate-html-template": "^1.7.0",
 		"rollup-plugin-livereload": "^2.0.5",
@@ -53,9 +55,9 @@
 		"stylelint": "^13.13.1",
 		"stylelint-order": "^4.0.0",
 		"ts-node": "^10.9.2",
-		"typescript": "^4.8.0",
+		"typescript": "^5.8.0",
 		"vinyl-ftp": "^0.6.1",
-		"vite": "^5.4.20",
+		"vite": "^7.3.0",
 		"webpack": "^5.98.0",
 		"webpack-cli": "^6.0.1",
 		"webpack-dev-server": "^5.2.1"

@@ -747,6 +747,7 @@ $utils-db: (
 			),
 			'Bgr': (
 				'properties': background-repeat,
+				'multi-list-separator': ml.$tULs1,
 				'keywords': (
 					'': no-repeat,
 					'nr': no-repeat,
@@ -759,10 +760,12 @@ $utils-db: (
 			),
 			'Bgp': (
 				'properties': background-position,
+				'multi-list-separator': ml.$tULs1,
 				'keywords': 'position'
 			),
 			'Bgs': (
 				'properties': background-size,
+				'multi-list-separator': ml.$tULs1,
 				'keywords': (
 					'ct': contain,
 					'cv': cover,
@@ -770,6 +773,7 @@ $utils-db: (
 			),
 			'Bga': (
 				'properties': background-attachment,
+				'multi-list-separator': ml.$tULs1,
 				'keywords': (
 					'f': fixed,
 					'l': local,
@@ -783,13 +787,16 @@ $utils-db: (
 			),
 			'Bgcl': (
 				'properties': background-clip,
+				'multi-list-separator': ml.$tULs1,
 				'keywords': 'box-ext',
 			),
 			'Bgo': (
 				'properties': background-origin,
+				'multi-list-separator': ml.$tULs1,
 				'keywords': 'box-ext',
 			),
 			'Bgi': (
+				'multi-list-separator': ml.$tULs1,
 				'properties': background-image,
 			),
 			'-Gdl': (
