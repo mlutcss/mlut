@@ -1,11 +1,11 @@
 {
 	"name": "@mlut/core",
-	"version": "2.1.2",
+	"version": "2.2.0",
 	"description": "Atomic CSS toolkit with Sass and ergonomics for creating styles of any complexity",
 	"author": "mr150",
 	"type": "module",
 	"license": "MIT",
-	"homepage": "https://mlutcss.github.io/mlut/",
+	"homepage": "https://mlut.style/",
 	"types": "dist/index.d.ts",
 	"keywords": [
 		"mlut",
@@ -44,8 +44,8 @@
 		"@octokit/rest": "^22.0.0",
 		"@types/node": "^20.10.5",
 		"path-browserify-esm": "^1.0.6",
-		"sass": "^1.71.0",
-		"sass-embedded": "^1.71.0",
+		"sass": "^1.93.0",
+		"sass-embedded": "^1.93.0",
 		"typescript": "^5.8.0"
 	}
 }

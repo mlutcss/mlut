@@ -6,7 +6,7 @@
 [![](https://img.shields.io/npm/v/mlut.svg)](https://www.npmjs.com/package/mlut)
 [![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/mlutcss)](https://x.com/mlutcss)
 
-Atomic CSS toolkit with Sass and ergonomics for creating styles of any complexity. <br> Get almost all power of CSS in one utility!
+Atomic CSS toolkit with Sass and ergonomics for creating styles of any complexity. <br> Make CSS exciting again!
 
 ## Table of Contents
 
@@ -275,7 +275,8 @@ Available [here](https://mlutcss.github.io/mlut/) or can be run locally. Documen
 - Atomic CSS Deep Dive: [EN](https://dev.to/mr150/atomic-css-deep-dive-1hee), [RU](https://habr.com/ru/articles/833712/)
 - [mlut - a new word in the Utility-First CSS approach](https://dev.to/mr150/mlut-a-new-word-in-the-utility-first-css-approach-gbl)
 - How to make one plugin for all frontend bundlers at once: [RU](https://habr.com/ru/articles/856028/)
-- Interactive lesson: [EN](https://htmlacademy.org/tutorials/17), [RU](https://htmlacademy.ru/demos/183)
+- Interactive lesson: [EN](https://htmlacademy.org/tutorials/17), [RU](https://htmlacademy.ru/demos/183/step/17)
+- I hired a junior dev for my open source project. This is what happened: [RU](https://habr.com/ru/articles/962468/)
 
 ## What next? ##
 - first-class pseudoselectors with arguments like `has()`

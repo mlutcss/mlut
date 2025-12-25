@@ -5,7 +5,7 @@
 	"author": "mr150",
 	"type": "module",
 	"license": "MIT",
-	"homepage": "https://mlutcss.github.io/mlut/",
+	"homepage": "https://mlut.style/",
 	"types": "dist/index.d.ts",
 	"keywords": [
 		"mlut",

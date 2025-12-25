@@ -38,7 +38,7 @@ export class JitEngine {
 	private inputFileCache = '@use "../sass/tools";';
 	private readonly defaultSassConfig =
 		'@use "sass:map";\n @use "../sass/tools/settings" as ml;';
-	private readonly utilsByFile = new Map<string, string[]>();
+	private readonly utilsByFile = new Map<string, [string[], string[]]>();
 	private readonly utilsRegexps = {
 		quotedContent: /"\n?[^"]*[^"\n]*\n?"/g,
 		singleQuotedContent: /'\n?[^']*[^'\n]*\n?'/g,
@@ -108,7 +108,16 @@ export class JitEngine {
 			return '';
 		}
 
-		const allUniqueUtils = [...new Set([...this.utilsByFile.values()].flat())];
+		const mainUtils: string[][] = [];
+		const atRuleUtils: string[][] = [];
+
+		for (const [main, withAr] of this.utilsByFile.values()) {
+			mainUtils.push(main);
+			atRuleUtils.push(withAr);
+		}
+
+		const sortedAtRuleUtils = atRuleUtils.flat().sort(this.compareUtilsWithAtRule);
+		const allUniqueUtils = [...new Set(mainUtils.flat().concat(sortedAtRuleUtils))];
 		const applyStr =
 			`\n@include ${this.sassModuleName}.apply(${JSON.stringify(allUniqueUtils)},(),true);`;
 
@@ -125,7 +134,7 @@ export class JitEngine {
 		);
 	}
 
-	private extractUtils(content: string): string[] {
+	private extractUtils(content: string): [string[], string[]] {
 		let fixedContent = content.replace(this.utilsRegexps.escapedQuotes, '');
 		const allClassNames = fixedContent
 			.match(this.utilsRegexps.quotedContent)
@@ -183,9 +192,7 @@ export class JitEngine {
 			return acc;
 		}, new Set<string>())];
 
-		return mainUtils.concat(
-			[...utilsWithAtRule].sort(this.compareUtilsWithAtRule)
-		);
+		return [mainUtils, [...utilsWithAtRule]];
 	}
 
 	private compareUtilsWithAtRule = (a: string, b: string): number => {
