@@ -1,23 +1,22 @@
 import type { Importer, ImporterResult } from 'sass';
 
-import { fileURLToPath } from '../utils/fileURLToPath.js';
 import { path } from '../utils/path.js';
-import { FsModuleLoader, SassModuleLoader } from './sassModuleLoader.js';
+import { sassModuleLoader, SassModuleLoader } from './sassModuleLoader.js';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const moduleLoader = new FsModuleLoader();
+const locationOrigin = globalThis.location?.origin ?? 'http://localhost';
+const sassIndexFileName = '_index.scss';
 
 async function readModulesRecursive(
-	entryPath: string, loader: SassModuleLoader,
+	loader: SassModuleLoader
 ): Promise<Map<string, string>> {
 	const result = new Map<string, string>();
+	const pathPrefix = locationOrigin + '/';
 
 	const doReadRecursive = async (entry: string, map: Map<string, string>) => {
-		const absEntry = path.resolve(__dirname, entry);
-		const files = await loader.loadDir(absEntry);
+		const files = await loader.loadDir(entry);
 
 		await Promise.all(files.map(async (item) => {
-			const itemPath = path.join(absEntry, item);
+			const itemPath = path.join(entry, item);
 			const isDir = await loader.isDir(itemPath);
 
 			if (isDir) {
@@ -25,11 +24,11 @@ async function readModulesRecursive(
 			} else {
 				const pathObj = path.parse(itemPath);
 
-				if (pathObj.base !== '_index.scss') {
+				if (pathObj.base !== sassIndexFileName && pathObj.base.startsWith('_')) {
 					pathObj.base = pathObj.base.slice(1);
 				}
 
-				const finalPath = 'file://' + path.format(pathObj);
+				const finalPath = pathPrefix + path.format(pathObj);
 				map.set(finalPath, (await loader.loadFile(itemPath)));
 			}
 		}));
@@ -38,32 +37,50 @@ async function readModulesRecursive(
 	};
 
 
-	return doReadRecursive(entryPath, result);
+	return doReadRecursive(sassModuleLoader.initPath, result);
 }
 
-const modulesMap = await readModulesRecursive('../sass/tools', moduleLoader);
+const modulesMap = await readModulesRecursive(sassModuleLoader);
 
 export class ModuleImporter implements Importer<'async'> {
 	private modules = modulesMap;
+	private aliases: Record<string, string> = {
+		'@mlut/core': '../sass/index',
+		'@mlut/core/tools': '../sass/tools',
+	};
 
-	canonicalize(url: string) {
-		if (!url.includes(path.join('sass', 'tools'))) {
-			return null;
+	// bind for the sass web version
+	canonicalize = (initUrl: string) => {
+		let url = initUrl;
+
+		if (!url.includes('/sass/')) {
+			if (url in this.aliases) {
+				url = this.aliases[url];
+			} else if (!url.startsWith('@mlut/core')) {
+				return null;
+			}
 		}
 
-		const isEntryUrl = !url.startsWith('file:');
+		const isEntryUrl = !url.startsWith('http');
+		let newUrl = url + '.scss';
 
-		let newUrl = !isEntryUrl ?
-			url + '.scss' : 'file://' + path.join(__dirname, '..', 'sass', url.split('sass')[1]) + '.scss';
+		if (isEntryUrl) {
+			newUrl = new URL(path.join(
+				locationOrigin,
+				sassModuleLoader.initPath,
+				url.split('sass')[1],
+			) + '.scss').href;
+		}
 
 		if (!this.modules.has(newUrl)) {
-			newUrl = path.join(newUrl.replace('.scss', ''), '_index.scss');
+			newUrl = path.join(newUrl.replace('.scss', ''), sassIndexFileName);
 		}
 
 		return new URL(newUrl);
-	}
+	};
 
-	load(canonicalUrl: URL): ImporterResult {
+	// bind for the sass web version
+	load = (canonicalUrl: URL): ImporterResult => {
 		if (!this.modules.has(canonicalUrl.href)) {
 			throw new Error('Unknown module');
 		}
@@ -72,7 +89,7 @@ export class ModuleImporter implements Importer<'async'> {
 			contents: this.modules.get(canonicalUrl.href) as string,
 			syntax: 'scss'
 		};
-	}
+	};
 }
 
 export const importer = new ModuleImporter();

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>mlut web test</title>
+		<link href="css/test.css" rel="stylesheet">
+	</head>
+	<body>
+		<main>
+			<div class="wrapper">
+				<h1 class="title-h1 Fns3r">mlut tests</h1>
+				<p class="Fnst-i Ct-'lol';'.';';'_b">Lorem about mlut</p>
+				<pre id="cssCode">Loading...</pre>
+			</div>
+		</main>
+		<script type="importmap">
+			{
+				"imports": {
+					"@mlut/core": "../packages/core/dist/index.js"
+				}
+			}
+		</script>
+		<script type="module">
+				globalThis.mlut = {
+					GITHUB_TOKEN: 'YOUR_GITHUB_TOKEN',
+				};
+		</script>
+		<script type="module">
+			import { jitEngine } from '@mlut/core';
+
+			const markup = document.body.firstElementChild.outerHTML;
+			const output = document.getElementById('cssCode');
+			const pageName = 'index.html';
+			const sassConfig = `
+@use "@mlut/core/tools";
+@use "@mlut/core/dist/sass/css/styles";
+`;
+
+			await jitEngine.init(['style.scss', sassConfig]);
+			jitEngine.putContent(pageName, markup);
+			output.textContent = await jitEngine.generateCss();
+
+			setTimeout(async () => {
+				jitEngine.putContent(pageName, markup + '<img class="W150">');
+				output.textContent = await jitEngine.generateCss();
+			}, 3000);
+		</script>
+	</body>
+</html>

@@ -1,26 +1,80 @@
-import fs from 'node:fs/promises';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import type { Octokit } from "@octokit/rest";
 
-export interface SassModuleLoader {
-	loadDir(path: string): Promise<string[]>
-	isDir(path: string): Promise<boolean>
-	loadFile(path: string): Promise<string>
-}
-
-export class FsModuleLoader implements SassModuleLoader {
-	private fs = fs;
-	private dirname = path.dirname(fileURLToPath(import.meta.url));
-
-	async loadDir(path: string): Promise<string[]> {
-		return this.fs.readdir(path).catch(() => []);
-	}
-
-	async isDir(path: string): Promise<boolean> {
-		return this.fs.stat(path).then((stat) => stat.isDirectory());
-	}
-
-	async loadFile(path: string): Promise<string> {
-		return this.fs.readFile(path, 'utf8');
+declare global {
+	var mlut: {
+		GITHUB_TOKEN?: string,
 	}
 }
+
+//@ts-expect-error - for run in browser
+const retryPromise = import('https://esm.sh/@octokit/plugin-retry')
+	.catch(() => import('@octokit/plugin-retry'))
+	.then((r) => r.retry as typeof import('@octokit/plugin-retry').retry);
+
+//@ts-expect-error - for run in browser
+const octokit = await import('https://esm.sh/@octokit/rest')
+	.catch(() => import('@octokit/rest'))
+	.then(async (r: typeof import('@octokit/rest')) => {
+		const retry = await retryPromise;
+		const ctr = r.Octokit.plugin(retry);
+		return new ctr({
+			auth: globalThis.mlut?.GITHUB_TOKEN ?? process.env.GITHUB_TOKEN,
+		});
+	}) as Octokit;
+
+export class SassModuleLoader {
+	private readonly kit = octokit;
+	private readonly owner = 'mlutcss';
+	private readonly repo = 'mlut';
+	private readonly unusedPath = 'packages/core/src/sass/css/utils';
+	private readonly dirs = new Set<string>();
+	readonly initPath = 'packages/core/src/sass';
+
+	async loadDir(dirPath: string): Promise<string[]> {
+		if (dirPath.includes(this.unusedPath)) {
+			return [];
+		}
+
+		return this.kit.repos.getContent({
+			owner: this.owner,
+			repo: this.repo,
+			path: dirPath,
+		}).then((r) => {
+			if (!Array.isArray(r.data)) {
+				return [];
+			}
+
+			const result: string[] = [];
+
+			for (const item of r.data) {
+				if (item.type === 'dir') {
+					this.dirs.add(item.path);
+				}
+
+				result.push(item.name);
+			}
+
+			return result;
+		});
+	};
+
+	isDir(dirPath: string): boolean {
+		return this.dirs.has(dirPath);
+	};
+
+	async loadFile(filePath: string): Promise<string> {
+		return this.kit.repos.getContent({
+			owner: this.owner,
+			repo: this.repo,
+			path: filePath,
+		}).then((r) => {
+			if (Array.isArray(r.data) || r.data.type !== 'file') {
+				return '';
+			}
+
+			return globalThis.atob(r.data.content);
+		});
+	};
+}
+
+export const sassModuleLoader = new SassModuleLoader();

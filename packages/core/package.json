@@ -40,6 +40,8 @@
 		"dist"
 	],
 	"devDependencies": {
+		"@octokit/plugin-retry": "^8.0.1",
+		"@octokit/rest": "^22.0.0",
 		"@types/node": "^20.10.5",
 		"path-browserify-esm": "^1.0.6",
 		"sass": "^1.71.0",

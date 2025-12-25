@@ -1,16 +1,27 @@
-import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { assert } from 'chai';
-import { importer } from '../../packages/core/src/jit/importer.js';
 import * as sass from 'sass-embedded';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+import type { ModuleImporter } from '../../packages/core/src/jit/importer.js';
 
 describe('importer', () => {
+	// check only in a full test run
+	if (process.env.NODE_ENV !== 'test') {
+		return;
+	}
+
+	let importer: ModuleImporter | null = null;
+
+	before(async () => {
+		importer = await import('../../packages/core/src/jit/importer.js')
+			.then((r) => r.importer);
+	});
+
 	it('collect all sass modules', () => {
-		const modulePath = 'file://' + path.join(
-			__dirname, '../../packages/core/src/sass/tools/functions/base/getters.scss'
-		);
+		const locationOrigin = 'http://localhost';
+		const modulePath = new URL(path.join(
+			locationOrigin,
+			'packages/core/src/sass/tools/functions/base/getters.scss',
+		)).href;
 
 		//@ts-expect-error
 		const content = importer.modules.get(modulePath) as string;
@@ -27,10 +38,7 @@ describe('importer', () => {
 			testConfig,
 			{
 				style: 'compressed',
-				loadPaths: [ __dirname, 'node_modules' ],
-				importers: [
-					importer
-				],
+				importers: [ importer as ModuleImporter ],
 			}
 		));
 
