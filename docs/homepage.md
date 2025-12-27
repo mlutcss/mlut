@@ -3,7 +3,7 @@
 <img alt="Logo" src="kss-assets/logo-full.png" style="display:block; margin:16px 0; max-width:350px"/>
 
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/mlutcss/mlut/test.yml?branch=master)](https://github.com/mlutcss/mlut/actions/workflows/test.yml)
-[![](https://img.shields.io/npm/v/mlut.svg)](https://www.npmjs.com/package/mlut)
+[![](https://img.shields.io/npm/v/@mlut/core.svg)](https://www.npmjs.com/package/@mlut/core)
 [![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/mlutcss)](https://x.com/mlutcss)
 
 Atomic CSS toolkit with Sass and ergonomics for creating styles of any complexity. <br> Make CSS exciting again!

@@ -7,14 +7,14 @@ declare global {
 	};
 }
 
-//@ts-expect-error - for run in browser
-const retryPromise = import('https://esm.sh/@octokit/plugin-retry')
-	.catch(() => import('@octokit/plugin-retry'))
+const retryPromise = import('@octokit/plugin-retry')
+	//@ts-expect-error - for run in browser
+	.catch(() => import('https://esm.sh/@octokit/plugin-retry'))
 	.then((r: typeof import('@octokit/plugin-retry')) => r.retry);
 
-//@ts-expect-error - for run in browser
-const octokit = await import('https://esm.sh/@octokit/rest')
-	.catch(() => import('@octokit/rest'))
+const octokit = await import('@octokit/rest')
+	//@ts-expect-error - for run in browser
+	.catch(() => import('https://esm.sh/@octokit/rest'))
 	.then(async (r: typeof import('@octokit/rest')) => {
 		const retry = await retryPromise;
 		const ctr = r.Octokit.plugin(retry);

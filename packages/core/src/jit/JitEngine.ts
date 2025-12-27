@@ -1,19 +1,16 @@
 import { path } from '../utils/path.js';
 import { logger } from '../utils/index.js';
-import type { AsyncCompiler } from 'sass';
 
-const isNode = globalThis.process?.env != undefined;
+const isNode = globalThis.window?.document === undefined;
 const isTestEnv = globalThis.process?.env?.NODE_ENV === 'test';
 
 const sass = await import('sass-embedded')
 	.catch(() => import('sass'))
-	//@ts-expect-error - for run in browser
-	.catch(() => import('https://jspm.dev/sass'))
 	.catch(() => {
 		throw new Error(
 			'The Sass package is not installed. You can do this with `npm i -D sass-embedded`'
 		);
-	}) as AsyncCompiler;
+	});
 
 const sassImporters = !isTestEnv && isNode ? [] :
 	await import('./importerFromMemory.js')

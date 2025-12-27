@@ -13,6 +13,7 @@ sassTrue.runSass(
 			'packages/core',
 			'node_modules',
 		],
+		silenceDeprecations: [ 'if-function', ],
 	},
 	{
 		describe,

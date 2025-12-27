@@ -1,6 +1,6 @@
 {
 	"name": "@mlut/core",
-	"version": "2.3.0",
+	"version": "2.3.1",
 	"description": "Atomic CSS toolkit with Sass and ergonomics for creating styles of any complexity",
 	"author": "mr150",
 	"type": "module",
