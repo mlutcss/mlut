@@ -6,7 +6,7 @@
 [![](https://img.shields.io/npm/v/@mlut/core.svg)](https://www.npmjs.com/package/@mlut/core)
 [![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/mlutcss)](https://x.com/mlutcss)
 
-Atomic CSS toolkit with Sass and ergonomics for creating styles of any complexity. <br> Make CSS exciting again!
+The best CSS framework for creative coding. Make CSS exciting again!
 
 <img class="D Mb4gg" alt="GIF animation with usage example" src="kss-assets/jit-demo.gif"/>
 
@@ -169,8 +169,10 @@ Addons may contains any tools, settings and styles. Addons now at the **preview*
 ## Articles ##
 - Atomic CSS Deep Dive: [EN](https://dev.to/mr150/atomic-css-deep-dive-1hee), [RU](https://habr.com/ru/articles/833712/)
 - [mlut - a new word in the Utility-First CSS approach](https://dev.to/mr150/mlut-a-new-word-in-the-utility-first-css-approach-gbl)
-- How to make one plugin for all frontend bundlers at once: [RU](https://habr.com/ru/articles/856028/)
 - Interactive lesson: [EN](https://htmlacademy.org/tutorials/17), [RU](https://htmlacademy.ru/demos/183/step/17)
+- Man or boy test in CSS: [EN](https://javascript.plainenglish.io/man-or-boy-test-in-css-9c343c6817c8), [RU](https://tproger.ru/articles/man-or-boy-test-v-css)
+- CSS counters in Atomic CSS — Part 1: [EN](https://blog.stackademic.com/css-counters-in-atomic-css-part-1-51c4127c5aab), [RU](https://tproger.ru/articles/css-counters-v-podhode-atomic-css---chast-1)
+- How to make one plugin for all frontend bundlers at once: [RU](https://habr.com/ru/articles/856028/)
 - I hired a junior dev for my open source project. This is what happened: [RU](https://habr.com/ru/articles/962468/)
 
 </section>
