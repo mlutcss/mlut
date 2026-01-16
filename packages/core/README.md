@@ -18,7 +18,7 @@ When using this package, you will need to install Sass separately. We recommend 
 This allows you to control the versions of all your dependencies, and to choose which Sass implementation to use.
 
 ## Documentation ##
-Full documentation available [here](https://mlutcss.github.io/mlut/)
+Full documentation available [here](https://docs.mlut.style/)
 
 ## License ##
 MIT

@@ -103,7 +103,7 @@ You can add the options in your input Sass file too. Options must be a **valid J
 ```
 
 ## Documentation ##
-Full documentation available [here](https://mlutcss.github.io/mlut/section-start.html#kssref-start-integrations)
+Full documentation available [here](https://docs.mlut.style/section-start.html#kssref-start-integrations)
 
 ## License ##
 MIT
