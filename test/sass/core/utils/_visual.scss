@@ -79,6 +79,24 @@
 				}
 			}
 		}
+
+		@include assert() {
+			@include output(false) {
+				@include ml.apply(
+					'-Gdrd-cr;at;c;75p;in;dpp;lr;hue,#fff;30p,#00f;80p,red -Gdrr#000,#000;5,#fff;5,#fff;10'
+				);
+			}
+
+			@include expect(false) {
+				.-Gdrd-cr\;at\;c\;75p\;in\;dpp\;lr\;hue\,\#fff\;30p\,\#00f\;80p\,red {
+					background-image: radial-gradient(circle at center 75% in display-p3 longer hue, #fff 30%, #00f 80%, red);
+				}
+
+				.-Gdrr\#000\,\#000\;5\,\#fff\;5\,\#fff\;10 {
+					background-image: repeating-radial-gradient(#000, #000 5px, #fff 5px, #fff 10px);
+				}
+			}
+		}
 	}
 
 	@include it('filter utils') {

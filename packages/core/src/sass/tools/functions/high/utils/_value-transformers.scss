@@ -22,20 +22,21 @@ $-directions: map.values(ml.$main-directions);
 
 @function gradient($values, $data: ()) {
 	$first-list: list.nth($values, 1);
+	$css-fn-name: map.get(
+		ml.$utils-db, 'utils', 'registry', map.get($data, 'name'), 'css-function'
+	);
 
-	@if list.index($-directions, list.nth($first-list, 1)) {
+	@if (
+		list.index($-directions, list.nth($first-list, 1)) and
+		string.index($css-fn-name, 'linear')
+	) {
 		$first-list: list.join(to, $first-list);
 	}
 
 	@return meta.call(
 		// TODO: add cache with frequently used CSS functions
-		meta.get-function(
-			map.get(
-				ml.$utils-db, 'utils', 'registry', map.get($data, 'name'), 'css-function'
-			),
-			true
-		),
-		list.set-nth($values, 1, $first-list)
+		meta.get-function($css-fn-name, true),
+		list.set-nth($values, 1, $first-list),
 	);
 }
 
