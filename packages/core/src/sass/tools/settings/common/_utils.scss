@@ -845,6 +845,32 @@ $utils-db: (
 					'gradients',
 				),
 			),
+			'-Gdc': (
+				'properties': background-image,
+				'transformer': 'gradient',
+				'css-function': 'conic-gradient',
+				'conversion': 'gradient',
+				'multi-list-separator': ml.$tULs1,
+				'keywords': (
+					'position',
+					'color-space',
+					'hue-interpolation',
+					'gradients',
+				),
+			),
+			'-Gdrc': (
+				'properties': background-image,
+				'transformer': 'gradient',
+				'css-function': 'repeating-conic-gradient',
+				'conversion': 'gradient',
+				'multi-list-separator': ml.$tULs1,
+				'keywords': (
+					'position',
+					'color-space',
+					'hue-interpolation',
+					'gradients',
+				),
+			),
 
 			// TRANSFORM
 			'Tf': (
@@ -1869,8 +1895,8 @@ $utils-db: (
 			'ray-size': (
 				'css': closest-side,
 				'csc': closest-corner,
-				'fs': farthest-side,
-				'fc': farthest-corner,
+				'fts': farthest-side,
+				'ftc': farthest-corner,
 				'sd': sides,
 			),
 			'color-space': (

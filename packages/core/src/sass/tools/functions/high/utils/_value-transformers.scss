@@ -22,15 +22,23 @@ $-directions: map.values(ml.$main-directions);
 
 @function gradient($values, $data: ()) {
 	$first-list: list.nth($values, 1);
+	$first-item: list.nth($first-list, 1);
 	$css-fn-name: map.get(
 		ml.$utils-db, 'utils', 'registry', map.get($data, 'name'), 'css-function'
 	);
 
 	@if (
-		list.index($-directions, list.nth($first-list, 1)) and
+		list.index($-directions, $first-item) and
 		string.index($css-fn-name, 'linear')
 	) {
 		$first-list: list.join(to, $first-list);
+	} @else if string.index($css-fn-name, 'conic') {
+		$is-first-item-calc:
+			meta.type-of($first-item) == 'string' and string.index($first-item, 'calc(');
+
+		@if (meta.type-of($first-item) == 'number' or $is-first-item-calc) {
+			$first-list: list.join(from, $first-list);
+		}
 	}
 
 	@return meta.call(
