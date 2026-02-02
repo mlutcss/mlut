@@ -321,7 +321,8 @@
 // Usage:
 // ```scss
 //	@debug ml.uv('-Gdrl-b;r,black,#ff0'); // repeating-linear-gradient(to bottom right, black, #ff0)
-//	@debug ml.uv('-Gdl-50d,blue;3r,cc;80p'); // linear-gradient(50deg, blue 3rem, currentColor 80%)
+//	@debug ml.uv('-Gdl-50d,blue;3r,cc;80p'); // linear-gradient(-50deg, blue 3rem, currentColor 80%)
+//	@debug ml.uv('-Gdc45d,#000;0.5g,yellow'); // conic-gradient(from 45deg, #000 0.5grad, yellow)
 // ```
 //
 // Styleguide: settings.utils.config.conversion.gradient
