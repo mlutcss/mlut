@@ -6,7 +6,7 @@
 [![](https://img.shields.io/npm/v/@mlut/core.svg)](https://www.npmjs.com/package/@mlut/core)
 [![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/mlutcss)](https://x.com/mlutcss)
 
-The best CSS framework for creative coding. Make CSS exciting again!
+The best CSS framework for custom websites and creative coding. <br> Make CSS exciting again!
 
 ## Table of Contents
 
@@ -277,11 +277,13 @@ Available [here](https://docs.mlut.style/) or can be run locally. Documentation 
 - Interactive lesson: [EN](https://htmlacademy.org/tutorials/17), [RU](https://htmlacademy.ru/demos/183/step/17)
 - Man or boy test in CSS: [EN](https://javascript.plainenglish.io/man-or-boy-test-in-css-9c343c6817c8), [RU](https://tproger.ru/articles/man-or-boy-test-v-css)
 - CSS counters in Atomic CSS — Part 1: [EN](https://blog.stackademic.com/css-counters-in-atomic-css-part-1-51c4127c5aab), [RU](https://tproger.ru/articles/css-counters-v-podhode-atomic-css---chast-1)
+- CSS counters in Atomic CSS — Part 2: [EN](https://blog.stackademic.com/css-counters-in-atomic-css-part-2-d6fca66ce974), [RU](https://tproger.ru/articles/css-counters-v-podhode-atomic-css---chast-2)
+- How to combine utilities and handwritten styles in Atomic CSS?: [EN](https://dev.to/ramimak/how-to-combine-utilities-and-handwritten-styles-in-atomic-css-95e), [RU](https://habr.com/ru/articles/990428/)
 - How to make one plugin for all frontend bundlers at once: [RU](https://habr.com/ru/articles/856028/)
 - I hired a junior dev for my open source project. This is what happened: [RU](https://habr.com/ru/articles/962468/)
 
 ## What next? ##
-- multiple gradients
+- masks and multiple gradients
 - first-class pseudoselectors with arguments like `has()`
 - performance optimization
 - plugins for editors and IDEs with hints and autocompletion

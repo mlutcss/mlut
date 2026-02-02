@@ -815,6 +815,62 @@ $utils-db: (
 				'multi-list-separator': ml.$tULs1,
 				'keywords': ('position', 'gradients'),
 			),
+			'-Gdrd': (
+				'properties': background-image,
+				'transformer': 'gradient',
+				'css-function': 'radial-gradient',
+				'conversion': 'gradient',
+				'multi-list-separator': ml.$tULs1,
+				'keywords': (
+					'position',
+					'radial-shape',
+					'ray-size',
+					'color-space',
+					'hue-interpolation',
+					'gradients',
+				),
+			),
+			'-Gdrr': (
+				'properties': background-image,
+				'transformer': 'gradient',
+				'conversion': 'gradient',
+				'css-function': 'repeating-radial-gradient',
+				'multi-list-separator': ml.$tULs1,
+				'keywords': (
+					'position',
+					'radial-shape',
+					'ray-size',
+					'color-space',
+					'hue-interpolation',
+					'gradients',
+				),
+			),
+			'-Gdc': (
+				'properties': background-image,
+				'transformer': 'gradient',
+				'css-function': 'conic-gradient',
+				'conversion': 'gradient',
+				'multi-list-separator': ml.$tULs1,
+				'keywords': (
+					'position',
+					'color-space',
+					'hue-interpolation',
+					'gradients',
+				),
+			),
+			'-Gdrc': (
+				'properties': background-image,
+				'transformer': 'gradient',
+				'css-function': 'repeating-conic-gradient',
+				'conversion': 'gradient',
+				'multi-list-separator': ml.$tULs1,
+				'keywords': (
+					'position',
+					'color-space',
+					'hue-interpolation',
+					'gradients',
+				),
+			),
 
 			// TRANSFORM
 			'Tf': (
@@ -1830,6 +1886,29 @@ $utils-db: (
 					background-color, border-color, color,
 					fill, outline-color, stroke,
 				),
+			),
+			'radial-shape': (
+				// c - center, cc - currentColor
+				'cr': circle,
+				'el': ellipse,
+			),
+			'ray-size': (
+				'css': closest-side,
+				'csc': closest-corner,
+				'fts': farthest-side,
+				'ftc': farthest-corner,
+				'sd': sides,
+			),
+			'color-space': (
+				'dpp': display-p3,
+				'dppl': display-p3-linear,
+				'ppr': prophoto-rgb,
+			),
+			'hue-interpolation': (
+				'sr': shorter,
+				'lr': longer,
+				'ic': increasing,
+				'dc': decreasing,
 			),
 			'sizing': $-sizing-kw,
 		),

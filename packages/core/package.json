@@ -1,7 +1,7 @@
 {
 	"name": "@mlut/core",
-	"version": "2.3.1",
-	"description": "Atomic CSS toolkit with Sass and ergonomics for creating styles of any complexity",
+	"version": "2.4.0",
+	"description": "Tailwind CSS alternative for custom websites and creative coding",
 	"author": "mr150",
 	"type": "module",
 	"license": "MIT",

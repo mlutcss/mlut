@@ -79,6 +79,48 @@
 				}
 			}
 		}
+
+		@include assert() {
+			@include output(false) {
+				@include ml.apply(
+					'-Gdrd-cr;at;c;75p;in;dpp;lr;hue,#fff;30p,#00f;80p,red -Gdrr#000,#000;5,#fff;5,#fff;10'
+				);
+			}
+
+			@include expect(false) {
+				.-Gdrd-cr\;at\;c\;75p\;in\;dpp\;lr\;hue\,\#fff\;30p\,\#00f\;80p\,red {
+					background-image: radial-gradient(circle at center 75% in display-p3 longer hue, #fff 30%, #00f 80%, red);
+				}
+
+				.-Gdrr\#000\,\#000\;5\,\#fff\;5\,\#fff\;10 {
+					background-image: repeating-radial-gradient(#000, #000 5px, #fff 5px, #fff 10px);
+				}
+			}
+		}
+
+		@include assert() {
+			@include output(false) {
+				@include ml.apply(
+					'-Gdc35d;at;b;25p;in;ppr;ic;hue,#000;1t;0.5ra,#ff0;50p \
+-Gdrc-black;0.8g,yellow \
+-Gdc-calc(3;*;$ang),red,black'
+				);
+			}
+
+			@include expect(false) {
+				.-Gdc35d\;at\;b\;25p\;in\;ppr\;ic\;hue\,\#000\;1t\;0\.5ra\,\#ff0\;50p {
+					background-image: conic-gradient(from 35deg at bottom 25% in prophoto-rgb increasing hue, #000 1turn 0.5rad, #ff0 50%);
+				}
+
+				.-Gdrc-black\;0\.8g\,yellow {
+					background-image: repeating-conic-gradient(black 0.8grad, yellow);
+				}
+
+				.-Gdc-calc\(3\;\*\;\$ang\)\,red\,black {
+					background-image: conic-gradient(from calc(3 * var(--ml-ang)), red, black);
+				}
+			}
+		}
 	}
 
 	@include it('filter utils') {
