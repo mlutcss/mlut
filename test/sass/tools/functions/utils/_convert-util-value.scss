@@ -200,6 +200,10 @@ ml.$utils-cfg: map.set(
 				('t,#007,cc', '-Gdrl'):
 					repeating-linear-gradient(to top, #007, currentColor),
 			),
+			'correct CSS functions usage': (
+				('url(img/circle.png)', 'Bgi'): url(img/circle.png),
+				('url("img/triangle.png")', 'Bgi'): url("img/triangle.png"),
+			),
 		);
 
 		@each $test, $data in $-tests {
