@@ -283,7 +283,7 @@ Available [here](https://docs.mlut.style/) or can be run locally. Documentation 
 - I hired a junior dev for my open source project. This is what happened: [RU](https://habr.com/ru/articles/962468/)
 
 ## What next? ##
-- masks and multiple gradients
+- multiple gradients
 - first-class pseudoselectors with arguments like `has()`
 - performance optimization
 - plugins for editors and IDEs with hints and autocompletion
