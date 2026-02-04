@@ -112,6 +112,20 @@ $-sizing-kw: (
 );
 
 $-bd-kw-links: ('border', 'line-style', 'line-width');
+$-radial-grad-kw: (
+	'position',
+	'radial-shape',
+	'ray-size',
+	'color-space',
+	'hue-interpolation',
+	'gradients',
+);
+$-conic-grad-kw: (
+	'position',
+	'color-space',
+	'hue-interpolation',
+	'gradients',
+);
 
 //stylelint-disable
 $utils-db: (
@@ -748,15 +762,7 @@ $utils-db: (
 			'Bgr': (
 				'properties': background-repeat,
 				'multi-list-separator': ml.$tULs1,
-				'keywords': (
-					'': no-repeat,
-					'nr': no-repeat,
-					'rx': repeat-x,
-					'ry': repeat-y,
-					'r': repeat,
-					's': space,
-					'rn': round,
-				)
+				'keywords': 'repeat-style',
 			),
 			'Bgp': (
 				'properties': background-position,
@@ -766,10 +772,7 @@ $utils-db: (
 			'Bgs': (
 				'properties': background-size,
 				'multi-list-separator': ml.$tULs1,
-				'keywords': (
-					'ct': contain,
-					'cv': cover,
-				),
+				'keywords': 'bg-size',
 			),
 			'Bga': (
 				'properties': background-attachment,
@@ -821,14 +824,7 @@ $utils-db: (
 				'css-function': 'radial-gradient',
 				'conversion': 'gradient',
 				'multi-list-separator': ml.$tULs1,
-				'keywords': (
-					'position',
-					'radial-shape',
-					'ray-size',
-					'color-space',
-					'hue-interpolation',
-					'gradients',
-				),
+				'keywords': $-radial-grad-kw,
 			),
 			'-Gdrr': (
 				'properties': background-image,
@@ -836,14 +832,7 @@ $utils-db: (
 				'conversion': 'gradient',
 				'css-function': 'repeating-radial-gradient',
 				'multi-list-separator': ml.$tULs1,
-				'keywords': (
-					'position',
-					'radial-shape',
-					'ray-size',
-					'color-space',
-					'hue-interpolation',
-					'gradients',
-				),
+				'keywords': $-radial-grad-kw,
 			),
 			'-Gdc': (
 				'properties': background-image,
@@ -851,12 +840,7 @@ $utils-db: (
 				'css-function': 'conic-gradient',
 				'conversion': 'gradient',
 				'multi-list-separator': ml.$tULs1,
-				'keywords': (
-					'position',
-					'color-space',
-					'hue-interpolation',
-					'gradients',
-				),
+				'keywords': $-conic-grad-kw,
 			),
 			'-Gdrc': (
 				'properties': background-image,
@@ -864,12 +848,7 @@ $utils-db: (
 				'css-function': 'repeating-conic-gradient',
 				'conversion': 'gradient',
 				'multi-list-separator': ml.$tULs1,
-				'keywords': (
-					'position',
-					'color-space',
-					'hue-interpolation',
-					'gradients',
-				),
+				'keywords': $-conic-grad-kw,
 			),
 
 			// TRANSFORM
@@ -1265,6 +1244,115 @@ $utils-db: (
 				'css-function': 'sepia',
 				'transformer': 'to-css-fn',
 				'conversion': 'num-percent',
+			),
+
+			// MASK
+			'Ms': (
+				'properties': mask,
+				'multi-list-separator': ml.$tULs1,
+			),
+			'Msi': (
+				'properties': mask-image,
+				'multi-list-separator': ml.$tULs1,
+			),
+			'Mscl': (
+				'properties': mask-clip,
+				'multi-list-separator': ml.$tULs1,
+				'keywords': ('box-ext', 'mask-clip'),
+			),
+			'Mso': (
+				'properties': mask-origin,
+				'multi-list-separator': ml.$tULs1,
+				'keywords': 'box-ext',
+			),
+			'Msc': (
+				'properties': mask-composite,
+				'multi-list-separator': ml.$tULs1,
+				'keywords': (
+					'a': add,
+					's': subtract,
+					'i': intersect,
+					'e': exclude,
+				),
+			),
+			'Msm': (
+				'properties': mask-mode,
+				'multi-list-separator': ml.$tULs1,
+				'keywords': (
+					'a': alpha,
+					'l': luminance,
+					'ms': match-source,
+				),
+			),
+			'Msp': (
+				'properties': mask-position,
+				'multi-list-separator': ml.$tULs1,
+				'keywords': 'position',
+			),
+			'Msr': (
+				'properties': mask-repeat,
+				'multi-list-separator': ml.$tULs1,
+				'keywords': 'repeat-style',
+			),
+			'Mss': (
+				'properties': mask-size,
+				'multi-list-separator': ml.$tULs1,
+				'keywords': 'bg-size',
+			),
+			'Mst': (
+				'properties': mask-type,
+				'keywords': (
+					'a': alpha,
+					'l': luminance,
+				),
+			),
+			'-Msgl': (
+				'properties': mask-image,
+				'transformer': 'gradient',
+				'css-function': 'linear-gradient',
+				'conversion': 'gradient',
+				'multi-list-separator': ml.$tULs1,
+				'keywords': ('position', 'gradients'),
+			),
+			'-Msgrpl': (
+				'properties': mask-image,
+				'transformer': 'gradient',
+				'conversion': 'gradient',
+				'css-function': 'repeating-linear-gradient',
+				'multi-list-separator': ml.$tULs1,
+				'keywords': ('position', 'gradients'),
+			),
+			'-Msgr': (
+				'properties': mask-image,
+				'transformer': 'gradient',
+				'css-function': 'radial-gradient',
+				'conversion': 'gradient',
+				'multi-list-separator': ml.$tULs1,
+				'keywords': $-radial-grad-kw,
+			),
+			'-Msgrpr': (
+				'properties': mask-image,
+				'transformer': 'gradient',
+				'conversion': 'gradient',
+				'css-function': 'repeating-radial-gradient',
+				'multi-list-separator': ml.$tULs1,
+				'keywords': $-radial-grad-kw,
+			),
+			'-Msgc': (
+				'properties': mask-image,
+				'transformer': 'gradient',
+				'css-function': 'conic-gradient',
+				'conversion': 'gradient',
+				'multi-list-separator': ml.$tULs1,
+				'keywords': $-conic-grad-kw,
+			),
+			'-Msgrpc': (
+				'properties': mask-image,
+				'transformer': 'gradient',
+				'css-function': 'repeating-conic-gradient',
+				'conversion': 'gradient',
+				'multi-list-separator': ml.$tULs1,
+				'keywords': $-conic-grad-kw,
 			),
 
 			// BORDER
@@ -1812,7 +1900,13 @@ $utils-db: (
 				'bb': border-box,
 				'cb': content-box,
 				'pb': padding-box,
+				'fb': fill-box,
+				'sb': stroke-box,
+				'vb': view-box,
 				't': text,
+			),
+			'mask-clip': (
+				'nc': no-clip,
 			),
 			'blend-mode': (
 				'n': normal,
@@ -1909,6 +2003,19 @@ $utils-db: (
 				'lr': longer,
 				'ic': increasing,
 				'dc': decreasing,
+			),
+			'repeat-style': (
+				'': no-repeat,
+				'nr': no-repeat,
+				'rx': repeat-x,
+				'ry': repeat-y,
+				'r': repeat,
+				's': space,
+				'rn': round,
+			),
+			'bg-size': (
+				'ct': contain,
+				'cv': cover,
 			),
 			'sizing': $-sizing-kw,
 		),
