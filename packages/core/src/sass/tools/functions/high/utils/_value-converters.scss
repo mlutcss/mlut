@@ -71,6 +71,11 @@
 
 		@if list.length($fraction) > 1 {
 			$dividend: list.nth($fraction, 1);
+			$is-css-function: string.index($value, '(') and string.slice($value, -1) == ')';
+
+			@if $is-css-function {
+				@return $value;
+			}
 
 			@if map.get($data, 'negative') {
 				$dividend: '-' + $dividend;
