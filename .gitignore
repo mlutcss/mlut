@@ -10,6 +10,8 @@ test/plugins/*/dist
 docs/styleguide
 docs/content/generate.css
 
+packages/core/src/sass/index.d.ts
+packages/core/src/sass/index.js
 packages/*/dist
 
 node_modules

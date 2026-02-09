@@ -16,7 +16,7 @@
 		"build:core": "npm run build --workspace=@mlut/core",
 		"build:plugins": "npm run build --workspace=@mlut/plugins",
 		"test:plugins": "vite build -c test/plugins/vite/vite.config.js && webpack -c test/plugins/webpack/webpack.config.js && rollup --config test/plugins/rollup/rollup.config.js",
-		"lint": "npx eslint packages/*/src/ && npx stylelint packages/core/src/sass --ip packages/core/src/sass/tools/mixins/base/_mk-ar.scss",
+		"lint": "npx eslint packages/*/src/**/*.ts && npx stylelint packages/core/src/sass --ip packages/core/src/sass/tools/mixins/base/_mk-ar.scss",
 		"test": "export NODE_ENV=test && mocha test/sass/index.js && mocha"
 	},
 	"devDependencies": {

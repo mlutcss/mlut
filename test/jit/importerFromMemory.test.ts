@@ -1,14 +1,10 @@
 import path from 'node:path';
 import { assert } from 'chai';
 import * as sass from 'sass-embedded';
+import { locationOrigin } from '../../packages/core/src/jit/importerConfig.js';
 import type { ModuleImporter } from '../../packages/core/src/jit/importerFromMemory.js';
 
 describe('importerFromMemory', () => {
-	// check only in a full test run
-	if (process.env.NODE_ENV !== 'test') {
-		return;
-	}
-
 	let importer: ModuleImporter | null = null;
 
 	before(async () => {
@@ -17,14 +13,13 @@ describe('importerFromMemory', () => {
 	});
 
 	it('collect all sass modules', () => {
-		const locationOrigin = 'http://localhost';
 		const modulePath = new URL(path.join(
 			locationOrigin,
-			'packages/core/src/sass/tools/functions/base/getters.scss',
+			'tools/functions/base/getters.scss',
 		)).href;
 
 		//@ts-expect-error
-		const content = importer.modules.get(modulePath) as string;
+		const content = importer.modules[modulePath];
 		assert.include(content, 'util-prop');
 	});
 

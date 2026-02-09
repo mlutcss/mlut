@@ -1,6 +1,6 @@
 {
 	"name": "@mlut/core",
-	"version": "2.5.0",
+	"version": "2.5.1",
 	"description": "Tailwind CSS alternative for custom websites and creative coding",
 	"author": "mr150",
 	"type": "module",
@@ -32,7 +32,7 @@
 		}
 	},
 	"scripts": {
-		"build": "rm -rf dist && tsc && cp src/sass dist/ -r"
+		"build": "rm -rf dist && ts-node --esm script/bundle-sass.ts && tsc && cp src/sass dist/ -r"
 	},
 	"files": [
 		"_index.scss",
@@ -40,10 +40,7 @@
 		"dist"
 	],
 	"devDependencies": {
-		"@octokit/plugin-retry": "^8.0.1",
-		"@octokit/rest": "^22.0.0",
 		"@types/node": "^20.10.5",
-		"path-browserify-esm": "^1.0.6",
 		"sass": "^1.93.0",
 		"sass-embedded": "^1.93.0",
 		"typescript": "^5.8.0"
