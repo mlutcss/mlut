@@ -1,48 +1,11 @@
 import type { Importer, ImporterResult } from 'sass';
 
 import { path } from '../utils/path.js';
-import { sassSourcesLoader, SassSourcesLoader } from './SassSourcesLoader.js';
-
-const locationOrigin = globalThis.location?.origin ?? 'http://localhost';
-const sassIndexFileName = '_index.scss';
-
-async function loadSourcesRecursive(
-	loader: SassSourcesLoader
-): Promise<Map<string, string>> {
-	const result = new Map<string, string>();
-	const pathPrefix = locationOrigin + '/';
-
-	const doLoadRecursive = async (entry: string, map: Map<string, string>) => {
-		const files = await loader.loadDir(entry);
-
-		await Promise.all(files.map(async (item) => {
-			const itemPath = path.join(entry, item);
-			const isDir = loader.isDir(itemPath);
-
-			if (isDir) {
-				await doLoadRecursive(itemPath, map);
-			} else {
-				const pathObj = path.parse(itemPath);
-
-				if (pathObj.base !== sassIndexFileName && pathObj.base.startsWith('_')) {
-					pathObj.base = pathObj.base.slice(1);
-				}
-
-				const finalPath = pathPrefix + path.format(pathObj);
-				map.set(finalPath, (await loader.loadFile(itemPath)));
-			}
-		}));
-
-		return map;
-	};
-
-	return doLoadRecursive(sassSourcesLoader.initPath, result);
-}
-
-const modulesMap = await loadSourcesRecursive(sassSourcesLoader);
+import { sourcesMap } from '../sass/index.js';
+import { locationOrigin, sassIndexFileName } from './importerConfig.js';
 
 export class ModuleImporter implements Importer<'async'> {
-	private modules = modulesMap;
+	private modules = sourcesMap;
 	private aliases: Record<string, string> = {
 		'@mlut/core': '../sass/index',
 		'@mlut/core/tools': '../sass/tools',
@@ -66,12 +29,11 @@ export class ModuleImporter implements Importer<'async'> {
 		if (isEntryUrl) {
 			newUrl = new URL(path.join(
 				locationOrigin,
-				sassSourcesLoader.initPath,
 				url.split('sass')[1],
 			) + '.scss').href;
 		}
 
-		if (!this.modules.has(newUrl)) {
+		if (!(newUrl in this.modules)) {
 			newUrl = path.join(newUrl.replace('.scss', ''), sassIndexFileName);
 		}
 
@@ -80,12 +42,12 @@ export class ModuleImporter implements Importer<'async'> {
 
 	// bind for the sass web version
 	load = (canonicalUrl: URL): ImporterResult => {
-		if (!this.modules.has(canonicalUrl.href)) {
+		if (!(canonicalUrl.href in this.modules)) {
 			throw new Error('Unknown module');
 		}
 
 		return {
-			contents: this.modules.get(canonicalUrl.href) as string,
+			contents: this.modules[canonicalUrl.href],
 			syntax: 'scss'
 		};
 	};

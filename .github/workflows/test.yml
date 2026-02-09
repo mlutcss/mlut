@@ -33,7 +33,5 @@ jobs:
         run: npm run lint
       - name: Test
         run: npm test
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Test plugins
         run: npm run test:plugins
