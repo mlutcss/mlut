@@ -1,6 +1,6 @@
 {
 	"name": "@mlut/core",
-	"version": "2.5.0",
+	"version": "2.5.1",
 	"description": "Tailwind CSS alternative for custom websites and creative coding",
 	"author": "mr150",
 	"type": "module",
