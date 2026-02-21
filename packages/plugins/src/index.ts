@@ -112,6 +112,10 @@ export const unplugin = createUnplugin<Options>((options, meta) => {
 
 			await initPlugin();
 
+			if (isWindows) {
+				return;
+			}
+
 			return {
 				server: {
 					watch: {
