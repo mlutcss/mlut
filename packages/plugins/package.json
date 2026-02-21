@@ -48,11 +48,11 @@
 		"esbuild": "^0.25.0",
 		"lightningcss": "^1.25.1",
 		"postcss": "^8.4.38",
-		"typescript": "^4.8.0"
+		"typescript": "^5.8.0"
 	},
 	"dependencies": {
-		"@mlut/core": "^2.1.0",
-		"fs-extra": "^11.2.0",
-		"unplugin": "^1.10.1"
+		"@mlut/core": "^2.5.0",
+		"fs-extra": "11.2.0",
+		"unplugin": "2.3.10"
 	}
 }
