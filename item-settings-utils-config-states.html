@@ -104,17 +104,17 @@
 </ul>
 <p>Below is a quick reference of states. Later it will be supplemented by comments and examples.</p>
 <p>If you want to add a state, it is recommended to do this in the <code>custom</code> section. <em>Please note</em> that in the code, all custom states begin with a hyphen. This prevents names collision with native states from CSS.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with (
 	<span class="hljs-variable">$utils-config</span>: (
-		<span class="hljs-string">&#x27;states&#x27;</span>: (
-			<span class="hljs-string">&#x27;custom&#x27;</span>: (
-				<span class="hljs-string">&#x27;rtl&#x27;</span>: <span class="hljs-string">&#x27;[dir=“rtl”]&#x27;</span>,
+		<span class="hljs-string">'states'</span>: (
+			<span class="hljs-string">'custom'</span>: (
+				<span class="hljs-string">'rtl'</span>: <span class="hljs-string">'[dir=“rtl”]'</span>,
 			),
 		),
 	),
 );
 
-<span class="hljs-keyword">@include</span> ml.apply((<span class="hljs-string">&#x27;-rtl _Mr2r&#x27;</span>), (), true);
+<span class="hljs-keyword">@include</span> ml.apply((<span class="hljs-string">'-rtl _Mr2r'</span>), (), true);
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-attr">[dir=“rtl”]</span> <span class="hljs-selector-class">.-rtl_Mr2r</span> {

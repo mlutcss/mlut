@@ -97,17 +97,17 @@
 
           <div class="kss-description">
             <p>With the @container rule you can use both generic and named container queries</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;@c:w&gt;600_C-red&#x27;</span>);
-<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;@c:box:h&gt;20r_P5u&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'@c:w&gt;600_C-red'</span>);
+<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'@c:box:h&gt;20r_P5u'</span>);
 
 <span class="hljs-comment">// CSS</span>
-<span class="hljs-keyword">@container</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">601px</span>) {
+<span class="hljs-keyword">@container</span> (min-width: <span class="hljs-number">601px</span>) {
   .\<span class="hljs-keyword">@c</span>\:w\&gt;<span class="hljs-number">600</span>_C-red {
     <span class="hljs-attribute">color</span>: red;
   }
 }
 
-<span class="hljs-keyword">@container</span> box (<span class="hljs-attribute">max-height</span>: <span class="hljs-number">20rem</span>) {
+<span class="hljs-keyword">@container</span> box (max-height: <span class="hljs-number">20rem</span>) {
   .\<span class="hljs-keyword">@c</span>\:box\:h\&lt;\=<span class="hljs-number">20</span>r_P5u {
     <span class="hljs-attribute">padding</span>: <span class="hljs-number">1.25rem</span>;
   }

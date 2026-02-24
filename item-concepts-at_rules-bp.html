@@ -98,10 +98,10 @@
           <div class="kss-description">
             <p>The width of the screen on which the styles change. The default mobile-first approach is used, so breakpoints are converted to <code>min-width</code> media queries. How to configure breakpoints see <a href="section-settings.html#kssref-settings-at_rules-breakpoints">here</a>.</p>
 <p>If required <code>max-width</code>, add the <code>&lt;</code> before the breakpoint:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-bp(<span class="hljs-string">&#x27;&lt;sm&#x27;</span>); <span class="hljs-comment">// (max-width: 519px)</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-bp(<span class="hljs-string">'&lt;sm'</span>); <span class="hljs-comment">// (max-width: 519px)</span>
 </code></pre>
 <p>Or use operators to create a range:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-bp(<span class="hljs-string">&#x27;sm:md,xl&#x27;</span>); <span class="hljs-comment">// (min-width: 520px) and (max-width: 767px), (min-width: 1200px)</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-bp(<span class="hljs-string">'sm:md,xl'</span>); <span class="hljs-comment">// (min-width: 520px) and (max-width: 767px), (min-width: 1200px)</span>
 </code></pre>
 
           </div>

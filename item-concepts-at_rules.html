@@ -97,23 +97,23 @@
 
           <div class="kss-description">
             <p>At-rules component may consist of breakpoints and rules. To specify breakpoint, just write it name: <code>lg_D-f</code>. To add rule, specify <code>@</code> before its name: <code>@s:ctv_D-g</code>. Breakpoints can only be specified 1 time in the entire component and only at the beginning, and rules - as much as you need.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;D&#x27;</span>, (<span class="hljs-string">&#x27;xl_&#x27;</span>, <span class="hljs-string">&#x27;@s:ctv_g&#x27;</span>));
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'D'</span>, (<span class="hljs-string">'xl_'</span>, <span class="hljs-string">'@s:ctv_g'</span>));
 
 <span class="hljs-comment">// CSS</span>
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">1200px</span>) {
+<span class="hljs-keyword">@media</span> (min-width: <span class="hljs-number">1200px</span>) {
   <span class="hljs-selector-class">.xl_D</span> {
     <span class="hljs-attribute">display</span>: block;
   }
 }
 
-<span class="hljs-keyword">@supports</span> (<span class="hljs-attribute">content-visibility</span>: auto) {
+<span class="hljs-keyword">@supports</span> (content-visibility: auto) {
   .\<span class="hljs-keyword">@s</span>\:ctv_D-g {
     <span class="hljs-attribute">display</span>: grid;
   }
 }
 </code></pre>
 <p>In all at-rules, you can create complex conditions using the <code>:</code> and <code>, </code> operators, which corresponds <code>and</code> and <code>or</code> in CSS. In some examples below, functions for at-rules conversion will be used for brevity.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-media(<span class="hljs-string">&#x27;pr:h&gt;gSm:dm,p-c:w&gt;=90r&#x27;</span>); <span class="hljs-comment">// print and (min-height: #{ml.bp(sm) + 1}) and (display-mode: fullscreen), (pointer: coarse) and (min-width: 90rem)</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-media(<span class="hljs-string">'pr:h&gt;gSm:dm,p-c:w&gt;=90r'</span>); <span class="hljs-comment">// print and (min-height: #{ml.bp(sm) + 1}) and (display-mode: fullscreen), (pointer: coarse) and (min-width: 90rem)</span>
 </code></pre>
 <p>And of course, Rules can be used in any order and in any combination.</p>
 

@@ -97,14 +97,14 @@
 
           <div class="kss-description">
             <p>Converts colors. Schema:</p>
-<pre class="hljs"><code class="language-scss">(&#x27;color&#x27;: list.join(&#x27;color&#x27;, $uv-type-base))
+<pre class="hljs"><code class="language-scss">('<span class="hljs-attribute">color</span>': list.join(<span class="hljs-string">'color'</span>, <span class="hljs-variable">$uv-type-base</span>))
 </code></pre>
 <p>Usage:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;C-tp&#x27;</span>); <span class="hljs-comment">// transparent</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Bgc#c06*$bgAlpha&#x27;</span>); <span class="hljs-comment">// rgba(204, 0, 102, var(--ml-bgAlpha, 1))</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'C-tp'</span>); <span class="hljs-comment">// transparent</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Bgc#c06*$bgAlpha'</span>); <span class="hljs-comment">// rgba(204, 0, 102, var(--ml-bgAlpha, 1))</span>
 
 <span class="hljs-comment">// you can use custom color keyword that you added in the database</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Bgc-purple50*20p&#x27;</span>); <span class="hljs-comment">// rgba(102, 0, 204, 0.2)</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Bgc-purple50*20p'</span>); <span class="hljs-comment">// rgba(102, 0, 204, 0.2)</span>
 </code></pre>
 
           </div>

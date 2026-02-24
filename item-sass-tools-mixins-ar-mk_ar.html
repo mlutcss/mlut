@@ -97,15 +97,15 @@
 
           <div class="kss-description">
             <p>Generate at-rules from the string with space separated abbreviations. Used <a href="section-concepts.html#kssref-concepts-at_rules">syntax</a> for at-rules from utilities.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-ar(<span class="hljs-string">&#x27;@s:apcr4/3@:dm&#x27;</span>) using (<span class="hljs-variable">$ar</span>) {
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-ar(<span class="hljs-string">'@s:apcr4/3@:dm'</span>) using (<span class="hljs-variable">$ar</span>) {
 	<span class="hljs-selector-class">.block</span> {
 		<span class="hljs-attribute">display</span>: inline-grid;
 	}
 }
 
 <span class="hljs-comment">// CSS</span>
-<span class="hljs-keyword">@supports</span> (<span class="hljs-attribute">aspect-ratio</span>: <span class="hljs-number">4</span>/<span class="hljs-number">3</span>) {
-	<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">display-mode</span>: fullscreen) {
+<span class="hljs-keyword">@supports</span> (aspect-ratio: <span class="hljs-number">4</span>/<span class="hljs-number">3</span>) {
+	<span class="hljs-keyword">@media</span> (display-mode: fullscreen) {
 		<span class="hljs-selector-class">.block</span> {
 			<span class="hljs-attribute">display</span>: inline-grid;
 		}

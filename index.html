@@ -131,10 +131,10 @@
 <h3>Great ergonomics</h3>
 <p>Shorter class names:</p>
 <pre class="hljs"><code class="language-html"><span class="hljs-comment">&lt;!-- Tailwindcss --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;relative -bottom-px col-span-full col-start-1 row-start-2 h-px bg-(--cardBg)&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"relative -bottom-px col-span-full col-start-1 row-start-2 h-px bg-(--cardBg)"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- mlut --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;Ps B-1 Gc1/-1 Gcs1 Grs2 H1 Bgc-$cardBg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"Ps B-1 Gc1/-1 Gcs1 Grs2 H1 Bgc-$cardBg"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <p>Convenient syntax for complex values, states and at-rules. It is like Vim for CSS.</p>
 <p><strong>❌ Tailwindcss:</strong></p>
@@ -153,16 +153,16 @@
 <section class="Mb4gg">
 <h3>Handy extension</h3>
 <p>Add utilities, states and custom at-rules with few lines of code</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut'</span> as ml with (
   // add utilities
   <span class="hljs-variable">$utils-data</span>: (
-    <span class="hljs-string">&#x27;utils&#x27;</span>: (
-      <span class="hljs-string">&#x27;registry&#x27;</span>: (
-        <span class="hljs-string">&#x27;Mil&#x27;</span>: margin-inline,
-        <span class="hljs-string">&#x27;Ir&#x27;</span>: (
-          <span class="hljs-string">&#x27;properties&#x27;</span>: image-rendering,
-          <span class="hljs-string">&#x27;keywords&#x27;</span>: (
-            <span class="hljs-string">&#x27;p&#x27;</span>: pixelated,
+    <span class="hljs-string">'utils'</span>: (
+      <span class="hljs-string">'registry'</span>: (
+        <span class="hljs-string">'Mil'</span>: margin-inline,
+        <span class="hljs-string">'Ir'</span>: (
+          <span class="hljs-string">'properties'</span>: image-rendering,
+          <span class="hljs-string">'keywords'</span>: (
+            <span class="hljs-string">'p'</span>: pixelated,
           ),
         ),
       ),
@@ -171,15 +171,15 @@
 
   // add states
   <span class="hljs-variable">$utils-config</span>: (
-    <span class="hljs-string">&#x27;states&#x27;</span>: (
-      <span class="hljs-string">&#x27;custom&#x27;</span>: (
-        <span class="hljs-string">&#x27;are&#x27;</span>: <span class="hljs-string">&#x27;[aria-expanded=“true”]&#x27;</span>,
+    <span class="hljs-string">'states'</span>: (
+      <span class="hljs-string">'custom'</span>: (
+        <span class="hljs-string">'are'</span>: <span class="hljs-string">'[aria-expanded=“true”]'</span>,
       ),
     ),
   ),
 );
 
-<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;Mil-15_-are Ir-p&#x27;</span>);
+<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'Mil-15_-are Ir-p'</span>);
 
 <span class="hljs-comment">// CSS</span>
 

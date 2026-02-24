@@ -97,16 +97,16 @@
 
           <div class="kss-description">
             <p>To create a new utility, add it to the registry during configuration. As a value, you can specify CSS property or map with options.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with (
 	<span class="hljs-variable">$utils-data</span>: (
-		<span class="hljs-string">&#x27;utils&#x27;</span>: (
-			<span class="hljs-string">&#x27;registry&#x27;</span>: (
-				<span class="hljs-string">&#x27;Mil&#x27;</span>: margin-inline,
-				<span class="hljs-string">&#x27;Ir&#x27;</span>: (
-					<span class="hljs-string">&#x27;properties&#x27;</span>: image-rendering,
-					<span class="hljs-string">&#x27;keywords&#x27;</span>: (
-						<span class="hljs-string">&#x27;ce&#x27;</span>: crisp-edges,
-						<span class="hljs-string">&#x27;p&#x27;</span>: pixelated,
+		<span class="hljs-string">'utils'</span>: (
+			<span class="hljs-string">'registry'</span>: (
+				<span class="hljs-string">'Mil'</span>: margin-inline,
+				<span class="hljs-string">'Ir'</span>: (
+					<span class="hljs-string">'properties'</span>: image-rendering,
+					<span class="hljs-string">'keywords'</span>: (
+						<span class="hljs-string">'ce'</span>: crisp-edges,
+						<span class="hljs-string">'p'</span>: pixelated,
 					),
 				),
 			),
@@ -114,7 +114,7 @@
 	),
 );
 
-<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;Mil-15 Ir-p&#x27;</span>);
+<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'Mil-15 Ir-p'</span>);
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-class">.Mil-15</span> {
@@ -126,15 +126,15 @@
 }
 </code></pre>
 <p>You can create a utility for changing one property even without registration <s>and SMS</s>. Just specify the name and values. If the name of the utility begins with <code>-</code>, then it will control the custom property.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/tools&#x27;</span> as ml;
-<span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/dist/css/utils&#x27;</span> with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/tools'</span> as ml;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/dist/css/utils'</span> with (
 	<span class="hljs-variable">$utils</span>: (
-		<span class="hljs-string">&#x27;display&#x27;</span>: (flex, <span class="hljs-number">5</span>r),
-		<span class="hljs-string">&#x27;/override&#x27;</span>: null,
+		<span class="hljs-string">'display'</span>: (flex, <span class="hljs-number">5</span>r),
+		<span class="hljs-string">'/override'</span>: null,
 	),
 );
 
-<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;-MySize-a&#x27;</span>);
+<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'-MySize-a'</span>);
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-class">.display-flex</span> {

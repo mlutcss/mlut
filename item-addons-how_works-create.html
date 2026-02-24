@@ -99,21 +99,21 @@
             <p>At the moment, an addon is a regular Sass modules that add functionality to mlut or some CSS. Key point to keep in mind: addon is imported <strong>after</strong> user has configure mlut. This means that you <strong>cannot configure</strong> mlut tools as a Sass module. But you can modify the configuration manually</p>
 <p>That said, it is recommended that you merge your configuration changes so that it does not erase the user's configuration (if hypothetically possible)</p>
 <pre class="hljs"><code class="language-scss"><span class="hljs-comment">// import mlut tools</span>
-<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;@mlut/core/tools&quot;</span> as ml;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">"@mlut/core/tools"</span> as ml;
 
 <span class="hljs-comment">// add some new features</span>
 <span class="hljs-variable">$new-colors</span>: (
-	<span class="hljs-string">&#x27;red0&#x27;</span>: <span class="hljs-number">#f22</span>,
-	<span class="hljs-string">&#x27;green0&#x27;</span>: <span class="hljs-number">#1f1</span>,
-	<span class="hljs-string">&#x27;blue0&#x27;</span>: <span class="hljs-number">#33f</span>,
+	<span class="hljs-string">'red0'</span>: <span class="hljs-number">#f22</span>,
+	<span class="hljs-string">'green0'</span>: <span class="hljs-number">#1f1</span>,
+	<span class="hljs-string">'blue0'</span>: <span class="hljs-number">#33f</span>,
 );
 
 <span class="hljs-comment">// neat merge it</span>
 ml.<span class="hljs-variable">$utils-db</span>: map.merge(
-	ml.<span class="hljs-variable">$utils-db</span>, <span class="hljs-string">&#x27;common&#x27;</span>, <span class="hljs-string">&#x27;keywords&#x27;</span>, <span class="hljs-string">&#x27;colors&#x27;</span>,
+	ml.<span class="hljs-variable">$utils-db</span>, <span class="hljs-string">'common'</span>, <span class="hljs-string">'keywords'</span>, <span class="hljs-string">'colors'</span>,
 	map.merge(
 		<span class="hljs-variable">$new-colors</span>,
-		map.get(ml.<span class="hljs-variable">$utils-db</span>, <span class="hljs-string">&#x27;common&#x27;</span>, <span class="hljs-string">&#x27;keywords&#x27;</span>, <span class="hljs-string">&#x27;colors&#x27;</span>)
+		map.get(ml.<span class="hljs-variable">$utils-db</span>, <span class="hljs-string">'common'</span>, <span class="hljs-string">'keywords'</span>, <span class="hljs-string">'colors'</span>)
 	)
 );
 </code></pre>

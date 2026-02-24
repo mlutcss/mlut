@@ -98,13 +98,13 @@
           <div class="kss-description">
             <p>There are 2 ways to add colors:</p>
 <div>1. with <code>$colors</code> map</div>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with (
 	<span class="hljs-variable">$colors</span>: (
-		<span class="hljs-string">&#x27;red22&#x27;</span>: <span class="hljs-number">#c00</span>,
+		<span class="hljs-string">'red22'</span>: <span class="hljs-number">#c00</span>,
 	),
 );
 
-<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;Bdc-red22&#x27;</span>);
+<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'Bdc-red22'</span>);
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-class">.Bdc-red22</span> {
@@ -112,17 +112,17 @@
 }
 </code></pre>
 <div>2. when generating any utility or utility group, which has a <code>color</code> type of conversion. If you specify a map with colors as values, then they will be added to the settings and they can be used below in other values of utilities</div>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/tools&#x27;</span> as ml;
-<span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/dist/css/utils&#x27;</span> with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/tools'</span> as ml;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/dist/css/utils'</span> with (
 	<span class="hljs-variable">$utils</span>: (
-		<span class="hljs-string">&#x27;C&#x27;</span>: (
-			<span class="hljs-string">&#x27;red100&#x27;</span>: <span class="hljs-number">#911</span>
+		<span class="hljs-string">'C'</span>: (
+			<span class="hljs-string">'red100'</span>: <span class="hljs-number">#911</span>
 		),
-		<span class="hljs-string">&#x27;/override&#x27;</span>: null,
+		<span class="hljs-string">'/override'</span>: null,
 	),
 );
 
-<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;Bgc-red100&#x27;</span>);
+<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'Bgc-red100'</span>);
 
 <span class="hljs-comment">// CSS</span>
 ...

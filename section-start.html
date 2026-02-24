@@ -209,7 +209,7 @@
 </code></pre>
 <h3>CDN</h3>
 <p>CSS only with demo theme:</p>
-<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://unpkg.com/mlut@latest/dist/mlut-demo-theme.min.css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>&gt;</span>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://unpkg.com/mlut@latest/dist/mlut-demo-theme.min.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span>
 </code></pre>
 
           </div>
@@ -247,11 +247,11 @@
 <li>if used <code>npm</code>, files are in <code>node_modules/@mlut/core/dist/</code></li>
 </ul>
 <p>Add the files to your page like here:</p>
-<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;css/mlut-demo-theme.min.css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>&gt;</span>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"css/mlut-demo-theme.min.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span>
 </code></pre>
 <p>And just use classes in the markup:</p>
-<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;D-g Gtc-t3&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;Bd P2u&quot;</span>&gt;</span>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"D-g Gtc-t3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"Bd P2u"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Simple text<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
 </code></pre>
 <h3>Toolkit</h3>
@@ -275,12 +275,12 @@ Options:
       --no-merge-mq     Prevent merging of CSS media queries during minification
 </code></pre>
 <p>In the input Sass file, you can customize mlut and write your own styles. Input file is optional, but if you use it, you must import mlut</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut&#x27;</span> with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut'</span> with (
   <span class="hljs-variable">$breakpoints</span>: (
-    <span class="hljs-string">&#x27;xxl&#x27;</span>: <span class="hljs-number">1600px</span>,
+    <span class="hljs-string">'xxl'</span>: <span class="hljs-number">1600px</span>,
   ),
   <span class="hljs-variable">$colors</span>: (
-    <span class="hljs-string">&#x27;red0&#x27;</span>: <span class="hljs-number">#f20</span>,
+    <span class="hljs-string">'red0'</span>: <span class="hljs-number">#f20</span>,
   ),
 );
 
@@ -289,11 +289,11 @@ Options:
 }
 </code></pre>
 <p>You can add the JIT options here too. Options must be a <strong>valid JSON</strong>, but single quotes is allowed. Paths will be resolved relative to the JIT engine working directory</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut&#x27;</span> with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut'</span> with (
   <span class="hljs-variable">$jit</span>: (
-    <span class="hljs-string">&#x27;output&#x27;</span>: <span class="hljs-string">&#x27;src/assets/css/style.css&#x27;</span>,
-    <span class="hljs-string">&#x27;content&#x27;</span>: [
-      <span class="hljs-string">&#x27;src/*.ejs&#x27;</span>, <span class="hljs-string">&#x27;src/assets/js/*.js&#x27;</span>
+    <span class="hljs-string">'output'</span>: <span class="hljs-string">'src/assets/css/style.css'</span>,
+    <span class="hljs-string">'content'</span>: [
+      <span class="hljs-string">'src/*.ejs'</span>, <span class="hljs-string">'src/assets/js/*.js'</span>
     ]
   ),
 );
@@ -303,14 +303,14 @@ Options:
 </code></pre>
 <p>Add the compiled CSS to your template, then start adding mlut classes to your markup</p>
 <pre class="hljs"><code class="language-html"><span class="hljs-meta">&lt;!doctype <span class="hljs-meta-keyword">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/assets/css/style.css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/assets/css/style.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;M0&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;C-red Fnw800 P2u&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"M0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"C-red Fnw800 P2u"</span>&gt;</span>
       Lorem Ipsum
     <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
@@ -410,7 +410,7 @@ Options:
           <div class="kss-description">
             <p>The plugin options are similar to the mlut CLI options</p>
 <pre class="hljs"><code class="language-ts"><span class="hljs-keyword">interface</span> Options {
-  <span class="hljs-attr">output</span>: <span class="hljs-built_in">string</span>,
+  output: <span class="hljs-built_in">string</span>,
   input?: <span class="hljs-built_in">string</span>,
   minify?: <span class="hljs-built_in">boolean</span>,
   autoprefixer?: <span class="hljs-built_in">boolean</span>,
@@ -418,11 +418,11 @@ Options:
 }
 </code></pre>
 <p>You can add the options in your input Sass file too. Options must be a <strong>valid JSON</strong>, but single quotes is allowed. Paths will be resolved relative to the JIT engine working directory</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core&#x27;</span> with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core'</span> with (
   <span class="hljs-variable">$jit</span>: (
-    <span class="hljs-string">&#x27;output&#x27;</span>: <span class="hljs-string">&#x27;dist/assets/style.css&#x27;</span>,
-    <span class="hljs-string">&#x27;minify&#x27;</span>: true,
-    <span class="hljs-string">&#x27;autoprefixer&#x27;</span>: true
+    <span class="hljs-string">'output'</span>: <span class="hljs-string">'dist/assets/style.css'</span>,
+    <span class="hljs-string">'minify'</span>: true,
+    <span class="hljs-string">'autoprefixer'</span>: true
   ),
 );
 </code></pre>
@@ -491,7 +491,7 @@ Options:
             <p>Import the plugin for the appropriate bundler from the <code>@mlut/plugins</code> package as in one of the examples below. You can find more detailed examples using dev-server and livereload in the plugin tests <a href="https://github.com/mlutcss/mlut/tree/master/test/plugins">directory</a></p>
 <p>We also recommend adding the input file right away:</p>
 <pre class="hljs"><code class="language-scss"><span class="hljs-comment">// style.scss</span>
-<span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core&#x27;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core'</span>;
 
 <span class="hljs-comment">// your CSS or mlut config</span>
 </code></pre>
@@ -526,10 +526,10 @@ Options:
           <div class="kss-description">
             <p>Update the config:</p>
 <pre class="hljs"><code class="language-js"><span class="hljs-comment">// rollup.config.js</span>
-<span class="hljs-keyword">import</span> { rollup } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@mlut/plugins&#x27;</span>;
+<span class="hljs-keyword">import</span> { rollup } <span class="hljs-keyword">from</span> <span class="hljs-string">'@mlut/plugins'</span>;
 
 <span class="hljs-keyword">const</span> mlut = rollup({
-  <span class="hljs-attr">output</span>: <span class="hljs-string">&#x27;dist/style.css&#x27;</span>,
+  <span class="hljs-attr">output</span>: <span class="hljs-string">'dist/style.css'</span>,
   <span class="hljs-comment">// other options...</span>
 });
 
@@ -539,7 +539,7 @@ Options:
 };
 </code></pre>
 <p>Add the compiled CSS to your <code>index.html</code></p>
-<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;assets/style.css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>&gt;</span>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"assets/style.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span>
 </code></pre>
 <p>Start your build process:</p>
 <pre class="hljs"><code class="language-">rollup --config rollup.config.js -w
@@ -547,8 +547,8 @@ Options:
 <p>Add the mlut classes to your components:</p>
 <pre class="hljs"><code class="language-js"><span class="hljs-comment">// index.js</span>
 <span class="hljs-keyword">const</span> component = <span class="hljs-string">`
-	&lt;div class=&quot;wrapper Mm7&quot;&gt;
-		&lt;h1 class=&quot;Fns5r C-purple&quot;&gt;Rollup plugin test!&lt;/h1&gt;
+	&lt;div class="wrapper Mm7"&gt;
+		&lt;h1 class="Fns5r C-purple"&gt;Rollup plugin test!&lt;/h1&gt;
 		&lt;p&gt;Lorem about mlut&lt;/p&gt;
 	&lt;/div&gt;
 `</span>;
@@ -584,15 +584,15 @@ Options:
           <div class="kss-description">
             <p>Update the config:</p>
 <pre class="hljs"><code class="language-js"><span class="hljs-comment">// vite.config.js</span>
-<span class="hljs-keyword">import</span> { defineConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vite&#x27;</span>;
-<span class="hljs-keyword">import</span> { vite } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@mlut/plugins&#x27;</span>;
+<span class="hljs-keyword">import</span> { defineConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">'vite'</span>;
+<span class="hljs-keyword">import</span> { vite } <span class="hljs-keyword">from</span> <span class="hljs-string">'@mlut/plugins'</span>;
 
 <span class="hljs-keyword">const</span> mlut = vite({
-  <span class="hljs-attr">output</span>: <span class="hljs-string">&#x27;dist/assets/style.css&#x27;</span>,
+  <span class="hljs-attr">output</span>: <span class="hljs-string">'dist/assets/style.css'</span>,
   <span class="hljs-comment">// other options...</span>
 });
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> defineConfig(<span class="hljs-function">() =&gt;</span> {
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> defineConfig(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
   <span class="hljs-keyword">return</span> {
     <span class="hljs-comment">// vite config...</span>
     <span class="hljs-attr">plugins</span>: [mlut],
@@ -600,13 +600,13 @@ Options:
 });
 </code></pre>
 <p>Add the compiled CSS to your <code>index.html</code>. Note that the path to it should be the <strong>same as in the production build</strong>:</p>
-<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;assets/style.css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>&gt;</span>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"assets/style.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span>
 </code></pre>
 <p>Start your build process:</p>
 <pre class="hljs"><code class="language-">vite
 </code></pre>
 <p>Add the mlut classes to your markup:</p>
-<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;C-red Fnw800 P2u&quot;</span>&gt;</span>Lorem Ipsu<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"C-red Fnw800 P2u"</span>&gt;</span>Lorem Ipsu<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
 </code></pre>
 
           </div>
@@ -639,10 +639,10 @@ Options:
           <div class="kss-description">
             <p>Update the config:</p>
 <pre class="hljs"><code class="language-js"><span class="hljs-comment">// webpack.config.js</span>
-<span class="hljs-keyword">import</span> { webpack } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@mlut/plugins&#x27;</span>;
+<span class="hljs-keyword">import</span> { webpack } <span class="hljs-keyword">from</span> <span class="hljs-string">'@mlut/plugins'</span>;
 
 <span class="hljs-keyword">const</span> mlut = webpack({
-  <span class="hljs-attr">output</span>: <span class="hljs-string">&#x27;dist/style.css&#x27;</span>,
+  <span class="hljs-attr">output</span>: <span class="hljs-string">'dist/style.css'</span>,
   <span class="hljs-comment">// other options...</span>
 });
 
@@ -652,7 +652,7 @@ Options:
 };
 </code></pre>
 <p>Add the compiled CSS to your <code>index.html</code></p>
-<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;assets/style.css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>&gt;</span>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"assets/style.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span>
 </code></pre>
 <p>Start your build process:</p>
 <pre class="hljs"><code class="language-">webpack watch
@@ -660,8 +660,8 @@ Options:
 <p>Add the mlut classes to your components:</p>
 <pre class="hljs"><code class="language-js"><span class="hljs-comment">// index.js</span>
 <span class="hljs-keyword">const</span> component = <span class="hljs-string">`
-	&lt;div class=&quot;wrapper xl_Mm8&quot;&gt;
-		&lt;h1 class=&quot;Fns5r xl_C-red&quot;&gt;Webpack plugin test&lt;/h1&gt;
+	&lt;div class="wrapper xl_Mm8"&gt;
+		&lt;h1 class="Fns5r xl_C-red"&gt;Webpack plugin test&lt;/h1&gt;
 		&lt;p&gt;Lorem about mlut and Webpack&lt;/p&gt;
 	&lt;/div&gt;
 `</span>;

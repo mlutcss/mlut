@@ -105,13 +105,13 @@
 <li>value: it can be a separate value, the name of the utility, group etc</li>
 </ul>
 <p>Here is an example, as the utility will be parsed to the components:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.parse-util(<span class="hljs-string">&#x27;&lt;sm_:f:&gt;_D!_h::^sub&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.parse-util(<span class="hljs-string">'&lt;sm_:f:&gt;_D!_h::^sub'</span>);
 <span class="hljs-comment">// (</span>
-<span class="hljs-comment">//   &#x27;at-rules&#x27;: &#x27;&lt;sm&#x27;,</span>
-<span class="hljs-comment">//   &#x27;pre-states&#x27;: &#x27;:f:&gt;&#x27;,</span>
-<span class="hljs-comment">//   &#x27;post-states&#x27;: &#x27;h::^sub&#x27;,</span>
-<span class="hljs-comment">//   &#x27;important&#x27;: true,</span>
-<span class="hljs-comment">//   &#x27;value&#x27;: &#x27;D&#x27;,</span>
+<span class="hljs-comment">//   'at-rules': '&lt;sm',</span>
+<span class="hljs-comment">//   'pre-states': ':f:&gt;',</span>
+<span class="hljs-comment">//   'post-states': 'h::^sub',</span>
+<span class="hljs-comment">//   'important': true,</span>
+<span class="hljs-comment">//   'value': 'D',</span>
 <span class="hljs-comment">// ),</span>
 </code></pre>
 <p>Note that the <em>order</em> of components is important.</p>

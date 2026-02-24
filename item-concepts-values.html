@@ -98,7 +98,7 @@
           <div class="kss-description">
             <p>The values of utilities are almost arbitrary. That is, if the value is not converted, it appear in the CSS without changes.</p>
 <p>To explicitly prevent conversion, use the <code>=</code> before the value. Also, use <code>= before</code> the value in quotes <code>''</code>: <code>Ct='test'_af</code>, since in the future quotes will be used in the values <em>without</em> separator.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;Ml&#x27;</span>, (<span class="hljs-number">5</span>, <span class="hljs-number">5ex</span>e, <span class="hljs-string">&#x27;=5&#x27;</span>));
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'Ml'</span>, (<span class="hljs-number">5</span>, <span class="hljs-number">5ex</span>e, <span class="hljs-string">'=5'</span>));
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-class">.Ml5</span> {

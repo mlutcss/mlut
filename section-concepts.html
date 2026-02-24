@@ -523,13 +523,13 @@
 <li>value: it can be a separate value, the name of the utility, group etc</li>
 </ul>
 <p>Here is an example, as the utility will be parsed to the components:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.parse-util(<span class="hljs-string">&#x27;&lt;sm_:f:&gt;_D!_h::^sub&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.parse-util(<span class="hljs-string">'&lt;sm_:f:&gt;_D!_h::^sub'</span>);
 <span class="hljs-comment">// (</span>
-<span class="hljs-comment">//   &#x27;at-rules&#x27;: &#x27;&lt;sm&#x27;,</span>
-<span class="hljs-comment">//   &#x27;pre-states&#x27;: &#x27;:f:&gt;&#x27;,</span>
-<span class="hljs-comment">//   &#x27;post-states&#x27;: &#x27;h::^sub&#x27;,</span>
-<span class="hljs-comment">//   &#x27;important&#x27;: true,</span>
-<span class="hljs-comment">//   &#x27;value&#x27;: &#x27;D&#x27;,</span>
+<span class="hljs-comment">//   'at-rules': '&lt;sm',</span>
+<span class="hljs-comment">//   'pre-states': ':f:&gt;',</span>
+<span class="hljs-comment">//   'post-states': 'h::^sub',</span>
+<span class="hljs-comment">//   'important': true,</span>
+<span class="hljs-comment">//   'value': 'D',</span>
 <span class="hljs-comment">// ),</span>
 </code></pre>
 <p>Note that the <em>order</em> of components is important.</p>
@@ -601,7 +601,7 @@
           <div class="kss-description">
             <p>The values of utilities are almost arbitrary. That is, if the value is not converted, it appear in the CSS without changes.</p>
 <p>To explicitly prevent conversion, use the <code>=</code> before the value. Also, use <code>= before</code> the value in quotes <code>''</code>: <code>Ct='test'_af</code>, since in the future quotes will be used in the values <em>without</em> separator.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;Ml&#x27;</span>, (<span class="hljs-number">5</span>, <span class="hljs-number">5ex</span>e, <span class="hljs-string">&#x27;=5&#x27;</span>));
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'Ml'</span>, (<span class="hljs-number">5</span>, <span class="hljs-number">5ex</span>e, <span class="hljs-string">'=5'</span>));
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-class">.Ml5</span> {
@@ -676,7 +676,7 @@
 
           <div class="kss-description">
             <p>In the values of some utilities you can use the names of other utilities.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Tsp-bdc&#x27;</span>); <span class="hljs-comment">// border-color</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Tsp-bdc'</span>); <span class="hljs-comment">// border-color</span>
 </code></pre>
 
           </div>
@@ -708,8 +708,8 @@
 
           <div class="kss-description">
             <p>You can use both HEX colors and color names set by the user. Read more about adding your colors <a href="section-how_to.html#kssref-how_to-config-colors">here</a>. With colors, you can specify the opacity modifier <code>*</code>. This converter is used to convert opacity. With modifier, you can use CSS variables or global keywords in any position:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;C#60c*20p&#x27;</span>); <span class="hljs-comment">// rgba(102, 0, 204, 0.2)</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;C-red0*$co&#x27;</span>); <span class="hljs-comment">// rgba(204, 0, 102, var(--ml-co, 1))</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'C#60c*20p'</span>); <span class="hljs-comment">// rgba(102, 0, 204, 0.2)</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'C-red0*$co'</span>); <span class="hljs-comment">// rgba(204, 0, 102, var(--ml-co, 1))</span>
 </code></pre>
 <p>If a variable is specified as opacity, then by default, it will have fallback <code>1</code>.</p>
 
@@ -742,11 +742,11 @@
 
           <div class="kss-description">
             <p>Their names begin with <code>$</code> written in lower camelCase and may contain numbers. They can be used almost everywhere, even as part of a complex value, for example in fractions:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;W1/$div&#x27;</span>); <span class="hljs-comment">// calc(1 / var(--ml-div) * 100%);</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'W1/$div'</span>); <span class="hljs-comment">// calc(1 / var(--ml-div) * 100%);</span>
 </code></pre>
 <p>To specify a fallback, use <code>?</code>. In the fallback, you can specify any value, including another variable with fallback:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;W-$myCard?200&#x27;</span>); <span class="hljs-comment">// var(--ml-myCard, 200px)</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;W-$myCard?$defWd?150&#x27;</span>); <span class="hljs-comment">// var(--ml-myCard, var(--ml-defWd, 150px))</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'W-$myCard?200'</span>); <span class="hljs-comment">// var(--ml-myCard, 200px)</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'W-$myCard?$defWd?150'</span>); <span class="hljs-comment">// var(--ml-myCard, var(--ml-defWd, 150px))</span>
 </code></pre>
 
           </div>
@@ -778,7 +778,7 @@
 
           <div class="kss-description">
             <p>Similar to ordinary, but differ in that they can be used in any utility. You can add your global keywords in the settings. It is recommended to use the prefix, for example: <code>gMyKw</code>. You can find the default mlut global keywords <a href="section-general_reference.html#kssref-general_reference-common_kw">here</a>.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;W-ih&#x27;</span>); <span class="hljs-comment">// inherit</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'W-ih'</span>); <span class="hljs-comment">// inherit</span>
 </code></pre>
 
           </div>
@@ -810,7 +810,7 @@
 
           <div class="kss-description">
             <p>Keywords - abbreviations that comply with CSS keywords. They are written Camel Camel Case and may contain numbers. How to add your keywords look <a href="section-settings.html#kssref-settings-utils-data-kw">here</a>.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;D-if&#x27;</span>); <span class="hljs-comment">// inline-flex</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'D-if'</span>); <span class="hljs-comment">// inline-flex</span>
 </code></pre>
 
           </div>
@@ -842,9 +842,9 @@
 
           <div class="kss-description">
             <p>Numbers can be both with units of measurements and without. Float values are allowed, and fractions also can be used in the default conversion type:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Fnw100&#x27;</span>); <span class="hljs-comment">// 100</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Ml3r&#x27;</span>); <span class="hljs-comment">// 3rem</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;W1/4&#x27;</span>); <span class="hljs-comment">// 25%</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Fnw100'</span>); <span class="hljs-comment">// 100</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Ml3r'</span>); <span class="hljs-comment">// 3rem</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'W1/4'</span>); <span class="hljs-comment">// 25%</span>
 </code></pre>
 
           </div>
@@ -906,13 +906,13 @@
 
           <div class="kss-description">
             <p>For any utility you can specify multiple values. Instead of a blank used <code>;</code>:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Bd3;sec0;d&#x27;</span>); <span class="hljs-comment">// 3px #0c6 dotted</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Bd3;sec0;d'</span>); <span class="hljs-comment">// 3px #0c6 dotted</span>
 </code></pre>
 <p>In some utilities, you can specify several lists of values. To do this, use the same separator as in CSS: <code>/</code> or <code>,</code></p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Bdrd1r;2/5p&#x27;</span>); <span class="hljs-comment">// 1rem 2px / 5%</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Bdrd1r;2/5p'</span>); <span class="hljs-comment">// 1rem 2px / 5%</span>
 </code></pre>
 <p>The separator for multi-list is specified in the <code>multi-list-separator</code> utility option. Please note that each value is converted separately. The prevent-conversion token <code>=</code> also applies to each value in the list separately:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;M1r;=10x&#x27;</span>); <span class="hljs-comment">// 1rem 10x</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'M1r;=10x'</span>); <span class="hljs-comment">// 1rem 10x</span>
 </code></pre>
 
           </div>
@@ -975,7 +975,7 @@
 
           <div class="kss-description">
             <p>At the end of the value or their sequences, you can specify <code>!</code> which will add the CSS <code>!important</code> to the final value. If the utility affects several properties, then <code>!important</code> adds to each.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;M2r;12! -I2r!&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'M2r;12! -I2r!'</span>);
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-class">.M2r</span>\;12\! {
@@ -1019,7 +1019,7 @@
 
           <div class="kss-description">
             <p>The negation is denoted by <code>-</code> before the value and works everywhere where it is appropriate. With numbers, with CSS variables and with keywords, if the final value may be negative.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;Ml&#x27;</span>, (<span class="hljs-string">&#x27;2/-8&#x27;</span>, -<span class="hljs-number">0.7</span>, <span class="hljs-string">&#x27;-$myVar&#x27;</span>));
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'Ml'</span>, (<span class="hljs-string">'2/-8'</span>, -<span class="hljs-number">0.7</span>, <span class="hljs-string">'-$myVar'</span>));
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-class">.Ml2</span>\/-8 {
@@ -1064,23 +1064,23 @@
 
           <div class="kss-description">
             <p>At-rules component may consist of breakpoints and rules. To specify breakpoint, just write it name: <code>lg_D-f</code>. To add rule, specify <code>@</code> before its name: <code>@s:ctv_D-g</code>. Breakpoints can only be specified 1 time in the entire component and only at the beginning, and rules - as much as you need.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;D&#x27;</span>, (<span class="hljs-string">&#x27;xl_&#x27;</span>, <span class="hljs-string">&#x27;@s:ctv_g&#x27;</span>));
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'D'</span>, (<span class="hljs-string">'xl_'</span>, <span class="hljs-string">'@s:ctv_g'</span>));
 
 <span class="hljs-comment">// CSS</span>
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">1200px</span>) {
+<span class="hljs-keyword">@media</span> (min-width: <span class="hljs-number">1200px</span>) {
   <span class="hljs-selector-class">.xl_D</span> {
     <span class="hljs-attribute">display</span>: block;
   }
 }
 
-<span class="hljs-keyword">@supports</span> (<span class="hljs-attribute">content-visibility</span>: auto) {
+<span class="hljs-keyword">@supports</span> (content-visibility: auto) {
   .\<span class="hljs-keyword">@s</span>\:ctv_D-g {
     <span class="hljs-attribute">display</span>: grid;
   }
 }
 </code></pre>
 <p>In all at-rules, you can create complex conditions using the <code>:</code> and <code>, </code> operators, which corresponds <code>and</code> and <code>or</code> in CSS. In some examples below, functions for at-rules conversion will be used for brevity.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-media(<span class="hljs-string">&#x27;pr:h&gt;gSm:dm,p-c:w&gt;=90r&#x27;</span>); <span class="hljs-comment">// print and (min-height: #{ml.bp(sm) + 1}) and (display-mode: fullscreen), (pointer: coarse) and (min-width: 90rem)</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-media(<span class="hljs-string">'pr:h&gt;gSm:dm,p-c:w&gt;=90r'</span>); <span class="hljs-comment">// print and (min-height: #{ml.bp(sm) + 1}) and (display-mode: fullscreen), (pointer: coarse) and (min-width: 90rem)</span>
 </code></pre>
 <p>And of course, Rules can be used in any order and in any combination.</p>
 
@@ -1114,10 +1114,10 @@
           <div class="kss-description">
             <p>The width of the screen on which the styles change. The default mobile-first approach is used, so breakpoints are converted to <code>min-width</code> media queries. How to configure breakpoints see <a href="section-settings.html#kssref-settings-at_rules-breakpoints">here</a>.</p>
 <p>If required <code>max-width</code>, add the <code>&lt;</code> before the breakpoint:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-bp(<span class="hljs-string">&#x27;&lt;sm&#x27;</span>); <span class="hljs-comment">// (max-width: 519px)</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-bp(<span class="hljs-string">'&lt;sm'</span>); <span class="hljs-comment">// (max-width: 519px)</span>
 </code></pre>
 <p>Or use operators to create a range:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-bp(<span class="hljs-string">&#x27;sm:md,xl&#x27;</span>); <span class="hljs-comment">// (min-width: 520px) and (max-width: 767px), (min-width: 1200px)</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-bp(<span class="hljs-string">'sm:md,xl'</span>); <span class="hljs-comment">// (min-width: 520px) and (max-width: 767px), (min-width: 1200px)</span>
 </code></pre>
 
           </div>
@@ -1149,17 +1149,17 @@
 
           <div class="kss-description">
             <p>With the @container rule you can use both generic and named container queries</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;@c:w&gt;600_C-red&#x27;</span>);
-<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;@c:box:h&gt;20r_P5u&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'@c:w&gt;600_C-red'</span>);
+<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'@c:box:h&gt;20r_P5u'</span>);
 
 <span class="hljs-comment">// CSS</span>
-<span class="hljs-keyword">@container</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">601px</span>) {
+<span class="hljs-keyword">@container</span> (min-width: <span class="hljs-number">601px</span>) {
   .\<span class="hljs-keyword">@c</span>\:w\&gt;<span class="hljs-number">600</span>_C-red {
     <span class="hljs-attribute">color</span>: red;
   }
 }
 
-<span class="hljs-keyword">@container</span> box (<span class="hljs-attribute">max-height</span>: <span class="hljs-number">20rem</span>) {
+<span class="hljs-keyword">@container</span> box (max-height: <span class="hljs-number">20rem</span>) {
   .\<span class="hljs-keyword">@c</span>\:box\:h\&lt;\=<span class="hljs-number">20</span>r_P5u {
     <span class="hljs-attribute">padding</span>: <span class="hljs-number">1.25rem</span>;
   }
@@ -1195,7 +1195,7 @@
 
           <div class="kss-description">
             <p>With the @layer rule, you can put some utils to different cascade layers</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;@l:utils_C-red&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'@l:utils_C-red'</span>);
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-keyword">@layer</span> utils {
@@ -1239,10 +1239,10 @@
 <li><code>s</code> - <code>screen</code></li>
 </ul>
 <p><code>@media</code> is the default rule. To choose it, just write <code>@</code> and then specify queries. The default rule can be selected in the settings.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;@:w&gt;=gSm:o _D&#x27;</span>, <span class="hljs-string">&#x27;if&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'@:w&gt;=gSm:o _D'</span>, <span class="hljs-string">'if'</span>);
 
 <span class="hljs-comment">// CSS</span>
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">520px</span>) <span class="hljs-keyword">and</span> (<span class="hljs-attribute">orientation</span>: landscape) {
+<span class="hljs-keyword">@media</span> (min-width: <span class="hljs-number">520px</span>) <span class="hljs-keyword">and</span> (orientation: landscape) {
   .\@\:w\&gt;\=gSm\:o_D-if {
     <span class="hljs-attribute">display</span>: inline-flex;
   }
@@ -1282,10 +1282,10 @@
 <li>if the feature has only two values, then to check its presence, you can simply write a name. For checking lack, you can use the <code>none</code> keyword. <em>Note</em> that some features also have the default value.</li>
 <li>if the features can check the range of values, then you can use the range syntax from <a href="https://www.w3.org/TR/mediaqueries-4/#mq-range-context">The Media Queries Level 4</a></li>
 </ul>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-media(<span class="hljs-string">&#x27;ah&#x27;</span>); <span class="hljs-comment">// (any-hover)</span>
-<span class="hljs-keyword">@debug</span> ml.convert-ar-media(<span class="hljs-string">&#x27;h-n&#x27;</span>); <span class="hljs-comment">// (hover: none)</span>
-<span class="hljs-keyword">@debug</span> ml.convert-ar-media(<span class="hljs-string">&#x27;dm&#x27;</span>); <span class="hljs-comment">// (display-mode: fullscreen)</span>
-<span class="hljs-keyword">@debug</span> ml.convert-ar-media(<span class="hljs-string">&#x27;c&lt;256&#x27;</span>); <span class="hljs-comment">// (max-color: 255)</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-media(<span class="hljs-string">'ah'</span>); <span class="hljs-comment">// (any-hover)</span>
+<span class="hljs-keyword">@debug</span> ml.convert-ar-media(<span class="hljs-string">'h-n'</span>); <span class="hljs-comment">// (hover: none)</span>
+<span class="hljs-keyword">@debug</span> ml.convert-ar-media(<span class="hljs-string">'dm'</span>); <span class="hljs-comment">// (display-mode: fullscreen)</span>
+<span class="hljs-keyword">@debug</span> ml.convert-ar-media(<span class="hljs-string">'c&lt;256'</span>); <span class="hljs-comment">// (max-color: 255)</span>
 </code></pre>
 
           </div>
@@ -1317,33 +1317,33 @@
 
           <div class="kss-description">
             <p>In @supports rule, you can check the support of properties and values of any utility from the registry. To check the current value of the utility used, leave the rule blank.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;Ps&#x27;</span>, <span class="hljs-string">&#x27;@s:d-flr_sk&#x27;</span>);
-<span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;D&#x27;</span>, <span class="hljs-string">&#x27;@s_f&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'Ps'</span>, <span class="hljs-string">'@s:d-flr_sk'</span>);
+<span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'D'</span>, <span class="hljs-string">'@s_f'</span>);
 
 <span class="hljs-comment">// CSS</span>
-<span class="hljs-keyword">@supports</span> (<span class="hljs-attribute">display</span>: flow-root) {
+<span class="hljs-keyword">@supports</span> (display: flow-root) {
   .\<span class="hljs-keyword">@s</span>\:d-flr_Ps-sk {
     <span class="hljs-attribute">position</span>: sticky;
   }
 }
 
-<span class="hljs-keyword">@supports</span> (<span class="hljs-attribute">display</span>: flex) {
+<span class="hljs-keyword">@supports</span> (display: flex) {
   .\<span class="hljs-keyword">@s</span>_D-f {
 		<span class="hljs-attribute">display</span>: flex;
 	}
 }
 </code></pre>
 <p>To check the property, it is not necessary to specify the value:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-supports(<span class="hljs-string">&#x27;apcr&#x27;</span>); <span class="hljs-comment">// (aspect-ratio: initial)</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-supports(<span class="hljs-string">'apcr'</span>); <span class="hljs-comment">// (aspect-ratio: initial)</span>
 </code></pre>
 <p>You can also use this-utility alias <code>&amp;</code> in a complex condition.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-supports(<span class="hljs-string">&#x27;d-ig:&amp;&#x27;</span>, (<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Jc&#x27;</span>, <span class="hljs-string">&#x27;value&#x27;</span>: <span class="hljs-string">&#x27;-se&#x27;</span>); <span class="hljs-comment">// (display: inline-grid) and (justify-content: space-evenly)</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-supports(<span class="hljs-string">'d-ig:&amp;'</span>, (<span class="hljs-string">'name'</span>: <span class="hljs-string">'Jc'</span>, <span class="hljs-string">'value'</span>: <span class="hljs-string">'-se'</span>); <span class="hljs-comment">// (display: inline-grid) and (justify-content: space-evenly)</span>
 </code></pre>
 <p>To check the lack of support, add an operator <code>!</code> before the utility:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-supports(<span class="hljs-string">&#x27;!d-ig&#x27;</span>); <span class="hljs-comment">// (not (display: inline-grid))</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-supports(<span class="hljs-string">'!d-ig'</span>); <span class="hljs-comment">// (not (display: inline-grid))</span>
 </code></pre>
 <p>Please note that in one supports rule, only one type of the operator is supported for a combination of expressions. When using both immediately, an error will appear</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-supports(<span class="hljs-string">&#x27;ps-sc,h1vh:m-a&#x27;</span>); <span class="hljs-comment">// ERROR: Different operators are not allowed in one abbreviations list</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-supports(<span class="hljs-string">'ps-sc,h1vh:m-a'</span>); <span class="hljs-comment">// ERROR: Different operators are not allowed in one abbreviations list</span>
 </code></pre>
 
           </div>
@@ -1405,7 +1405,7 @@
 
           <div class="kss-description">
             <p>In the states you can use pseudo-class, pseudo-elements and almost everything that CSS selectors allow. States are two types: <code>pre</code> and <code>post</code>, depending on the position in the CSS utility selector. In both of them, you can use the same parts.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;:h _D_ af&#x27;</span>, <span class="hljs-string">&#x27;f&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">':h _D_ af'</span>, <span class="hljs-string">'f'</span>);
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-class">.D-f</span> {
@@ -1421,7 +1421,7 @@
 }
 </code></pre>
 <p>In essence, the states is a simplified <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Selector_list">CSS selector list</a>. To combine the states, use <code>:</code>, and for the separation of selector to the lists - <code>,</code>. For a space in the selector, use <code>::</code> or <code>:</code> if post-state is the first in the list.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;D_ h,f h:b :fc&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'D_ h,f h:b :fc'</span>, <span class="hljs-string">''</span>);
 
 <span class="hljs-comment">// CSS</span>
 ...
@@ -1444,7 +1444,7 @@
 <li>unconvertible parts will fall into the selector unchanged</li>
 <li>use <code>=</code> to prevent conversion</li>
 </ul>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;=a. h1+ _D_ .js:a&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'=a. h1+ _D_ .js:a'</span>, <span class="hljs-string">''</span>);
 
 <span class="hljs-comment">// CSS</span>
 ...
@@ -1523,7 +1523,7 @@
           <div class="kss-description">
             <p>With the help of a context, the utilities can react to the state of the container, adjacent item etc. It is denoted by <code>^</code> and is just an alias for <code>.-Ctx</code>. Add this class to markup, and in the states of utilities, make a combination for the necessary behavior.</p>
 <p>You can also specify the name of the context. Allowed lower camelCase and numbers.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;^:h ^one:lc:&gt;_D&#x27;</span>, <span class="hljs-string">&#x27;f&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'^:h ^one:lc:&gt;_D'</span>, <span class="hljs-string">'f'</span>);
 
 <span class="hljs-comment">// CSS</span>
 ...
@@ -1566,16 +1566,16 @@
 
           <div class="kss-description">
             <p>To use a pseudo-class <code>not</code>, add <code>! </code> before any part of state:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;D_!fc !input&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'D_!fc !input'</span>, <span class="hljs-string">''</span>);
 
 <span class="hljs-comment">// CSS</span>
 ...
 
-<span class="hljs-selector-class">.D_</span>\!fc<span class="hljs-selector-pseudo">:not</span>(:first-child) {
+<span class="hljs-selector-class">.D_</span>\!fc<span class="hljs-selector-pseudo">:not</span>(<span class="hljs-selector-pseudo">:first-child</span>) {
 	<span class="hljs-attribute">display</span>: block;
 }
 
-<span class="hljs-selector-class">.D_</span>\!<span class="hljs-selector-tag">input</span><span class="hljs-selector-pseudo">:not</span>(input) {
+<span class="hljs-selector-class">.D_</span>\!<span class="hljs-selector-tag">input</span><span class="hljs-selector-pseudo">:not</span>(<span class="hljs-selector-tag">input</span>) {
 	<span class="hljs-attribute">display</span>: block;
 }
 </code></pre>
@@ -1609,7 +1609,7 @@
 
           <div class="kss-description">
             <p>As in <a href="#kssref-concepts-at_rules-supports">@supports</a>, <code>&amp;</code> can be used in the states. To increase specificity, it can only be used in post-states so many times as much as you need:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;D_&amp;&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'D_&amp;'</span>);
 
 <span class="hljs-comment">// CSS</span>
 ...
@@ -1714,7 +1714,7 @@
 
           <div class="kss-description">
             <p>The value of this unit depends on the CSS variable <code>--ml-gg</code>. Due to this, it value can be changed dynamically. By default <code>--ml-gg = 3u</code> but increase to <code>4u</code> on the <code>lg</code> breakpoint.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Ml-2.5gg&#x27;</span>); <span class="hljs-comment">// calc(var(--ml-gg) * -2.5)</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Ml-2.5gg'</span>); <span class="hljs-comment">// calc(var(--ml-gg) * -2.5)</span>
 </code></pre>
 
           </div>
@@ -1746,7 +1746,7 @@
 
           <div class="kss-description">
             <p>Unit of measurement to create a scale of sizes and indents in your design system. By default <code>1u = 0.25rem</code>(4px).</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Fns6u&#x27;</span>); <span class="hljs-comment">// 1.5rem</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Fns6u'</span>); <span class="hljs-comment">// 1.5rem</span>
 </code></pre>
 
           </div>

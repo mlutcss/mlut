@@ -97,12 +97,12 @@
 
           <div class="kss-description">
             <p>As you remember, the library part of mlut contains <a href="section-css_lib.html#kssref-css_lib-styles">basic styles</a>, <a href="section-css_lib.html#kssref-css_lib-helpers">helpers</a> and utilities. Note that the CSS library is in the <a href="https://www.npmjs.com/package/@mlut/core">@mlut/core</a> package, so you need to import it from there. This package is installed when mlut is used in any way. By default, only basic styles and helpers are included:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/tools&#x27;</span> as ml;
-<span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/dist/css&#x27;</span>;
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/tools'</span> as ml;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/dist/css'</span>;
 </code></pre>
 <p>But you can include only the necessary parts of the core:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/tools&#x27;</span> as ml;
-<span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/dist/css/helpers&#x27;</span>;
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/tools'</span> as ml;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/dist/css/helpers'</span>;
 </code></pre>
 <p><em>Note</em>: for convenience, in the examples we will include mlut as if we specified a Sass load path, so that each time we do not write <code>../../node_modules/mlut</code>. It is default behavior with JIT engine</p>
 

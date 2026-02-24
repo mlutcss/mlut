@@ -102,10 +102,10 @@
 <li><code>s</code> - <code>screen</code></li>
 </ul>
 <p><code>@media</code> is the default rule. To choose it, just write <code>@</code> and then specify queries. The default rule can be selected in the settings.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;@:w&gt;=gSm:o _D&#x27;</span>, <span class="hljs-string">&#x27;if&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'@:w&gt;=gSm:o _D'</span>, <span class="hljs-string">'if'</span>);
 
 <span class="hljs-comment">// CSS</span>
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">520px</span>) <span class="hljs-keyword">and</span> (<span class="hljs-attribute">orientation</span>: landscape) {
+<span class="hljs-keyword">@media</span> (min-width: <span class="hljs-number">520px</span>) <span class="hljs-keyword">and</span> (orientation: landscape) {
   .\@\:w\&gt;\=gSm\:o_D-if {
     <span class="hljs-attribute">display</span>: inline-flex;
   }

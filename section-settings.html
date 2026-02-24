@@ -164,44 +164,44 @@
 <li>maps with data: source suffix - <code>db</code>, user's - <code>data</code></li>
 <li>maps with configs: source suffix - <code>cfg</code>, user's - <code>config</code></li>
 </ul>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> with (
 	<span class="hljs-variable">$utils-config</span>: (
-		<span class="hljs-string">&#x27;states&#x27;</span>: (
-			<span class="hljs-string">&#x27;custom&#x27;</span>: (
-				<span class="hljs-string">&#x27;are&#x27;</span>: <span class="hljs-string">&#x27;[aria-expanded=“true”]&#x27;</span>,
+		<span class="hljs-string">'states'</span>: (
+			<span class="hljs-string">'custom'</span>: (
+				<span class="hljs-string">'are'</span>: <span class="hljs-string">'[aria-expanded=“true”]'</span>,
 			),
 		),
 	),
 	<span class="hljs-variable">$at-rules-data</span>: (
-		<span class="hljs-string">&#x27;container&#x27;</span>: (
-			<span class="hljs-string">&#x27;alias&#x27;</span>: <span class="hljs-string">&#x27;c&#x27;</span>,
+		<span class="hljs-string">'container'</span>: (
+			<span class="hljs-string">'alias'</span>: <span class="hljs-string">'c'</span>,
 		),
 	),
 );
 </code></pre>
 <p>If you want to completely overwrite map or one of its fields, specify <code>null</code>. Below in the configuration use <code>*mapname*-ext</code> and then your values.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with (
 	<span class="hljs-variable">$utils-data</span>: (
-		<span class="hljs-string">&#x27;utils&#x27;</span>: (
-			<span class="hljs-string">&#x27;registry&#x27;</span>: (
-				<span class="hljs-string">&#x27;Ps&#x27;</span>: null,
+		<span class="hljs-string">'utils'</span>: (
+			<span class="hljs-string">'registry'</span>: (
+				<span class="hljs-string">'Ps'</span>: null,
 			),
 		),
 	),
 	<span class="hljs-variable">$utils-data-ext</span>: (
-		<span class="hljs-string">&#x27;utils&#x27;</span>: (
-			<span class="hljs-string">&#x27;registry&#x27;</span>: (
-				<span class="hljs-string">&#x27;Ps&#x27;</span>: (
-					<span class="hljs-string">&#x27;properties&#x27;</span>: position,
-					<span class="hljs-string">&#x27;keywords&#x27;</span>: (<span class="hljs-string">&#x27;sc&#x27;</span>: sticky),
+		<span class="hljs-string">'utils'</span>: (
+			<span class="hljs-string">'registry'</span>: (
+				<span class="hljs-string">'Ps'</span>: (
+					<span class="hljs-string">'properties'</span>: position,
+					<span class="hljs-string">'keywords'</span>: (<span class="hljs-string">'sc'</span>: sticky),
 				),
 			)
 		),
 	),
 );
 
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Ps-sc&#x27;</span>); <span class="hljs-comment">// sticky</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Ps-a&#x27;</span>); <span class="hljs-comment">// a</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Ps-sc'</span>); <span class="hljs-comment">// sticky</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Ps-a'</span>); <span class="hljs-comment">// a</span>
 </code></pre>
 <p>This is relevant for some smaller maps like a <code>$breakpoints</code>. In the specific settings will specified which maps have the possibility of rewriting using <code>ext</code>.</p>
 <p>For the time being, you can look at the structure of maps with the settings in the code, but later it will be described in the documentation.</p>
@@ -300,20 +300,20 @@
 </tbody>
 </table>
 <p>To fully rewrite breakpoints, use <code>$breakpoints-ext</code> map:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with (
 	<span class="hljs-variable">$breakpoints</span>: null,
 	<span class="hljs-variable">$breakpoints-ext</span>: (
-		<span class="hljs-string">&#x27;sm&#x27;</span>: <span class="hljs-number">768px</span>,
-		<span class="hljs-string">&#x27;md&#x27;</span>: <span class="hljs-number">1200px</span>,
-		<span class="hljs-string">&#x27;lg&#x27;</span>: <span class="hljs-number">1440px</span>,
+		<span class="hljs-string">'sm'</span>: <span class="hljs-number">768px</span>,
+		<span class="hljs-string">'md'</span>: <span class="hljs-number">1200px</span>,
+		<span class="hljs-string">'lg'</span>: <span class="hljs-number">1440px</span>,
 	),
 );
 
-<span class="hljs-keyword">@debug</span> map.get(ml.<span class="hljs-variable">$at-rules-cfg</span>, <span class="hljs-string">&#x27;breakpoints&#x27;</span>);
+<span class="hljs-keyword">@debug</span> map.get(ml.<span class="hljs-variable">$at-rules-cfg</span>, <span class="hljs-string">'breakpoints'</span>);
 <span class="hljs-comment">// (</span>
-<span class="hljs-comment">//   &#x27;sm&#x27;: 768px,</span>
-<span class="hljs-comment">//   &#x27;md&#x27;: 1200px,</span>
-<span class="hljs-comment">//   &#x27;lg&#x27;: 1440px,</span>
+<span class="hljs-comment">//   'sm': 768px,</span>
+<span class="hljs-comment">//   'md': 1200px,</span>
+<span class="hljs-comment">//   'lg': 1440px,</span>
 <span class="hljs-comment">// )</span>
 </code></pre>
 
@@ -699,9 +699,9 @@
           <div class="kss-description">
             <p>Available on the key <code>conversion-types</code>. This is a map, the keys in which are names of types that are used in utility options. The values in a map are a list of converters through which the value of utilities passes.</p>
 <pre class="hljs"><code class="language-scss"><span class="hljs-variable">$utils-cfg</span>: (
-	<span class="hljs-string">&#x27;conversion-types&#x27;</span>: (
-		<span class="hljs-string">&#x27;angle&#x27;</span>: (<span class="hljs-string">&#x27;angle&#x27;</span>, <span class="hljs-string">&#x27;global-kw&#x27;</span>, <span class="hljs-string">&#x27;cust-prop&#x27;</span>),
-		<span class="hljs-string">&#x27;grid-span&#x27;</span>: (<span class="hljs-string">&#x27;grid-span&#x27;</span>, <span class="hljs-string">&#x27;num-length&#x27;</span>, <span class="hljs-string">&#x27;global-kw&#x27;</span>, <span class="hljs-string">&#x27;cust-prop&#x27;</span>),
+	<span class="hljs-string">'conversion-types'</span>: (
+		<span class="hljs-string">'angle'</span>: (<span class="hljs-string">'angle'</span>, <span class="hljs-string">'global-kw'</span>, <span class="hljs-string">'cust-prop'</span>),
+		<span class="hljs-string">'grid-span'</span>: (<span class="hljs-string">'grid-span'</span>, <span class="hljs-string">'num-length'</span>, <span class="hljs-string">'global-kw'</span>, <span class="hljs-string">'cust-prop'</span>),
 	),
 );
 </code></pre>
@@ -737,11 +737,11 @@
 
           <div class="kss-description">
             <p>Expand abbreaviations of utilities. Schema:</p>
-<pre class="hljs"><code class="language-scss">(&#x27;abbr-kw&#x27;: list.join(&#x27;abbr&#x27;, $uv-type-default))
+<pre class="hljs"><code class="language-scss">('<span class="hljs-selector-tag">abbr</span>-kw': list.join(<span class="hljs-string">'abbr'</span>, <span class="hljs-variable">$uv-type-default</span>))
 </code></pre>
 <p>Usage:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Wlc-tf&#x27;</span>); <span class="hljs-comment">// transform</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Ts-bdc;2s,c;1s&#x27;</span>); <span class="hljs-comment">// border-color 2s, color 1s</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Wlc-tf'</span>); <span class="hljs-comment">// transform</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Ts-bdc;2s,c;1s'</span>); <span class="hljs-comment">// border-color 2s, color 1s</span>
 </code></pre>
 
           </div>
@@ -773,13 +773,13 @@
 
           <div class="kss-description">
             <p>Converts angles. Schema:</p>
-<pre class="hljs"><code class="language-scss">(&#x27;angle&#x27;: list.join(&#x27;angle&#x27;, $uv-type-base))
+<pre class="hljs"><code class="language-scss">('angle': list.join(<span class="hljs-string">'angle'</span>, <span class="hljs-variable">$uv-type-base</span>))
 </code></pre>
 <p>Usage:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;-Rt45d&#x27;</span>); <span class="hljs-comment">// 45deg</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;-Rt-50g&#x27;</span>); <span class="hljs-comment">// -50grad</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;-Sk3.14r;2r&#x27;</span>); <span class="hljs-comment">// 3.14rad 2rad</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;-Hur-1.5t&#x27;</span>); <span class="hljs-comment">// -1.5turn</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'-Rt45d'</span>); <span class="hljs-comment">// 45deg</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'-Rt-50g'</span>); <span class="hljs-comment">// -50grad</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'-Sk3.14r;2r'</span>); <span class="hljs-comment">// 3.14rad 2rad</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'-Hur-1.5t'</span>); <span class="hljs-comment">// -1.5turn</span>
 </code></pre>
 
           </div>
@@ -811,14 +811,14 @@
 
           <div class="kss-description">
             <p>Converts colors. Schema:</p>
-<pre class="hljs"><code class="language-scss">(&#x27;color&#x27;: list.join(&#x27;color&#x27;, $uv-type-base))
+<pre class="hljs"><code class="language-scss">('<span class="hljs-attribute">color</span>': list.join(<span class="hljs-string">'color'</span>, <span class="hljs-variable">$uv-type-base</span>))
 </code></pre>
 <p>Usage:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;C-tp&#x27;</span>); <span class="hljs-comment">// transparent</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Bgc#c06*$bgAlpha&#x27;</span>); <span class="hljs-comment">// rgba(204, 0, 102, var(--ml-bgAlpha, 1))</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'C-tp'</span>); <span class="hljs-comment">// transparent</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Bgc#c06*$bgAlpha'</span>); <span class="hljs-comment">// rgba(204, 0, 102, var(--ml-bgAlpha, 1))</span>
 
 <span class="hljs-comment">// you can use custom color keyword that you added in the database</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Bgc-purple50*20p&#x27;</span>); <span class="hljs-comment">// rgba(102, 0, 204, 0.2)</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Bgc-purple50*20p'</span>); <span class="hljs-comment">// rgba(102, 0, 204, 0.2)</span>
 </code></pre>
 
           </div>
@@ -850,14 +850,14 @@
 
           <div class="kss-description">
             <p>Converts values in the gradient functions. Schema:</p>
-<pre class="hljs"><code class="language-scss">(&#x27;gradient&#x27;: (
-	&#x27;keyword&#x27;, &#x27;color&#x27;, &#x27;cust-prop&#x27;, &#x27;Pl&#x27;, &#x27;number&#x27;, &#x27;angle&#x27;, &#x27;global-kw&#x27;
+<pre class="hljs"><code class="language-scss">('gradient': (
+	<span class="hljs-string">'keyword'</span>, <span class="hljs-string">'color'</span>, <span class="hljs-string">'cust-prop'</span>, <span class="hljs-string">'Pl'</span>, <span class="hljs-string">'number'</span>, <span class="hljs-string">'angle'</span>, <span class="hljs-string">'global-kw'</span>
 ))
 </code></pre>
 <p>Usage:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;-Gdrl-b;r,black,#ff0&#x27;</span>); <span class="hljs-comment">// repeating-linear-gradient(to bottom right, black, #ff0)</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;-Msgl-50d,blue;3r,cc;80p&#x27;</span>); <span class="hljs-comment">// linear-gradient(-50deg, blue 3rem, currentColor 80%)</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;-Gdc45d,#000;0.5g,yellow&#x27;</span>); <span class="hljs-comment">// conic-gradient(from 45deg, #000 0.5grad, yellow)</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'-Gdrl-b;r,black,#ff0'</span>); <span class="hljs-comment">// repeating-linear-gradient(to bottom right, black, #ff0)</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'-Msgl-50d,blue;3r,cc;80p'</span>); <span class="hljs-comment">// linear-gradient(-50deg, blue 3rem, currentColor 80%)</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'-Gdc45d,#000;0.5g,yellow'</span>); <span class="hljs-comment">// conic-gradient(from 45deg, #000 0.5grad, yellow)</span>
 </code></pre>
 
           </div>
@@ -889,10 +889,10 @@
 
           <div class="kss-description">
             <p>Converts special keywords, to specify the sizes of the grid items in spans. Schema:</p>
-<pre class="hljs"><code class="language-scss">(&#x27;grid-span&#x27;: list.join((&#x27;grid-span&#x27;, &#x27;num-length&#x27;), <span class="hljs-variable">$uv-type-base</span>))
+<pre class="hljs"><code class="language-scss">('grid-<span class="hljs-selector-tag">span</span>': list.join((<span class="hljs-string">'grid-span'</span>, <span class="hljs-string">'num-length'</span>), <span class="hljs-variable">$uv-type-base</span>))
 </code></pre>
 <p>Usage:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Gc-s3&#x27;</span>); <span class="hljs-comment">// span 3 / span 3</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Gc-s3'</span>); <span class="hljs-comment">// span 3 / span 3</span>
 </code></pre>
 
           </div>
@@ -924,11 +924,11 @@
 
           <div class="kss-description">
             <p>Adds converting of special keywords for grid templates to the default type. Schema:</p>
-<pre class="hljs"><code class="language-scss">(&#x27;grid-tpl&#x27;: list.join(&#x27;grid-tracks&#x27;, $uv-type-default))
+<pre class="hljs"><code class="language-scss">('grid-tpl': list.join(<span class="hljs-string">'grid-tracks'</span>, <span class="hljs-variable">$uv-type-default</span>))
 </code></pre>
 <p>Usage:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Gtc-t4&#x27;</span>); <span class="hljs-comment">// repeat(4, minmax(0, 1fr))</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;G-t3/af;d;15r&#x27;</span>); <span class="hljs-comment">// repeat(3, minmax(0, 1fr)) / auto-flow dense 15rem</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Gtc-t4'</span>); <span class="hljs-comment">// repeat(4, minmax(0, 1fr))</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'G-t3/af;d;15r'</span>); <span class="hljs-comment">// repeat(3, minmax(0, 1fr)) / auto-flow dense 15rem</span>
 </code></pre>
 
           </div>
@@ -960,12 +960,12 @@
 
           <div class="kss-description">
             <p>Type works almost as a default type, with the exception of that it does not convert numbers without units of measurement in a pixels. Schema:</p>
-<pre class="hljs"><code class="language-scss">(&#x27;kw-num-length&#x27;: list.set-nth($uv-type-default, <span class="hljs-number">2</span>, &#x27;num-length&#x27;))
+<pre class="hljs"><code class="language-scss">('kw-num-length': list.set-nth(<span class="hljs-variable">$uv-type-default</span>, <span class="hljs-number">2</span>, <span class="hljs-string">'num-length'</span>))
 </code></pre>
 <p>Usage:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Fnw300&#x27;</span>); <span class="hljs-comment">// 300</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Fnw-bd&#x27;</span>); <span class="hljs-comment">// bolder</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Lnh4.5u&#x27;</span>); <span class="hljs-comment">// 1.125rem</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Fnw300'</span>); <span class="hljs-comment">// 300</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Fnw-bd'</span>); <span class="hljs-comment">// bolder</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Lnh4.5u'</span>); <span class="hljs-comment">// 1.125rem</span>
 </code></pre>
 
           </div>
@@ -997,15 +997,15 @@
 
           <div class="kss-description">
             <p>The basic meta type on which all other types are based. Schema:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-variable">$uv-type-base</span>: (<span class="hljs-string">&#x27;global-kw&#x27;</span>, <span class="hljs-string">&#x27;cust-prop&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-variable">$uv-type-base</span>: (<span class="hljs-string">'global-kw'</span>, <span class="hljs-string">'cust-prop'</span>);
 </code></pre>
 <p>Usage:</p>
 <pre class="hljs"><code class="language-scss"><span class="hljs-comment">// global keywords</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;C-ih&#x27;</span>); <span class="hljs-comment">// inherit</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;W-gSm&#x27;</span>); <span class="hljs-comment">// 520px - sm breakpoints</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'C-ih'</span>); <span class="hljs-comment">// inherit</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'W-gSm'</span>); <span class="hljs-comment">// 520px - sm breakpoints</span>
 
 <span class="hljs-comment">// custom properties</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;W-$myCard?200&#x27;</span>); <span class="hljs-comment">// var(--ml-myCard, 200px)</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'W-$myCard?200'</span>); <span class="hljs-comment">// var(--ml-myCard, 200px)</span>
 </code></pre>
 
           </div>
@@ -1037,24 +1037,24 @@
 
           <div class="kss-description">
             <p>Meta type that corresponds to the default conversion type. If the type of conversion is not specified for the utility, then this will be used. Schema:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-variable">$uv-type-default</span>: list.join((<span class="hljs-string">&#x27;keyword&#x27;</span>, <span class="hljs-string">&#x27;number&#x27;</span>), <span class="hljs-variable">$uv-type-base</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-variable">$uv-type-default</span>: list.join((<span class="hljs-string">'keyword'</span>, <span class="hljs-string">'number'</span>), <span class="hljs-variable">$uv-type-base</span>);
 
 <span class="hljs-comment">// and below in the conversion types</span>
-&#x27;conversion-types&#x27;: (
-	<span class="hljs-string">&#x27;default&#x27;</span>: <span class="hljs-variable">$uv-type-default</span>,
+'conversion-types': (
+	<span class="hljs-string">'default'</span>: <span class="hljs-variable">$uv-type-default</span>,
 </code></pre>
 <p>Usage:</p>
 <pre class="hljs"><code class="language-scss"><span class="hljs-comment">// keyword</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Ai-c&#x27;</span>); <span class="hljs-comment">// center</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Bd&#x27;</span>); <span class="hljs-comment">// 1px solid</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Ai-c'</span>); <span class="hljs-comment">// center</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Bd'</span>); <span class="hljs-comment">// 1px solid</span>
 
 <span class="hljs-comment">// number</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;W200&#x27;</span>); <span class="hljs-comment">// 200px</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Ml-0.7&#x27;</span>); <span class="hljs-comment">// -0.7rem</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;P1r;2e;5p&#x27;</span>); <span class="hljs-comment">// 1rem 2em 5%</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Ml-2.5gg&#x27;</span>); <span class="hljs-comment">// calc(var(--ml-gg) * -2.5)</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;W1/3&#x27;</span>); <span class="hljs-comment">// 33.3333333333%</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;W2/$div&#x27;</span>); <span class="hljs-comment">// calc(2 / var(--ml-div) * 100%)</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'W200'</span>); <span class="hljs-comment">// 200px</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Ml-0.7'</span>); <span class="hljs-comment">// -0.7rem</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'P1r;2e;5p'</span>); <span class="hljs-comment">// 1rem 2em 5%</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Ml-2.5gg'</span>); <span class="hljs-comment">// calc(var(--ml-gg) * -2.5)</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'W1/3'</span>); <span class="hljs-comment">// 33.3333333333%</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'W2/$div'</span>); <span class="hljs-comment">// calc(2 / var(--ml-div) * 100%)</span>
 </code></pre>
 
           </div>
@@ -1086,11 +1086,11 @@
 
           <div class="kss-description">
             <p>This type converts numbers almost as a default type, except that it does not convert numbers without units of measurement in a pixels. Schema:</p>
-<pre class="hljs"><code class="language-scss">(&#x27;num-length&#x27;: list.join(&#x27;num-length&#x27;, $uv-type-base))
+<pre class="hljs"><code class="language-scss">('num-length': list.join(<span class="hljs-string">'num-length'</span>, <span class="hljs-variable">$uv-type-base</span>))
 </code></pre>
 <p>Usage:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Zi5&#x27;</span>); <span class="hljs-comment">// 5</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Tas2e&#x27;</span>); <span class="hljs-comment">// 2em</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Zi5'</span>); <span class="hljs-comment">// 5</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Tas2e'</span>); <span class="hljs-comment">// 2em</span>
 </code></pre>
 
           </div>
@@ -1122,11 +1122,11 @@
 
           <div class="kss-description">
             <p>Converts percent to decimal fractions. Schema:</p>
-<pre class="hljs"><code class="language-scss">(&#x27;num-percent&#x27;: list.join(&#x27;num-percent&#x27;, $uv-type-base))
+<pre class="hljs"><code class="language-scss">('num-percent': list.join(<span class="hljs-string">'num-percent'</span>, <span class="hljs-variable">$uv-type-base</span>))
 </code></pre>
 <p>Usage:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;O70p&#x27;</span>); <span class="hljs-comment">// 0.7</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;-S-50p&#x27;</span>); <span class="hljs-comment">// -0.5</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'O70p'</span>); <span class="hljs-comment">// 0.7</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'-S-50p'</span>); <span class="hljs-comment">// -0.5</span>
 </code></pre>
 
           </div>
@@ -1158,12 +1158,12 @@
 
           <div class="kss-description">
             <p>Adds colors conversion to a default converters chain. Schema:</p>
-<pre class="hljs"><code class="language-scss">(&#x27;outline&#x27;: list.join(
-	(&#x27;keyword&#x27;, &#x27;color&#x27;, &#x27;number&#x27;), <span class="hljs-variable">$uv-type-base</span>
+<pre class="hljs"><code class="language-scss">('<span class="hljs-attribute">outline</span>': list.join(
+	(<span class="hljs-string">'keyword'</span>, <span class="hljs-string">'color'</span>, <span class="hljs-string">'number'</span>), <span class="hljs-variable">$uv-type-base</span>
 ))
 </code></pre>
 <p>Usage:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Bd3;tp;d&#x27;</span>); <span class="hljs-comment">// 3px transparent dotted</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Bd3;tp;d'</span>); <span class="hljs-comment">// 3px transparent dotted</span>
 </code></pre>
 
           </div>
@@ -1202,17 +1202,17 @@
 </ul>
 <p>Below is a quick reference of states. Later it will be supplemented by comments and examples.</p>
 <p>If you want to add a state, it is recommended to do this in the <code>custom</code> section. <em>Please note</em> that in the code, all custom states begin with a hyphen. This prevents names collision with native states from CSS.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with (
 	<span class="hljs-variable">$utils-config</span>: (
-		<span class="hljs-string">&#x27;states&#x27;</span>: (
-			<span class="hljs-string">&#x27;custom&#x27;</span>: (
-				<span class="hljs-string">&#x27;rtl&#x27;</span>: <span class="hljs-string">&#x27;[dir=“rtl”]&#x27;</span>,
+		<span class="hljs-string">'states'</span>: (
+			<span class="hljs-string">'custom'</span>: (
+				<span class="hljs-string">'rtl'</span>: <span class="hljs-string">'[dir=“rtl”]'</span>,
 			),
 		),
 	),
 );
 
-<span class="hljs-keyword">@include</span> ml.apply((<span class="hljs-string">&#x27;-rtl _Mr2r&#x27;</span>), (), true);
+<span class="hljs-keyword">@include</span> ml.apply((<span class="hljs-string">'-rtl _Mr2r'</span>), (), true);
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-attr">[dir=“rtl”]</span> <span class="hljs-selector-class">.-rtl_Mr2r</span> {
@@ -1373,8 +1373,8 @@
 
           <div class="kss-description">
             <p>The registry stores data of all utilities. You can get these data with the following path:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml;
-map<span class="hljs-selector-class">.get</span>(ml.$utils-db, &#x27;utils&#x27;, &#x27;registry&#x27;, &#x27;&lt;utility-name&gt;&#x27;);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml;
+<span class="hljs-selector-tag">map</span><span class="hljs-selector-class">.get</span>(ml.<span class="hljs-variable">$utils-db</span>, 'utils', 'registry', '&lt;utility-name&gt;');
 </code></pre>
 <p>The registry is a map, the keys in which are the names of the utility, and the value can be, both a string with 1 property and a map with options. Below will be examined in detail the utility options. You can familiarize yourself with the utility registry on <a href="section-utils-reference.html">this</a> page, and the registry of media features is available <a href="section-general_reference.html#kssref-general_reference-media">here</a>.</p>
 
@@ -1407,35 +1407,35 @@ map<span class="hljs-selector-class">.get</span>(ml.$utils-db, &#x27;utils&#x27;
 
           <div class="kss-description">
             <p>In this subsection, keywords that are used in several utilities are stored. To use a set of keywords from here, specify the corresponding map key, in the <code>keywords</code> setting of utility.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with  (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with  (
 	<span class="hljs-variable">$utils-data</span>: (
-		<span class="hljs-string">&#x27;utils&#x27;</span>: (
-			<span class="hljs-string">&#x27;registry&#x27;</span>: (
-				<span class="hljs-string">&#x27;Mxw&#x27;</span>: (
-					<span class="hljs-string">&#x27;keywords&#x27;</span>: (<span class="hljs-string">&#x27;sizing&#x27;</span>, <span class="hljs-string">&#x27;my-sizing&#x27;</span>),
+		<span class="hljs-string">'utils'</span>: (
+			<span class="hljs-string">'registry'</span>: (
+				<span class="hljs-string">'Mxw'</span>: (
+					<span class="hljs-string">'keywords'</span>: (<span class="hljs-string">'sizing'</span>, <span class="hljs-string">'my-sizing'</span>),
 				),
-				<span class="hljs-string">&#x27;Flb&#x27;</span>: (
-					<span class="hljs-string">&#x27;keywords&#x27;</span>: (<span class="hljs-string">&#x27;sizing&#x27;</span>, <span class="hljs-string">&#x27;my-sizing&#x27;</span>),
+				<span class="hljs-string">'Flb'</span>: (
+					<span class="hljs-string">'keywords'</span>: (<span class="hljs-string">'sizing'</span>, <span class="hljs-string">'my-sizing'</span>),
 				),
 			),
-			<span class="hljs-string">&#x27;keywords&#x27;</span>: (
+			<span class="hljs-string">'keywords'</span>: (
 				// adds new keywords to the existing set
-				<span class="hljs-string">&#x27;box-alignment&#x27;</span>: (
-					<span class="hljs-string">&#x27;sf&#x27;</span>: safe,
-					<span class="hljs-string">&#x27;u&#x27;</span>: unsafe,
+				<span class="hljs-string">'box-alignment'</span>: (
+					<span class="hljs-string">'sf'</span>: safe,
+					<span class="hljs-string">'u'</span>: unsafe,
 				),
-				<span class="hljs-string">&#x27;my-sizing&#x27;</span>: (
-					<span class="hljs-string">&#x27;sm&#x27;</span>: <span class="hljs-number">22rem</span>,
-					<span class="hljs-string">&#x27;md&#x27;</span>: <span class="hljs-number">44rem</span>,
+				<span class="hljs-string">'my-sizing'</span>: (
+					<span class="hljs-string">'sm'</span>: <span class="hljs-number">22rem</span>,
+					<span class="hljs-string">'md'</span>: <span class="hljs-number">44rem</span>,
 				),
 			),
 		),
 	),
 );
 
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Mxw-sm&#x27;</span>); <span class="hljs-comment">// 22rem</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Flb-md&#x27;</span>); <span class="hljs-comment">// 44rem</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Jc-c;sf&#x27;</span>); <span class="hljs-comment">// center safe</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Mxw-sm'</span>); <span class="hljs-comment">// 22rem</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Flb-md'</span>); <span class="hljs-comment">// 44rem</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Jc-c;sf'</span>); <span class="hljs-comment">// center safe</span>
 </code></pre>
 <p>See the full list of keywords <a href="section-general_reference.html#kssref-general_reference-kw">here</a>.</p>
 
@@ -1600,16 +1600,16 @@ map<span class="hljs-selector-class">.get</span>(ml.$utils-db, &#x27;utils&#x27;
 
           <div class="kss-description">
             <p>Groups are stored in a separate database <code>$utils-groups-db</code>. To modify or add groups, use <code>$utils-groups</code>. When specifying utilities in the group, you can use Generation Syntax. In this case, utilities with components will be generated for each value.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut'</span> as ml with (
 	<span class="hljs-variable">$utils-groups</span>: (
-		<span class="hljs-string">&#x27;MPSpaces&#x27;</span>: (
-			<span class="hljs-string">&#x27;M_ frc&#x27;</span>, Mt, Mr, Mb, Ml, -Mx, -My,
+		<span class="hljs-string">'MPSpaces'</span>: (
+			<span class="hljs-string">'M_ frc'</span>, Mt, Mr, Mb, Ml, -Mx, -My,
 			P, Pt, Pr, Pb, Pl, -Px, -Py,
 		),
 	),
 	<span class="hljs-variable">$utils</span>: (
-		<span class="hljs-string">&#x27;MPSpaces&#x27;</span>: (
-			<span class="hljs-number">100</span>, <span class="hljs-string">&#x27;$myOffset&#x27;</span>
+		<span class="hljs-string">'MPSpaces'</span>: (
+			<span class="hljs-number">100</span>, <span class="hljs-string">'$myOffset'</span>
 		),
 	),
 );
@@ -1621,7 +1621,7 @@ map<span class="hljs-selector-class">.get</span>(ml.$utils-db, &#x27;utils&#x27;
   <span class="hljs-attribute">margin</span>: <span class="hljs-number">100px</span>;
 }
 
-<span class="hljs-selector-class">.M100_frc</span><span class="hljs-selector-pseudo">:first</span>-child {
+<span class="hljs-selector-class">.M100_frc</span><span class="hljs-selector-pseudo">:first-child</span> {
   <span class="hljs-attribute">margin</span>: <span class="hljs-number">100px</span>;
 }
 
@@ -1629,7 +1629,7 @@ map<span class="hljs-selector-class">.get</span>(ml.$utils-db, &#x27;utils&#x27;
   <span class="hljs-attribute">margin</span>: var(--ml-myOffset);
 }
 
-<span class="hljs-selector-class">.M-</span>\<span class="hljs-variable">$myOffset_frc</span><span class="hljs-selector-pseudo">:first</span>-child {
+<span class="hljs-selector-class">.M-</span>\<span class="hljs-variable">$myOffset_frc</span><span class="hljs-selector-pseudo">:first-child</span> {
   <span class="hljs-attribute">margin</span>: var(--ml-myOffset);
 }
 
@@ -1669,11 +1669,11 @@ map<span class="hljs-selector-class">.get</span>(ml.$utils-db, &#x27;utils&#x27;
 
           <div class="kss-description">
             <p><code>boolean | string</code><br>Increase the specificity of all utilities at once. When <code>true</code> - to each utility property will be added <code>!important</code>. A string with a CSS selector is also acceptable. It will be added before the utility selector. <br>Defaults to: <code>false</code></p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with (
 	<span class="hljs-variable">$utils-up-specificity</span>: true,
 );
 
-<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;Mt2r&#x27;</span>);
+<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'Mt2r'</span>);
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-class">.Mt2r</span> {

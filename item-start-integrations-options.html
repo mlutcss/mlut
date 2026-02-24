@@ -98,7 +98,7 @@
           <div class="kss-description">
             <p>The plugin options are similar to the mlut CLI options</p>
 <pre class="hljs"><code class="language-ts"><span class="hljs-keyword">interface</span> Options {
-  <span class="hljs-attr">output</span>: <span class="hljs-built_in">string</span>,
+  output: <span class="hljs-built_in">string</span>,
   input?: <span class="hljs-built_in">string</span>,
   minify?: <span class="hljs-built_in">boolean</span>,
   autoprefixer?: <span class="hljs-built_in">boolean</span>,
@@ -106,11 +106,11 @@
 }
 </code></pre>
 <p>You can add the options in your input Sass file too. Options must be a <strong>valid JSON</strong>, but single quotes is allowed. Paths will be resolved relative to the JIT engine working directory</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core&#x27;</span> with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core'</span> with (
   <span class="hljs-variable">$jit</span>: (
-    <span class="hljs-string">&#x27;output&#x27;</span>: <span class="hljs-string">&#x27;dist/assets/style.css&#x27;</span>,
-    <span class="hljs-string">&#x27;minify&#x27;</span>: true,
-    <span class="hljs-string">&#x27;autoprefixer&#x27;</span>: true
+    <span class="hljs-string">'output'</span>: <span class="hljs-string">'dist/assets/style.css'</span>,
+    <span class="hljs-string">'minify'</span>: true,
+    <span class="hljs-string">'autoprefixer'</span>: true
   ),
 );
 </code></pre>

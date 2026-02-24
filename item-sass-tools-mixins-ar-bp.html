@@ -102,7 +102,7 @@
 <li>two from zero: <code>max-width</code></li>
 <li>two numbers: range</li>
 </ul>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.bp(<span class="hljs-string">&#x27;&lt;sm,md:lg&#x27;</span>) {
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.bp(<span class="hljs-string">'&lt;sm,md:lg'</span>) {
 	<span class="hljs-selector-class">.inp--common</span> {
 		<span class="hljs-attribute">padding-left</span>: <span class="hljs-number">48px</span>;
 	}
@@ -121,19 +121,19 @@
 }
 
 <span class="hljs-comment">// CSS</span>
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">519px</span>), (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">768px</span>) <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">991px</span>) {
+<span class="hljs-keyword">@media</span> (max-width: <span class="hljs-number">519px</span>), (min-width: <span class="hljs-number">768px</span>) <span class="hljs-keyword">and</span> (max-width: <span class="hljs-number">991px</span>) {
 	<span class="hljs-selector-class">.inp--common</span> {
 		<span class="hljs-attribute">padding-left</span>: <span class="hljs-number">48px</span>;
 	}
 }
 
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">599px</span>) {
+<span class="hljs-keyword">@media</span> (max-width: <span class="hljs-number">599px</span>) {
 	<span class="hljs-selector-class">.btn__icon</span> {
 		<span class="hljs-attribute">margin-left</span>: <span class="hljs-number">18px</span>;
 	}
 }
 
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">16em</span>) <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">31.94em</span>) {
+<span class="hljs-keyword">@media</span> (min-width: <span class="hljs-number">16em</span>) <span class="hljs-keyword">and</span> (max-width: <span class="hljs-number">31.94em</span>) {
 	<span class="hljs-selector-class">.btn__icon</span> {
 		<span class="hljs-attribute">margin-top</span>: <span class="hljs-number">8px</span>;
 	}

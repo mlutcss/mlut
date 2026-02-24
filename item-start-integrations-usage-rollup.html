@@ -98,10 +98,10 @@
           <div class="kss-description">
             <p>Update the config:</p>
 <pre class="hljs"><code class="language-js"><span class="hljs-comment">// rollup.config.js</span>
-<span class="hljs-keyword">import</span> { rollup } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@mlut/plugins&#x27;</span>;
+<span class="hljs-keyword">import</span> { rollup } <span class="hljs-keyword">from</span> <span class="hljs-string">'@mlut/plugins'</span>;
 
 <span class="hljs-keyword">const</span> mlut = rollup({
-  <span class="hljs-attr">output</span>: <span class="hljs-string">&#x27;dist/style.css&#x27;</span>,
+  <span class="hljs-attr">output</span>: <span class="hljs-string">'dist/style.css'</span>,
   <span class="hljs-comment">// other options...</span>
 });
 
@@ -111,7 +111,7 @@
 };
 </code></pre>
 <p>Add the compiled CSS to your <code>index.html</code></p>
-<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;assets/style.css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>&gt;</span>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"assets/style.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span>
 </code></pre>
 <p>Start your build process:</p>
 <pre class="hljs"><code class="language-">rollup --config rollup.config.js -w
@@ -119,8 +119,8 @@
 <p>Add the mlut classes to your components:</p>
 <pre class="hljs"><code class="language-js"><span class="hljs-comment">// index.js</span>
 <span class="hljs-keyword">const</span> component = <span class="hljs-string">`
-	&lt;div class=&quot;wrapper Mm7&quot;&gt;
-		&lt;h1 class=&quot;Fns5r C-purple&quot;&gt;Rollup plugin test!&lt;/h1&gt;
+	&lt;div class="wrapper Mm7"&gt;
+		&lt;h1 class="Fns5r C-purple"&gt;Rollup plugin test!&lt;/h1&gt;
 		&lt;p&gt;Lorem about mlut&lt;/p&gt;
 	&lt;/div&gt;
 `</span>;

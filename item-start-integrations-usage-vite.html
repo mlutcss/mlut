@@ -98,15 +98,15 @@
           <div class="kss-description">
             <p>Update the config:</p>
 <pre class="hljs"><code class="language-js"><span class="hljs-comment">// vite.config.js</span>
-<span class="hljs-keyword">import</span> { defineConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vite&#x27;</span>;
-<span class="hljs-keyword">import</span> { vite } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@mlut/plugins&#x27;</span>;
+<span class="hljs-keyword">import</span> { defineConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">'vite'</span>;
+<span class="hljs-keyword">import</span> { vite } <span class="hljs-keyword">from</span> <span class="hljs-string">'@mlut/plugins'</span>;
 
 <span class="hljs-keyword">const</span> mlut = vite({
-  <span class="hljs-attr">output</span>: <span class="hljs-string">&#x27;dist/assets/style.css&#x27;</span>,
+  <span class="hljs-attr">output</span>: <span class="hljs-string">'dist/assets/style.css'</span>,
   <span class="hljs-comment">// other options...</span>
 });
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> defineConfig(<span class="hljs-function">() =&gt;</span> {
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> defineConfig(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
   <span class="hljs-keyword">return</span> {
     <span class="hljs-comment">// vite config...</span>
     <span class="hljs-attr">plugins</span>: [mlut],
@@ -114,13 +114,13 @@
 });
 </code></pre>
 <p>Add the compiled CSS to your <code>index.html</code>. Note that the path to it should be the <strong>same as in the production build</strong>:</p>
-<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;assets/style.css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>&gt;</span>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"assets/style.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span>
 </code></pre>
 <p>Start your build process:</p>
 <pre class="hljs"><code class="language-">vite
 </code></pre>
 <p>Add the mlut classes to your markup:</p>
-<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;C-red Fnw800 P2u&quot;</span>&gt;</span>Lorem Ipsu<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"C-red Fnw800 P2u"</span>&gt;</span>Lorem Ipsu<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
 </code></pre>
 
           </div>

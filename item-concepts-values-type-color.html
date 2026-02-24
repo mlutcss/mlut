@@ -97,8 +97,8 @@
 
           <div class="kss-description">
             <p>You can use both HEX colors and color names set by the user. Read more about adding your colors <a href="section-how_to.html#kssref-how_to-config-colors">here</a>. With colors, you can specify the opacity modifier <code>*</code>. This converter is used to convert opacity. With modifier, you can use CSS variables or global keywords in any position:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;C#60c*20p&#x27;</span>); <span class="hljs-comment">// rgba(102, 0, 204, 0.2)</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;C-red0*$co&#x27;</span>); <span class="hljs-comment">// rgba(204, 0, 102, var(--ml-co, 1))</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'C#60c*20p'</span>); <span class="hljs-comment">// rgba(102, 0, 204, 0.2)</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'C-red0*$co'</span>); <span class="hljs-comment">// rgba(204, 0, 102, var(--ml-co, 1))</span>
 </code></pre>
 <p>If a variable is specified as opacity, then by default, it will have fallback <code>1</code>.</p>
 

@@ -97,11 +97,11 @@
 
           <div class="kss-description">
             <p>Adds converting of special keywords for grid templates to the default type. Schema:</p>
-<pre class="hljs"><code class="language-scss">(&#x27;grid-tpl&#x27;: list.join(&#x27;grid-tracks&#x27;, $uv-type-default))
+<pre class="hljs"><code class="language-scss">('grid-tpl': list.join(<span class="hljs-string">'grid-tracks'</span>, <span class="hljs-variable">$uv-type-default</span>))
 </code></pre>
 <p>Usage:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Gtc-t4&#x27;</span>); <span class="hljs-comment">// repeat(4, minmax(0, 1fr))</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;G-t3/af;d;15r&#x27;</span>); <span class="hljs-comment">// repeat(3, minmax(0, 1fr)) / auto-flow dense 15rem</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Gtc-t4'</span>); <span class="hljs-comment">// repeat(4, minmax(0, 1fr))</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'G-t3/af;d;15r'</span>); <span class="hljs-comment">// repeat(3, minmax(0, 1fr)) / auto-flow dense 15rem</span>
 </code></pre>
 
           </div>

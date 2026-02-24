@@ -102,16 +102,16 @@
 <li><code>/ban</code> - exclude these utilities, <code>list</code></li>
 <li><code>/override</code> - <code>map</code> with utilities and values, which will be merged into <code>$utils-map</code> with overwriting. Passing <code>null</code> will clear <code>$utils-map</code>.</li>
 </ul>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/dist/css/utils&#x27;</span> with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/dist/css/utils'</span> with (
 	<span class="hljs-variable">$utils</span>: (
-		<span class="hljs-string">&#x27;C&#x27;</span>: red,
+		<span class="hljs-string">'C'</span>: red,
 
-		<span class="hljs-string">&#x27;/override&#x27;</span>: (
-			<span class="hljs-string">&#x27;M&#x27;</span>: (<span class="hljs-number">1</span>u, <span class="hljs-number">2</span>r)
+		<span class="hljs-string">'/override'</span>: (
+			<span class="hljs-string">'M'</span>: (<span class="hljs-number">1</span>u, <span class="hljs-number">2</span>r)
 		),
 
-		<span class="hljs-string">&#x27;/allow&#x27;</span>: (
-			<span class="hljs-string">&#x27;M&#x27;</span>, <span class="hljs-string">&#x27;C&#x27;</span>,
+		<span class="hljs-string">'/allow'</span>: (
+			<span class="hljs-string">'M'</span>, <span class="hljs-string">'C'</span>,
 		),
 	),
 );

@@ -97,16 +97,16 @@
 
           <div class="kss-description">
             <p>Groups are stored in a separate database <code>$utils-groups-db</code>. To modify or add groups, use <code>$utils-groups</code>. When specifying utilities in the group, you can use Generation Syntax. In this case, utilities with components will be generated for each value.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut'</span> as ml with (
 	<span class="hljs-variable">$utils-groups</span>: (
-		<span class="hljs-string">&#x27;MPSpaces&#x27;</span>: (
-			<span class="hljs-string">&#x27;M_ frc&#x27;</span>, Mt, Mr, Mb, Ml, -Mx, -My,
+		<span class="hljs-string">'MPSpaces'</span>: (
+			<span class="hljs-string">'M_ frc'</span>, Mt, Mr, Mb, Ml, -Mx, -My,
 			P, Pt, Pr, Pb, Pl, -Px, -Py,
 		),
 	),
 	<span class="hljs-variable">$utils</span>: (
-		<span class="hljs-string">&#x27;MPSpaces&#x27;</span>: (
-			<span class="hljs-number">100</span>, <span class="hljs-string">&#x27;$myOffset&#x27;</span>
+		<span class="hljs-string">'MPSpaces'</span>: (
+			<span class="hljs-number">100</span>, <span class="hljs-string">'$myOffset'</span>
 		),
 	),
 );
@@ -118,7 +118,7 @@
   <span class="hljs-attribute">margin</span>: <span class="hljs-number">100px</span>;
 }
 
-<span class="hljs-selector-class">.M100_frc</span><span class="hljs-selector-pseudo">:first</span>-child {
+<span class="hljs-selector-class">.M100_frc</span><span class="hljs-selector-pseudo">:first-child</span> {
   <span class="hljs-attribute">margin</span>: <span class="hljs-number">100px</span>;
 }
 
@@ -126,7 +126,7 @@
   <span class="hljs-attribute">margin</span>: var(--ml-myOffset);
 }
 
-<span class="hljs-selector-class">.M-</span>\<span class="hljs-variable">$myOffset_frc</span><span class="hljs-selector-pseudo">:first</span>-child {
+<span class="hljs-selector-class">.M-</span>\<span class="hljs-variable">$myOffset_frc</span><span class="hljs-selector-pseudo">:first-child</span> {
   <span class="hljs-attribute">margin</span>: var(--ml-myOffset);
 }
 

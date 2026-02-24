@@ -132,20 +132,20 @@
 </tbody>
 </table>
 <p>To fully rewrite breakpoints, use <code>$breakpoints-ext</code> map:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with (
 	<span class="hljs-variable">$breakpoints</span>: null,
 	<span class="hljs-variable">$breakpoints-ext</span>: (
-		<span class="hljs-string">&#x27;sm&#x27;</span>: <span class="hljs-number">768px</span>,
-		<span class="hljs-string">&#x27;md&#x27;</span>: <span class="hljs-number">1200px</span>,
-		<span class="hljs-string">&#x27;lg&#x27;</span>: <span class="hljs-number">1440px</span>,
+		<span class="hljs-string">'sm'</span>: <span class="hljs-number">768px</span>,
+		<span class="hljs-string">'md'</span>: <span class="hljs-number">1200px</span>,
+		<span class="hljs-string">'lg'</span>: <span class="hljs-number">1440px</span>,
 	),
 );
 
-<span class="hljs-keyword">@debug</span> map.get(ml.<span class="hljs-variable">$at-rules-cfg</span>, <span class="hljs-string">&#x27;breakpoints&#x27;</span>);
+<span class="hljs-keyword">@debug</span> map.get(ml.<span class="hljs-variable">$at-rules-cfg</span>, <span class="hljs-string">'breakpoints'</span>);
 <span class="hljs-comment">// (</span>
-<span class="hljs-comment">//   &#x27;sm&#x27;: 768px,</span>
-<span class="hljs-comment">//   &#x27;md&#x27;: 1200px,</span>
-<span class="hljs-comment">//   &#x27;lg&#x27;: 1440px,</span>
+<span class="hljs-comment">//   'sm': 768px,</span>
+<span class="hljs-comment">//   'md': 1200px,</span>
+<span class="hljs-comment">//   'lg': 1440px,</span>
 <span class="hljs-comment">// )</span>
 </code></pre>
 

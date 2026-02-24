@@ -261,10 +261,10 @@
           <div class="kss-description">
             <p>Standard methods include creating through config and using <code>mk-</code> <a href="section-sass-tools.html#kssref-sass-tools-mixins-utils-mk_util">mixins</a>. As the values of utilities, you can use a list or map. The generation syntax can be used both in the names of utilities/groups and in the values.</p>
 <pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(
-	<span class="hljs-string">&#x27;Mxw&#x27;</span>,
+	<span class="hljs-string">'Mxw'</span>,
 	(
-		<span class="hljs-string">&#x27;cardXs&#x27;</span>: <span class="hljs-number">12</span>r,
-		<span class="hljs-string">&#x27;sm0&#x27;</span>: <span class="hljs-number">560px</span>,
+		<span class="hljs-string">'cardXs'</span>: <span class="hljs-number">12</span>r,
+		<span class="hljs-string">'sm0'</span>: <span class="hljs-number">560px</span>,
 	)
 );
 
@@ -309,10 +309,10 @@
 
           <div class="kss-description">
             <p>The main method of creating utilities - in config. Use map <code>$utils</code>. As keys, specify the names of utilities or groups.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut&#x27;</span> with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut'</span> with (
 	<span class="hljs-variable">$utils</span>: (
-		<span class="hljs-string">&#x27;D&#x27;</span>: (<span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-string">&#x27;n&#x27;</span>),
-		<span class="hljs-string">&#x27;xl_P&#x27;</span>: <span class="hljs-number">10</span>e,
+		<span class="hljs-string">'D'</span>: (<span class="hljs-string">''</span>, <span class="hljs-string">'n'</span>),
+		<span class="hljs-string">'xl_P'</span>: <span class="hljs-number">10</span>e,
 	)
 );
 
@@ -329,7 +329,7 @@
 	<span class="hljs-attribute">padding</span>: <span class="hljs-number">10em</span>;
 }
 
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">1200px</span>) {
+<span class="hljs-keyword">@media</span> (min-width: <span class="hljs-number">1200px</span>) {
 	<span class="hljs-selector-class">.xl_P10e</span> {
 		<span class="hljs-attribute">padding</span>: <span class="hljs-number">10em</span>;
 	}
@@ -365,7 +365,7 @@
 
           <div class="kss-description">
             <p>For mass generation utilities, you can use groups. Existing groups can be found <a href="section-general_reference.html#kssref-general_reference-groups">here</a>, and you can add new ones to <code>$utils-groups</code> map.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-utils-group(<span class="hljs-string">&#x27;Paddings&#x27;</span>, <span class="hljs-number">150</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-utils-group(<span class="hljs-string">'Paddings'</span>, <span class="hljs-number">150</span>);
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-class">.P150</span> {
@@ -412,7 +412,7 @@
 
           <div class="kss-description">
             <p>To generate the values of the utility with all the keywords, use <code>KW</code> in the list or map of values. You can also get a specific keywords group from <code>common</code> section of the utils registry. To do this, specify the name of the group through the dot: <code>KW.colors</code></p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;Ec&#x27;</span>, <span class="hljs-string">&#x27;KW&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'Ec'</span>, <span class="hljs-string">'KW'</span>);
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-class">.Ec-s</span> {
@@ -555,8 +555,8 @@
 
           <div class="kss-description">
             <p>May consist of three or four arguments. General form: <br><code>[$colors-list, $shades, $step, $function: 'adjust']</code>.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;C&#x27;</span>, (
-	[<span class="hljs-string">&#x27;prm0&#x27;</span>, <span class="hljs-string">&#x27;2_h StOl&#x27;</span>, (<span class="hljs-string">&#x27;alpha&#x27;</span>: <span class="hljs-number">0.2</span>, <span class="hljs-string">&#x27;green&#x27;</span>: <span class="hljs-number">30</span>)],
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'C'</span>, (
+	[<span class="hljs-string">'prm0'</span>, <span class="hljs-string">'2_h StOl'</span>, (<span class="hljs-string">'alpha'</span>: <span class="hljs-number">0.2</span>, <span class="hljs-string">'green'</span>: <span class="hljs-number">30</span>)],
 ));
 
 <span class="hljs-comment">// CSS</span>
@@ -636,7 +636,7 @@
 
           <div class="kss-description">
             <p>Number is default range syntax. You can use it with any utility if another range generator is not specified in its options. May consist of 2 or 3 arguments. General form: <br><code>[$start, $end, $step: 1]</code>.<br> In the <code>$start</code> value, and only in it, you can specify a measurement unit, as well as the utility components.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;Bdw&#x27;</span>, ([<span class="hljs-number">2</span>u, <span class="hljs-number">4</span>],));
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'Bdw'</span>, ([<span class="hljs-number">2</span>u, <span class="hljs-number">4</span>],));
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-class">.Bdw2u</span> {
@@ -680,7 +680,7 @@
           <div class="kss-description">
             <p>If you want to create only a few utilities with specific values or components, you can use the <a href="section-sass-tools.html#kssref-sass-tools-mixins-utils-apply">apply</a> mixin. If you call it outside another rule, it will generate the specified utilities:</p>
 <pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.apply(
-	<span class="hljs-string">&#x27;-Gdl-r,#0f0;30p,#00f;80p,red -Drps10;15;#00f,20;2r;5;#0ff&#x27;</span>
+	<span class="hljs-string">'-Gdl-r,#0f0;30p,#00f;80p,red -Drps10;15;#00f,20;2r;5;#0ff'</span>
 );
 
 <span class="hljs-comment">// CSS</span>
@@ -722,12 +722,12 @@
 
           <div class="kss-description">
             <p>As you remember, the library part of mlut contains <a href="section-css_lib.html#kssref-css_lib-styles">basic styles</a>, <a href="section-css_lib.html#kssref-css_lib-helpers">helpers</a> and utilities. Note that the CSS library is in the <a href="https://www.npmjs.com/package/@mlut/core">@mlut/core</a> package, so you need to import it from there. This package is installed when mlut is used in any way. By default, only basic styles and helpers are included:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/tools&#x27;</span> as ml;
-<span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/dist/css&#x27;</span>;
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/tools'</span> as ml;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/dist/css'</span>;
 </code></pre>
 <p>But you can include only the necessary parts of the core:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/tools&#x27;</span> as ml;
-<span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/dist/css/helpers&#x27;</span>;
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/tools'</span> as ml;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/dist/css/helpers'</span>;
 </code></pre>
 <p><em>Note</em>: for convenience, in the examples we will include mlut as if we specified a Sass load path, so that each time we do not write <code>../../node_modules/mlut</code>. It is default behavior with JIT engine</p>
 
@@ -760,9 +760,9 @@
 
           <div class="kss-description">
             <p>This section contains modules with ready-made utilities and a module for initialization. To get all utilities, just include <code>css/utils</code>. If you want to load only certain sets, then include them, and then include the initialization module:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/dist/css/utils/box-model&#x27;</span>;
-<span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/dist/css/utils/text&#x27;</span>;
-<span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/dist/css/utils/init&#x27;</span>;
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/dist/css/utils/box-model'</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/dist/css/utils/text'</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/dist/css/utils/init'</span>;
 </code></pre>
 <p>To load basic utils without generating them, include the <code>css/utils/load</code> module. This may be needed when using <a href="section-addons.html">addons</a>.</p>
 <p>All utilities are sets to <code>$utils-map</code> by the key <code>core</code>.</p>
@@ -801,16 +801,16 @@
 <li><code>/ban</code> - exclude these utilities, <code>list</code></li>
 <li><code>/override</code> - <code>map</code> with utilities and values, which will be merged into <code>$utils-map</code> with overwriting. Passing <code>null</code> will clear <code>$utils-map</code>.</li>
 </ul>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/dist/css/utils&#x27;</span> with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/dist/css/utils'</span> with (
 	<span class="hljs-variable">$utils</span>: (
-		<span class="hljs-string">&#x27;C&#x27;</span>: red,
+		<span class="hljs-string">'C'</span>: red,
 
-		<span class="hljs-string">&#x27;/override&#x27;</span>: (
-			<span class="hljs-string">&#x27;M&#x27;</span>: (<span class="hljs-number">1</span>u, <span class="hljs-number">2</span>r)
+		<span class="hljs-string">'/override'</span>: (
+			<span class="hljs-string">'M'</span>: (<span class="hljs-number">1</span>u, <span class="hljs-number">2</span>r)
 		),
 
-		<span class="hljs-string">&#x27;/allow&#x27;</span>: (
-			<span class="hljs-string">&#x27;M&#x27;</span>, <span class="hljs-string">&#x27;C&#x27;</span>,
+		<span class="hljs-string">'/allow'</span>: (
+			<span class="hljs-string">'M'</span>, <span class="hljs-string">'C'</span>,
 		),
 	),
 );
@@ -892,23 +892,23 @@
 
           <div class="kss-description">
             <p>To add or change breakpoints, use the <code>$breakpoints</code> map.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with (
 	<span class="hljs-variable">$breakpoints</span>: (
-		<span class="hljs-string">&#x27;xxxl&#x27;</span>: <span class="hljs-number">1600px</span>,
-		<span class="hljs-string">&#x27;sm&#x27;</span>: <span class="hljs-number">480px</span>,
+		<span class="hljs-string">'xxxl'</span>: <span class="hljs-number">1600px</span>,
+		<span class="hljs-string">'sm'</span>: <span class="hljs-number">480px</span>,
 	),
 );
 
-<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;&lt;sm_W15 xxxl_W150&#x27;</span>);
+<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'&lt;sm_W15 xxxl_W150'</span>);
 
 <span class="hljs-comment">// CSS</span>
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">479px</span>) {
+<span class="hljs-keyword">@media</span> (max-width: <span class="hljs-number">479px</span>) {
   .\&lt;sm_W15 {
     <span class="hljs-attribute">width</span>: <span class="hljs-number">15px</span>;
   }
 }
 
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">1600px</span>) {
+<span class="hljs-keyword">@media</span> (min-width: <span class="hljs-number">1600px</span>) {
   <span class="hljs-selector-class">.xxxl_W150</span> {
     <span class="hljs-attribute">width</span>: <span class="hljs-number">150px</span>;
   }
@@ -946,13 +946,13 @@
           <div class="kss-description">
             <p>There are 2 ways to add colors:</p>
 <div>1. with <code>$colors</code> map</div>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with (
 	<span class="hljs-variable">$colors</span>: (
-		<span class="hljs-string">&#x27;red22&#x27;</span>: <span class="hljs-number">#c00</span>,
+		<span class="hljs-string">'red22'</span>: <span class="hljs-number">#c00</span>,
 	),
 );
 
-<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;Bdc-red22&#x27;</span>);
+<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'Bdc-red22'</span>);
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-class">.Bdc-red22</span> {
@@ -960,17 +960,17 @@
 }
 </code></pre>
 <div>2. when generating any utility or utility group, which has a <code>color</code> type of conversion. If you specify a map with colors as values, then they will be added to the settings and they can be used below in other values of utilities</div>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/tools&#x27;</span> as ml;
-<span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/dist/css/utils&#x27;</span> with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/tools'</span> as ml;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/dist/css/utils'</span> with (
 	<span class="hljs-variable">$utils</span>: (
-		<span class="hljs-string">&#x27;C&#x27;</span>: (
-			<span class="hljs-string">&#x27;red100&#x27;</span>: <span class="hljs-number">#911</span>
+		<span class="hljs-string">'C'</span>: (
+			<span class="hljs-string">'red100'</span>: <span class="hljs-number">#911</span>
 		),
-		<span class="hljs-string">&#x27;/override&#x27;</span>: null,
+		<span class="hljs-string">'/override'</span>: null,
 	),
 );
 
-<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;Bgc-red100&#x27;</span>);
+<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'Bgc-red100'</span>);
 
 <span class="hljs-comment">// CSS</span>
 ...
@@ -1012,40 +1012,40 @@
 
           <div class="kss-description">
             <p>For long media queries, you can create a short alias. Such alias is called custom media query. Use <code>$at-rures-data</code> map in the configuration. <em>Note</em> when using custom media query, a hyphen is added to their names.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with (
 	<span class="hljs-variable">$at-rules-data</span>: (
-		<span class="hljs-string">&#x27;media&#x27;</span>: (
-			<span class="hljs-string">&#x27;custom&#x27;</span>: (
-				<span class="hljs-string">&#x27;myMq&#x27;</span>: <span class="hljs-string">&#x27;(orientation: landscape) and (min-height: 20rem)&#x27;</span>,
+		<span class="hljs-string">'media'</span>: (
+			<span class="hljs-string">'custom'</span>: (
+				<span class="hljs-string">'myMq'</span>: <span class="hljs-string">'(orientation: landscape) and (min-height: 20rem)'</span>,
 			),
 		),
 	),
 );
 
-<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;@:-myMq_D-f&#x27;</span>);
+<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'@:-myMq_D-f'</span>);
 
 <span class="hljs-comment">// CSS</span>
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">orientation</span>: landscape) <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-height</span>: <span class="hljs-number">20rem</span>) {
+<span class="hljs-keyword">@media</span> (orientation: landscape) <span class="hljs-keyword">and</span> (min-height: <span class="hljs-number">20rem</span>) {
   .\@\:-myMq_D-f {
     <span class="hljs-attribute">display</span>: flex;
   }
 }
 </code></pre>
 <p>You can also add a new media feature. They are stored in the same registry as the utilities, in the <code>media</code> section. Added as well as utilities.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with (
 	<span class="hljs-variable">$utils-data</span>: (
-		<span class="hljs-string">&#x27;media&#x27;</span>: (
-			<span class="hljs-string">&#x27;registry&#x27;</span>: (
-				<span class="hljs-string">&#x27;st&#x27;</span>: <span class="hljs-attribute">scripting</span>,
+		<span class="hljs-string">'media'</span>: (
+			<span class="hljs-string">'registry'</span>: (
+				<span class="hljs-string">'st'</span>: scripting,
 			),
 		),
 	),
 );
 
-<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;@:st-n_D&#x27;</span>);
+<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'@:st-n_D'</span>);
 
 <span class="hljs-comment">// CSS</span>
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">scripting</span>: none) {
+<span class="hljs-keyword">@media</span> (scripting: none) {
   .\@\:st-n_D {
     <span class="hljs-attribute">display</span>: block;
   }
@@ -1081,16 +1081,16 @@
 
           <div class="kss-description">
             <p>To create a new utility, add it to the registry during configuration. As a value, you can specify CSS property or map with options.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with (
 	<span class="hljs-variable">$utils-data</span>: (
-		<span class="hljs-string">&#x27;utils&#x27;</span>: (
-			<span class="hljs-string">&#x27;registry&#x27;</span>: (
-				<span class="hljs-string">&#x27;Mil&#x27;</span>: margin-inline,
-				<span class="hljs-string">&#x27;Ir&#x27;</span>: (
-					<span class="hljs-string">&#x27;properties&#x27;</span>: image-rendering,
-					<span class="hljs-string">&#x27;keywords&#x27;</span>: (
-						<span class="hljs-string">&#x27;ce&#x27;</span>: crisp-edges,
-						<span class="hljs-string">&#x27;p&#x27;</span>: pixelated,
+		<span class="hljs-string">'utils'</span>: (
+			<span class="hljs-string">'registry'</span>: (
+				<span class="hljs-string">'Mil'</span>: margin-inline,
+				<span class="hljs-string">'Ir'</span>: (
+					<span class="hljs-string">'properties'</span>: image-rendering,
+					<span class="hljs-string">'keywords'</span>: (
+						<span class="hljs-string">'ce'</span>: crisp-edges,
+						<span class="hljs-string">'p'</span>: pixelated,
 					),
 				),
 			),
@@ -1098,7 +1098,7 @@
 	),
 );
 
-<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;Mil-15 Ir-p&#x27;</span>);
+<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'Mil-15 Ir-p'</span>);
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-class">.Mil-15</span> {
@@ -1110,15 +1110,15 @@
 }
 </code></pre>
 <p>You can create a utility for changing one property even without registration <s>and SMS</s>. Just specify the name and values. If the name of the utility begins with <code>-</code>, then it will control the custom property.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/tools&#x27;</span> as ml;
-<span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/dist/css/utils&#x27;</span> with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/tools'</span> as ml;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/dist/css/utils'</span> with (
 	<span class="hljs-variable">$utils</span>: (
-		<span class="hljs-string">&#x27;display&#x27;</span>: (flex, <span class="hljs-number">5</span>r),
-		<span class="hljs-string">&#x27;/override&#x27;</span>: null,
+		<span class="hljs-string">'display'</span>: (flex, <span class="hljs-number">5</span>r),
+		<span class="hljs-string">'/override'</span>: null,
 	),
 );
 
-<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;-MySize-a&#x27;</span>);
+<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'-MySize-a'</span>);
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-class">.display-flex</span> {
@@ -1165,11 +1165,11 @@
           <div class="kss-description">
             <p>Generic CSS includes resetting styles, setting <code>box-sizing</code> etc. You can customize or completely remove these styles. Their configuration is in <code>$general-config</code>, by the key <code>generic-css</code>.
 The configuration is a <code>map</code>, each element of which is a boolean flag. If set to <code>true</code>, the specified CSS will be generated. To disable these styles, pass <code>null</code> instead of a map.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut&#x27;</span> with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut'</span> with (
 	<span class="hljs-variable">$general-config</span>: (
-		<span class="hljs-string">&#x27;generic-css&#x27;</span>: (
-			<span class="hljs-string">&#x27;svg-fill-cur-color&#x27;</span>: true,
-			<span class="hljs-string">&#x27;reset-border&#x27;</span>: true,
+		<span class="hljs-string">'generic-css'</span>: (
+			<span class="hljs-string">'svg-fill-cur-color'</span>: true,
+			<span class="hljs-string">'reset-border'</span>: true,
 		)
 	),
 );

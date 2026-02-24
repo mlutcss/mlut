@@ -97,33 +97,33 @@
 
           <div class="kss-description">
             <p>In @supports rule, you can check the support of properties and values of any utility from the registry. To check the current value of the utility used, leave the rule blank.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;Ps&#x27;</span>, <span class="hljs-string">&#x27;@s:d-flr_sk&#x27;</span>);
-<span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;D&#x27;</span>, <span class="hljs-string">&#x27;@s_f&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'Ps'</span>, <span class="hljs-string">'@s:d-flr_sk'</span>);
+<span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'D'</span>, <span class="hljs-string">'@s_f'</span>);
 
 <span class="hljs-comment">// CSS</span>
-<span class="hljs-keyword">@supports</span> (<span class="hljs-attribute">display</span>: flow-root) {
+<span class="hljs-keyword">@supports</span> (display: flow-root) {
   .\<span class="hljs-keyword">@s</span>\:d-flr_Ps-sk {
     <span class="hljs-attribute">position</span>: sticky;
   }
 }
 
-<span class="hljs-keyword">@supports</span> (<span class="hljs-attribute">display</span>: flex) {
+<span class="hljs-keyword">@supports</span> (display: flex) {
   .\<span class="hljs-keyword">@s</span>_D-f {
 		<span class="hljs-attribute">display</span>: flex;
 	}
 }
 </code></pre>
 <p>To check the property, it is not necessary to specify the value:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-supports(<span class="hljs-string">&#x27;apcr&#x27;</span>); <span class="hljs-comment">// (aspect-ratio: initial)</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-supports(<span class="hljs-string">'apcr'</span>); <span class="hljs-comment">// (aspect-ratio: initial)</span>
 </code></pre>
 <p>You can also use this-utility alias <code>&amp;</code> in a complex condition.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-supports(<span class="hljs-string">&#x27;d-ig:&amp;&#x27;</span>, (<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Jc&#x27;</span>, <span class="hljs-string">&#x27;value&#x27;</span>: <span class="hljs-string">&#x27;-se&#x27;</span>); <span class="hljs-comment">// (display: inline-grid) and (justify-content: space-evenly)</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-supports(<span class="hljs-string">'d-ig:&amp;'</span>, (<span class="hljs-string">'name'</span>: <span class="hljs-string">'Jc'</span>, <span class="hljs-string">'value'</span>: <span class="hljs-string">'-se'</span>); <span class="hljs-comment">// (display: inline-grid) and (justify-content: space-evenly)</span>
 </code></pre>
 <p>To check the lack of support, add an operator <code>!</code> before the utility:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-supports(<span class="hljs-string">&#x27;!d-ig&#x27;</span>); <span class="hljs-comment">// (not (display: inline-grid))</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-supports(<span class="hljs-string">'!d-ig'</span>); <span class="hljs-comment">// (not (display: inline-grid))</span>
 </code></pre>
 <p>Please note that in one supports rule, only one type of the operator is supported for a combination of expressions. When using both immediately, an error will appear</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-supports(<span class="hljs-string">&#x27;ps-sc,h1vh:m-a&#x27;</span>); <span class="hljs-comment">// ERROR: Different operators are not allowed in one abbreviations list</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.convert-ar-supports(<span class="hljs-string">'ps-sc,h1vh:m-a'</span>); <span class="hljs-comment">// ERROR: Different operators are not allowed in one abbreviations list</span>
 </code></pre>
 
           </div>

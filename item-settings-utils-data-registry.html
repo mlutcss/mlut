@@ -97,8 +97,8 @@
 
           <div class="kss-description">
             <p>The registry stores data of all utilities. You can get these data with the following path:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml;
-map<span class="hljs-selector-class">.get</span>(ml.$utils-db, &#x27;utils&#x27;, &#x27;registry&#x27;, &#x27;&lt;utility-name&gt;&#x27;);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml;
+<span class="hljs-selector-tag">map</span><span class="hljs-selector-class">.get</span>(ml.<span class="hljs-variable">$utils-db</span>, 'utils', 'registry', '&lt;utility-name&gt;');
 </code></pre>
 <p>The registry is a map, the keys in which are the names of the utility, and the value can be, both a string with 1 property and a map with options. Below will be examined in detail the utility options. You can familiarize yourself with the utility registry on <a href="section-utils-reference.html">this</a> page, and the registry of media features is available <a href="section-general_reference.html#kssref-general_reference-media">here</a>.</p>
 

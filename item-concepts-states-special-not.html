@@ -97,16 +97,16 @@
 
           <div class="kss-description">
             <p>To use a pseudo-class <code>not</code>, add <code>! </code> before any part of state:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;D_!fc !input&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'D_!fc !input'</span>, <span class="hljs-string">''</span>);
 
 <span class="hljs-comment">// CSS</span>
 ...
 
-<span class="hljs-selector-class">.D_</span>\!fc<span class="hljs-selector-pseudo">:not</span>(:first-child) {
+<span class="hljs-selector-class">.D_</span>\!fc<span class="hljs-selector-pseudo">:not</span>(<span class="hljs-selector-pseudo">:first-child</span>) {
 	<span class="hljs-attribute">display</span>: block;
 }
 
-<span class="hljs-selector-class">.D_</span>\!<span class="hljs-selector-tag">input</span><span class="hljs-selector-pseudo">:not</span>(input) {
+<span class="hljs-selector-class">.D_</span>\!<span class="hljs-selector-tag">input</span><span class="hljs-selector-pseudo">:not</span>(<span class="hljs-selector-tag">input</span>) {
 	<span class="hljs-attribute">display</span>: block;
 }
 </code></pre>

@@ -97,23 +97,23 @@
 
           <div class="kss-description">
             <p>To add or change breakpoints, use the <code>$breakpoints</code> map.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with (
 	<span class="hljs-variable">$breakpoints</span>: (
-		<span class="hljs-string">&#x27;xxxl&#x27;</span>: <span class="hljs-number">1600px</span>,
-		<span class="hljs-string">&#x27;sm&#x27;</span>: <span class="hljs-number">480px</span>,
+		<span class="hljs-string">'xxxl'</span>: <span class="hljs-number">1600px</span>,
+		<span class="hljs-string">'sm'</span>: <span class="hljs-number">480px</span>,
 	),
 );
 
-<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;&lt;sm_W15 xxxl_W150&#x27;</span>);
+<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'&lt;sm_W15 xxxl_W150'</span>);
 
 <span class="hljs-comment">// CSS</span>
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">479px</span>) {
+<span class="hljs-keyword">@media</span> (max-width: <span class="hljs-number">479px</span>) {
   .\&lt;sm_W15 {
     <span class="hljs-attribute">width</span>: <span class="hljs-number">15px</span>;
   }
 }
 
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">1600px</span>) {
+<span class="hljs-keyword">@media</span> (min-width: <span class="hljs-number">1600px</span>) {
   <span class="hljs-selector-class">.xxxl_W150</span> {
     <span class="hljs-attribute">width</span>: <span class="hljs-number">150px</span>;
   }

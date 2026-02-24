@@ -99,10 +99,10 @@
             <p>Creates utilities based on a map or a list with values. Simple examples you can see <a href="section-how_to.html#kssref-how_to-mk_utils">here</a>.</p>
 <p>Even if you started using a map, you can still use the conversion of values. To do this, specify <code>null</code> instead of CSS values. And if you want that CSS value corresponds to the value of the utility, use <code>false</code>:</p>
 <pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(
-	<span class="hljs-string">&#x27;Mxw&#x27;</span>, (
+	<span class="hljs-string">'Mxw'</span>, (
 	<span class="hljs-number">500</span>: false,
-	<span class="hljs-string">&#x27;sm0&#x27;</span>: <span class="hljs-number">560px</span>,
-	<span class="hljs-string">&#x27;n&#x27;</span>: null,
+	<span class="hljs-string">'sm0'</span>: <span class="hljs-number">560px</span>,
+	<span class="hljs-string">'n'</span>: null,
 	[<span class="hljs-number">5</span>e, <span class="hljs-number">7</span>]: null,
 ));
 
@@ -127,14 +127,14 @@
 </code></pre>
 <p>Do not forget that you can use Generation Syntax for any utility value. This is available, both in a map of values and in the list.</p>
 <pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(
-	<span class="hljs-string">&#x27;Mxw&#x27;</span>, (
-	<span class="hljs-string">&#x27;sm0_ af bf&#x27;</span>: <span class="hljs-number">560px</span>,
+	<span class="hljs-string">'Mxw'</span>, (
+	<span class="hljs-string">'sm0_ af bf'</span>: <span class="hljs-number">560px</span>,
 ));
 
 <span class="hljs-keyword">@include</span> ml.mk-util(
-	<span class="hljs-string">&#x27;Mxw&#x27;</span>, (
-	<span class="hljs-string">&#x27;:f _100_ +:h&#x27;</span>,
-	<span class="hljs-string">&#x27;@:pr _10p&#x27;</span>,
+	<span class="hljs-string">'Mxw'</span>, (
+	<span class="hljs-string">':f _100_ +:h'</span>,
+	<span class="hljs-string">'@:pr _10p'</span>,
 ));
 </code></pre>
 

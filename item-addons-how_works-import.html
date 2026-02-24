@@ -97,19 +97,19 @@
 
           <div class="kss-description">
             <p>To import addon that <strong>contains utilities</strong> as CSS (AOT), you will need:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@charset</span> <span class="hljs-string">&quot;utf-8&quot;</span>;
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@charset</span> <span class="hljs-string">"utf-8"</span>;
 
 <span class="hljs-comment">// import tools</span>
-<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;@mlut/core/tools&quot;</span> as ml;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">"@mlut/core/tools"</span> as ml;
 
 <span class="hljs-comment">// optional import styles from the core that you need: helpers, utilities, etc</span>
-<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;@mlut/core/dist/css/base-setup&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">"@mlut/core/dist/css/base-setup"</span>;
 
 <span class="hljs-comment">// import addons</span>
-<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;@mlut/core/dist/addons/demo-theme&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">"@mlut/core/dist/addons/demo-theme"</span>;
 
 <span class="hljs-comment">// import a module that initialize utilities</span>
-<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;@mlut/core/dist/css/utils/init&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">"@mlut/core/dist/css/utils/init"</span>;
 </code></pre>
 <p>You can also cancel the generation of all utilities from the addon, and get only the necessary values from there. To do this, pass the parameter to the config of the addon: <code>$generate: false</code>.</p>
 <p>If the addon contains only a ready-made Sass/CSS code, it can be included in any order after tools. Addon also may have their own settings. They can be seen in the code or documentation.</p>

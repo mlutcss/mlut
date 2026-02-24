@@ -711,10 +711,10 @@ Final value in ems rounded because accuracy more than two decimal places does no
 
           <div class="kss-description">
             <p>Convert string to number. Returns null if conversion is not possible.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.str2n(<span class="hljs-string">&#x27;1.5&#x27;</span>); <span class="hljs-comment">// 1.5</span>
-<span class="hljs-keyword">@debug</span> ml.str2n(<span class="hljs-string">&#x27;1x5&#x27;</span>); <span class="hljs-comment">// 1</span>
-<span class="hljs-keyword">@debug</span> ml.str2n(<span class="hljs-string">&#x27;xx&#x27;</span>); <span class="hljs-comment">// null</span>
-<span class="hljs-keyword">@debug</span> ml.str2n(<span class="hljs-string">&#x27;1x5&#x27;</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// 1x5</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.str2n(<span class="hljs-string">'1.5'</span>); <span class="hljs-comment">// 1.5</span>
+<span class="hljs-keyword">@debug</span> ml.str2n(<span class="hljs-string">'1x5'</span>); <span class="hljs-comment">// 1</span>
+<span class="hljs-keyword">@debug</span> ml.str2n(<span class="hljs-string">'xx'</span>); <span class="hljs-comment">// null</span>
+<span class="hljs-keyword">@debug</span> ml.str2n(<span class="hljs-string">'1x5'</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// 1x5</span>
 </code></pre>
 
           </div>
@@ -764,8 +764,8 @@ Final value in ems rounded because accuracy more than two decimal places does no
 
           <div class="kss-description">
             <p>Returns the first index of digit in $str, or <code>null</code> if digits not found</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.str-digit-index(<span class="hljs-string">&#x27;Mb55&#x27;</span>); <span class="hljs-comment">// 3</span>
-<span class="hljs-keyword">@debug</span> ml.str-digit-index(<span class="hljs-string">&#x27;Mt-a&#x27;</span>); <span class="hljs-comment">// null</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.str-digit-index(<span class="hljs-string">'Mb55'</span>); <span class="hljs-comment">// 3</span>
+<span class="hljs-keyword">@debug</span> ml.str-digit-index(<span class="hljs-string">'Mt-a'</span>); <span class="hljs-comment">// null</span>
 </code></pre>
 
           </div>
@@ -806,8 +806,8 @@ Final value in ems rounded because accuracy more than two decimal places does no
 
           <div class="kss-description">
             <p>Escape special characters in value for using it in CSS selector.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.str-escape(<span class="hljs-string">&#x27;:^:&amp;:h&#x27;</span>); <span class="hljs-comment">// &#x27;\\:\\^\\:\\&amp;\\:h&#x27;</span>
-<span class="hljs-keyword">@debug</span> ml.str-escape(<span class="hljs-number">1.5</span>); <span class="hljs-comment">// &#x27;1\\.5&#x27;</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.str-escape(<span class="hljs-string">':^:&amp;:h'</span>); <span class="hljs-comment">// '\\:\\^\\:\\&amp;\\:h'</span>
+<span class="hljs-keyword">@debug</span> ml.str-escape(<span class="hljs-number">1.5</span>); <span class="hljs-comment">// '1\\.5'</span>
 </code></pre>
 
           </div>
@@ -848,7 +848,7 @@ Final value in ems rounded because accuracy more than two decimal places does no
 
           <div class="kss-description">
             <p>Converts the first letter of string to uppercase</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.str-ucfirst(<span class="hljs-string">&#x27;fxg1&#x27;</span>); <span class="hljs-comment">// &#x27;Fxg1&#x27;</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.str-ucfirst(<span class="hljs-string">'fxg1'</span>); <span class="hljs-comment">// 'Fxg1'</span>
 </code></pre>
 
           </div>
@@ -919,7 +919,7 @@ Final value in ems rounded because accuracy more than two decimal places does no
 
           <div class="kss-description">
             <p>Get the CSS property, which corresponds to the utility from registry.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.util-prop(<span class="hljs-string">&#x27;D&#x27;</span>); <span class="hljs-comment">// &#x27;display&#x27;</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.util-prop(<span class="hljs-string">'D'</span>); <span class="hljs-comment">// 'display'</span>
 </code></pre>
 
           </div>
@@ -987,9 +987,9 @@ Final value in ems rounded because accuracy more than two decimal places does no
 
           <div class="kss-description">
             <p>Get CSS value of utility.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;D&#x27;</span>); <span class="hljs-comment">// &#x27;block&#x27;</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;C#c06*80&#x27;</span>); <span class="hljs-comment">// rgba(204, 0, 102, 0.8)</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;M3gg;a;gSm&#x27;</span>); <span class="hljs-comment">// calc(var(--ml-gg) * 3) auto 520px</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'D'</span>); <span class="hljs-comment">// 'block'</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'C#c06*80'</span>); <span class="hljs-comment">// rgba(204, 0, 102, 0.8)</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'M3gg;a;gSm'</span>); <span class="hljs-comment">// calc(var(--ml-gg) * 3) auto 520px</span>
 </code></pre>
 
           </div>
@@ -1095,7 +1095,7 @@ Final value in ems rounded because accuracy more than two decimal places does no
 <li>two from zero: <code>max-width</code></li>
 <li>two numbers: range</li>
 </ul>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.bp(<span class="hljs-string">&#x27;&lt;sm,md:lg&#x27;</span>) {
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.bp(<span class="hljs-string">'&lt;sm,md:lg'</span>) {
 	<span class="hljs-selector-class">.inp--common</span> {
 		<span class="hljs-attribute">padding-left</span>: <span class="hljs-number">48px</span>;
 	}
@@ -1114,19 +1114,19 @@ Final value in ems rounded because accuracy more than two decimal places does no
 }
 
 <span class="hljs-comment">// CSS</span>
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">519px</span>), (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">768px</span>) <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">991px</span>) {
+<span class="hljs-keyword">@media</span> (max-width: <span class="hljs-number">519px</span>), (min-width: <span class="hljs-number">768px</span>) <span class="hljs-keyword">and</span> (max-width: <span class="hljs-number">991px</span>) {
 	<span class="hljs-selector-class">.inp--common</span> {
 		<span class="hljs-attribute">padding-left</span>: <span class="hljs-number">48px</span>;
 	}
 }
 
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">599px</span>) {
+<span class="hljs-keyword">@media</span> (max-width: <span class="hljs-number">599px</span>) {
 	<span class="hljs-selector-class">.btn__icon</span> {
 		<span class="hljs-attribute">margin-left</span>: <span class="hljs-number">18px</span>;
 	}
 }
 
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">16em</span>) <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">31.94em</span>) {
+<span class="hljs-keyword">@media</span> (min-width: <span class="hljs-number">16em</span>) <span class="hljs-keyword">and</span> (max-width: <span class="hljs-number">31.94em</span>) {
 	<span class="hljs-selector-class">.btn__icon</span> {
 		<span class="hljs-attribute">margin-top</span>: <span class="hljs-number">8px</span>;
 	}
@@ -1177,15 +1177,15 @@ Final value in ems rounded because accuracy more than two decimal places does no
 
           <div class="kss-description">
             <p>Generate at-rules from the string with space separated abbreviations. Used <a href="section-concepts.html#kssref-concepts-at_rules">syntax</a> for at-rules from utilities.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-ar(<span class="hljs-string">&#x27;@s:apcr4/3@:dm&#x27;</span>) using (<span class="hljs-variable">$ar</span>) {
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-ar(<span class="hljs-string">'@s:apcr4/3@:dm'</span>) using (<span class="hljs-variable">$ar</span>) {
 	<span class="hljs-selector-class">.block</span> {
 		<span class="hljs-attribute">display</span>: inline-grid;
 	}
 }
 
 <span class="hljs-comment">// CSS</span>
-<span class="hljs-keyword">@supports</span> (<span class="hljs-attribute">aspect-ratio</span>: <span class="hljs-number">4</span>/<span class="hljs-number">3</span>) {
-	<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">display-mode</span>: fullscreen) {
+<span class="hljs-keyword">@supports</span> (aspect-ratio: <span class="hljs-number">4</span>/<span class="hljs-number">3</span>) {
+	<span class="hljs-keyword">@media</span> (display-mode: fullscreen) {
 		<span class="hljs-selector-class">.block</span> {
 			<span class="hljs-attribute">display</span>: inline-grid;
 		}
@@ -1279,7 +1279,7 @@ Final value in ems rounded because accuracy more than two decimal places does no
 <pre class="hljs"><code class="language-scss"><span class="hljs-selector-class">.card</span> {
 	<span class="hljs-attribute">display</span>: block;
 
-	<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;P2u Fns1r xl_P5u&#x27;</span>);
+	<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'P2u Fns1r xl_P5u'</span>);
 }
 
 <span class="hljs-comment">// CSS</span>
@@ -1289,7 +1289,7 @@ Final value in ems rounded because accuracy more than two decimal places does no
 	<span class="hljs-attribute">font-size</span>: <span class="hljs-number">1rem</span>;
 }
 
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">1200px</span>) {
+<span class="hljs-keyword">@media</span> (min-width: <span class="hljs-number">1200px</span>) {
 	<span class="hljs-selector-class">.card</span> {
 		<span class="hljs-attribute">padding</span>: <span class="hljs-number">1.25rem</span>;
 	}
@@ -1297,7 +1297,7 @@ Final value in ems rounded because accuracy more than two decimal places does no
 </code></pre>
 <p>If a mixin is called outside CSS rule, then creates utilities from the list. See examples <a href="section-how_to.html#kssref-how_to-config">here</a>.</p>
 <p>Apply has some restrictions. If you try to use a utility with <code>pre-state</code> in it without a clear indication that this is a state, you will get an error. This happens because the Parser cannot distinguish <code>pre-state</code> from the utility itself. To create such utilities, pass a list of utilities as a list of strings, separating the components of the utility by spaces, as well as in Generation Syntax. Next, pass <code>true</code> in the third argument:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.apply((<span class="hljs-string">&#x27;.js:h:&gt;* _D&#x27;</span>, <span class="hljs-string">&#x27;Lnh2r!_af&#x27;</span>), (), true);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.apply((<span class="hljs-string">'.js:h:&gt;* _D'</span>, <span class="hljs-string">'Lnh2r!_af'</span>), (), true);
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-class">.js</span><span class="hljs-selector-pseudo">:hover</span> &gt; * .\<span class="hljs-selector-class">.js</span>\:h\:\&gt;\*_D {
@@ -1367,10 +1367,10 @@ Final value in ems rounded because accuracy more than two decimal places does no
             <p>Creates utilities based on a map or a list with values. Simple examples you can see <a href="section-how_to.html#kssref-how_to-mk_utils">here</a>.</p>
 <p>Even if you started using a map, you can still use the conversion of values. To do this, specify <code>null</code> instead of CSS values. And if you want that CSS value corresponds to the value of the utility, use <code>false</code>:</p>
 <pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(
-	<span class="hljs-string">&#x27;Mxw&#x27;</span>, (
+	<span class="hljs-string">'Mxw'</span>, (
 	<span class="hljs-number">500</span>: false,
-	<span class="hljs-string">&#x27;sm0&#x27;</span>: <span class="hljs-number">560px</span>,
-	<span class="hljs-string">&#x27;n&#x27;</span>: null,
+	<span class="hljs-string">'sm0'</span>: <span class="hljs-number">560px</span>,
+	<span class="hljs-string">'n'</span>: null,
 	[<span class="hljs-number">5</span>e, <span class="hljs-number">7</span>]: null,
 ));
 
@@ -1395,14 +1395,14 @@ Final value in ems rounded because accuracy more than two decimal places does no
 </code></pre>
 <p>Do not forget that you can use Generation Syntax for any utility value. This is available, both in a map of values and in the list.</p>
 <pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(
-	<span class="hljs-string">&#x27;Mxw&#x27;</span>, (
-	<span class="hljs-string">&#x27;sm0_ af bf&#x27;</span>: <span class="hljs-number">560px</span>,
+	<span class="hljs-string">'Mxw'</span>, (
+	<span class="hljs-string">'sm0_ af bf'</span>: <span class="hljs-number">560px</span>,
 ));
 
 <span class="hljs-keyword">@include</span> ml.mk-util(
-	<span class="hljs-string">&#x27;Mxw&#x27;</span>, (
-	<span class="hljs-string">&#x27;:f _100_ +:h&#x27;</span>,
-	<span class="hljs-string">&#x27;@:pr _10p&#x27;</span>,
+	<span class="hljs-string">'Mxw'</span>, (
+	<span class="hljs-string">':f _100_ +:h'</span>,
+	<span class="hljs-string">'@:pr _10p'</span>,
 ));
 </code></pre>
 
@@ -1469,8 +1469,8 @@ Final value in ems rounded because accuracy more than two decimal places does no
           <div class="kss-description">
             <p>Creates utilities group based on a map or a list with values. Works similarly that <a href="section-sass-tools.html#kssref-sass-tools-mixins-utils-mk_util">mk-util</a> mixin. You can find existing groups <a href="section-general_reference.html#kssref-general_reference-groups">here</a>.</p>
 <pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-utils-group(
-	<span class="hljs-string">&#x27;Margins&#x27;</span>, (
-		<span class="hljs-string">&#x27;xs0&#x27;</span>: <span class="hljs-number">100px</span>,
+	<span class="hljs-string">'Margins'</span>, (
+		<span class="hljs-string">'xs0'</span>: <span class="hljs-number">100px</span>,
 		<span class="hljs-number">150</span>: null
 ));
 

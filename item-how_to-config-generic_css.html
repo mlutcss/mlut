@@ -98,11 +98,11 @@
           <div class="kss-description">
             <p>Generic CSS includes resetting styles, setting <code>box-sizing</code> etc. You can customize or completely remove these styles. Their configuration is in <code>$general-config</code>, by the key <code>generic-css</code>.
 The configuration is a <code>map</code>, each element of which is a boolean flag. If set to <code>true</code>, the specified CSS will be generated. To disable these styles, pass <code>null</code> instead of a map.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut&#x27;</span> with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut'</span> with (
 	<span class="hljs-variable">$general-config</span>: (
-		<span class="hljs-string">&#x27;generic-css&#x27;</span>: (
-			<span class="hljs-string">&#x27;svg-fill-cur-color&#x27;</span>: true,
-			<span class="hljs-string">&#x27;reset-border&#x27;</span>: true,
+		<span class="hljs-string">'generic-css'</span>: (
+			<span class="hljs-string">'svg-fill-cur-color'</span>: true,
+			<span class="hljs-string">'reset-border'</span>: true,
 		)
 	),
 );

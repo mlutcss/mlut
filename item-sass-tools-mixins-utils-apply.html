@@ -100,7 +100,7 @@
 <pre class="hljs"><code class="language-scss"><span class="hljs-selector-class">.card</span> {
 	<span class="hljs-attribute">display</span>: block;
 
-	<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;P2u Fns1r xl_P5u&#x27;</span>);
+	<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'P2u Fns1r xl_P5u'</span>);
 }
 
 <span class="hljs-comment">// CSS</span>
@@ -110,7 +110,7 @@
 	<span class="hljs-attribute">font-size</span>: <span class="hljs-number">1rem</span>;
 }
 
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">1200px</span>) {
+<span class="hljs-keyword">@media</span> (min-width: <span class="hljs-number">1200px</span>) {
 	<span class="hljs-selector-class">.card</span> {
 		<span class="hljs-attribute">padding</span>: <span class="hljs-number">1.25rem</span>;
 	}
@@ -118,7 +118,7 @@
 </code></pre>
 <p>If a mixin is called outside CSS rule, then creates utilities from the list. See examples <a href="section-how_to.html#kssref-how_to-config">here</a>.</p>
 <p>Apply has some restrictions. If you try to use a utility with <code>pre-state</code> in it without a clear indication that this is a state, you will get an error. This happens because the Parser cannot distinguish <code>pre-state</code> from the utility itself. To create such utilities, pass a list of utilities as a list of strings, separating the components of the utility by spaces, as well as in Generation Syntax. Next, pass <code>true</code> in the third argument:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.apply((<span class="hljs-string">&#x27;.js:h:&gt;* _D&#x27;</span>, <span class="hljs-string">&#x27;Lnh2r!_af&#x27;</span>), (), true);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.apply((<span class="hljs-string">'.js:h:&gt;* _D'</span>, <span class="hljs-string">'Lnh2r!_af'</span>), (), true);
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-class">.js</span><span class="hljs-selector-pseudo">:hover</span> &gt; * .\<span class="hljs-selector-class">.js</span>\:h\:\&gt;\*_D {

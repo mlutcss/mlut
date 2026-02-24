@@ -97,7 +97,7 @@
 
           <div class="kss-description">
             <p>In the states you can use pseudo-class, pseudo-elements and almost everything that CSS selectors allow. States are two types: <code>pre</code> and <code>post</code>, depending on the position in the CSS utility selector. In both of them, you can use the same parts.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;:h _D_ af&#x27;</span>, <span class="hljs-string">&#x27;f&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">':h _D_ af'</span>, <span class="hljs-string">'f'</span>);
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-class">.D-f</span> {
@@ -113,7 +113,7 @@
 }
 </code></pre>
 <p>In essence, the states is a simplified <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Selector_list">CSS selector list</a>. To combine the states, use <code>:</code>, and for the separation of selector to the lists - <code>,</code>. For a space in the selector, use <code>::</code> or <code>:</code> if post-state is the first in the list.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;D_ h,f h:b :fc&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'D_ h,f h:b :fc'</span>, <span class="hljs-string">''</span>);
 
 <span class="hljs-comment">// CSS</span>
 ...
@@ -136,7 +136,7 @@
 <li>unconvertible parts will fall into the selector unchanged</li>
 <li>use <code>=</code> to prevent conversion</li>
 </ul>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">&#x27;=a. h1+ _D_ .js:a&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@include</span> ml.mk-util(<span class="hljs-string">'=a. h1+ _D_ .js:a'</span>, <span class="hljs-string">''</span>);
 
 <span class="hljs-comment">// CSS</span>
 ...

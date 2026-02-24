@@ -97,10 +97,10 @@
 
           <div class="kss-description">
             <p>The main method of creating utilities - in config. Use map <code>$utils</code>. As keys, specify the names of utilities or groups.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut&#x27;</span> with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut'</span> with (
 	<span class="hljs-variable">$utils</span>: (
-		<span class="hljs-string">&#x27;D&#x27;</span>: (<span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-string">&#x27;n&#x27;</span>),
-		<span class="hljs-string">&#x27;xl_P&#x27;</span>: <span class="hljs-number">10</span>e,
+		<span class="hljs-string">'D'</span>: (<span class="hljs-string">''</span>, <span class="hljs-string">'n'</span>),
+		<span class="hljs-string">'xl_P'</span>: <span class="hljs-number">10</span>e,
 	)
 );
 
@@ -117,7 +117,7 @@
 	<span class="hljs-attribute">padding</span>: <span class="hljs-number">10em</span>;
 }
 
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">1200px</span>) {
+<span class="hljs-keyword">@media</span> (min-width: <span class="hljs-number">1200px</span>) {
 	<span class="hljs-selector-class">.xl_P10e</span> {
 		<span class="hljs-attribute">padding</span>: <span class="hljs-number">10em</span>;
 	}

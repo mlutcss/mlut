@@ -164,44 +164,44 @@
 <li>maps with data: source suffix - <code>db</code>, user's - <code>data</code></li>
 <li>maps with configs: source suffix - <code>cfg</code>, user's - <code>config</code></li>
 </ul>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> with (
 	<span class="hljs-variable">$utils-config</span>: (
-		<span class="hljs-string">&#x27;states&#x27;</span>: (
-			<span class="hljs-string">&#x27;custom&#x27;</span>: (
-				<span class="hljs-string">&#x27;are&#x27;</span>: <span class="hljs-string">&#x27;[aria-expanded=“true”]&#x27;</span>,
+		<span class="hljs-string">'states'</span>: (
+			<span class="hljs-string">'custom'</span>: (
+				<span class="hljs-string">'are'</span>: <span class="hljs-string">'[aria-expanded=“true”]'</span>,
 			),
 		),
 	),
 	<span class="hljs-variable">$at-rules-data</span>: (
-		<span class="hljs-string">&#x27;container&#x27;</span>: (
-			<span class="hljs-string">&#x27;alias&#x27;</span>: <span class="hljs-string">&#x27;c&#x27;</span>,
+		<span class="hljs-string">'container'</span>: (
+			<span class="hljs-string">'alias'</span>: <span class="hljs-string">'c'</span>,
 		),
 	),
 );
 </code></pre>
 <p>If you want to completely overwrite map or one of its fields, specify <code>null</code>. Below in the configuration use <code>*mapname*-ext</code> and then your values.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with (
 	<span class="hljs-variable">$utils-data</span>: (
-		<span class="hljs-string">&#x27;utils&#x27;</span>: (
-			<span class="hljs-string">&#x27;registry&#x27;</span>: (
-				<span class="hljs-string">&#x27;Ps&#x27;</span>: null,
+		<span class="hljs-string">'utils'</span>: (
+			<span class="hljs-string">'registry'</span>: (
+				<span class="hljs-string">'Ps'</span>: null,
 			),
 		),
 	),
 	<span class="hljs-variable">$utils-data-ext</span>: (
-		<span class="hljs-string">&#x27;utils&#x27;</span>: (
-			<span class="hljs-string">&#x27;registry&#x27;</span>: (
-				<span class="hljs-string">&#x27;Ps&#x27;</span>: (
-					<span class="hljs-string">&#x27;properties&#x27;</span>: position,
-					<span class="hljs-string">&#x27;keywords&#x27;</span>: (<span class="hljs-string">&#x27;sc&#x27;</span>: sticky),
+		<span class="hljs-string">'utils'</span>: (
+			<span class="hljs-string">'registry'</span>: (
+				<span class="hljs-string">'Ps'</span>: (
+					<span class="hljs-string">'properties'</span>: position,
+					<span class="hljs-string">'keywords'</span>: (<span class="hljs-string">'sc'</span>: sticky),
 				),
 			)
 		),
 	),
 );
 
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Ps-sc&#x27;</span>); <span class="hljs-comment">// sticky</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Ps-a&#x27;</span>); <span class="hljs-comment">// a</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Ps-sc'</span>); <span class="hljs-comment">// sticky</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Ps-a'</span>); <span class="hljs-comment">// a</span>
 </code></pre>
 <p>This is relevant for some smaller maps like a <code>$breakpoints</code>. In the specific settings will specified which maps have the possibility of rewriting using <code>ext</code>.</p>
 <p>For the time being, you can look at the structure of maps with the settings in the code, but later it will be described in the documentation.</p>

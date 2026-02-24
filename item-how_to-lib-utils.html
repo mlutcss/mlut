@@ -97,9 +97,9 @@
 
           <div class="kss-description">
             <p>This section contains modules with ready-made utilities and a module for initialization. To get all utilities, just include <code>css/utils</code>. If you want to load only certain sets, then include them, and then include the initialization module:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/dist/css/utils/box-model&#x27;</span>;
-<span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/dist/css/utils/text&#x27;</span>;
-<span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;@mlut/core/dist/css/utils/init&#x27;</span>;
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/dist/css/utils/box-model'</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/dist/css/utils/text'</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">'@mlut/core/dist/css/utils/init'</span>;
 </code></pre>
 <p>To load basic utils without generating them, include the <code>css/utils/load</code> module. This may be needed when using <a href="section-addons.html">addons</a>.</p>
 <p>All utilities are sets to <code>$utils-map</code> by the key <code>core</code>.</p>

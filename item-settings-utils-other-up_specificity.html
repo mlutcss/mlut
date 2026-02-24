@@ -97,11 +97,11 @@
 
           <div class="kss-description">
             <p><code>boolean | string</code><br>Increase the specificity of all utilities at once. When <code>true</code> - to each utility property will be added <code>!important</code>. A string with a CSS selector is also acceptable. It will be added before the utility selector. <br>Defaults to: <code>false</code></p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with (
 	<span class="hljs-variable">$utils-up-specificity</span>: true,
 );
 
-<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;Mt2r&#x27;</span>);
+<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'Mt2r'</span>);
 
 <span class="hljs-comment">// CSS</span>
 <span class="hljs-selector-class">.Mt2r</span> {

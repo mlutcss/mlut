@@ -97,24 +97,24 @@
 
           <div class="kss-description">
             <p>Meta type that corresponds to the default conversion type. If the type of conversion is not specified for the utility, then this will be used. Schema:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-variable">$uv-type-default</span>: list.join((<span class="hljs-string">&#x27;keyword&#x27;</span>, <span class="hljs-string">&#x27;number&#x27;</span>), <span class="hljs-variable">$uv-type-base</span>);
+<pre class="hljs"><code class="language-scss"><span class="hljs-variable">$uv-type-default</span>: list.join((<span class="hljs-string">'keyword'</span>, <span class="hljs-string">'number'</span>), <span class="hljs-variable">$uv-type-base</span>);
 
 <span class="hljs-comment">// and below in the conversion types</span>
-&#x27;conversion-types&#x27;: (
-	<span class="hljs-string">&#x27;default&#x27;</span>: <span class="hljs-variable">$uv-type-default</span>,
+'conversion-types': (
+	<span class="hljs-string">'default'</span>: <span class="hljs-variable">$uv-type-default</span>,
 </code></pre>
 <p>Usage:</p>
 <pre class="hljs"><code class="language-scss"><span class="hljs-comment">// keyword</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Ai-c&#x27;</span>); <span class="hljs-comment">// center</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Bd&#x27;</span>); <span class="hljs-comment">// 1px solid</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Ai-c'</span>); <span class="hljs-comment">// center</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Bd'</span>); <span class="hljs-comment">// 1px solid</span>
 
 <span class="hljs-comment">// number</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;W200&#x27;</span>); <span class="hljs-comment">// 200px</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Ml-0.7&#x27;</span>); <span class="hljs-comment">// -0.7rem</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;P1r;2e;5p&#x27;</span>); <span class="hljs-comment">// 1rem 2em 5%</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Ml-2.5gg&#x27;</span>); <span class="hljs-comment">// calc(var(--ml-gg) * -2.5)</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;W1/3&#x27;</span>); <span class="hljs-comment">// 33.3333333333%</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;W2/$div&#x27;</span>); <span class="hljs-comment">// calc(2 / var(--ml-div) * 100%)</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'W200'</span>); <span class="hljs-comment">// 200px</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Ml-0.7'</span>); <span class="hljs-comment">// -0.7rem</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'P1r;2e;5p'</span>); <span class="hljs-comment">// 1rem 2em 5%</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Ml-2.5gg'</span>); <span class="hljs-comment">// calc(var(--ml-gg) * -2.5)</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'W1/3'</span>); <span class="hljs-comment">// 33.3333333333%</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'W2/$div'</span>); <span class="hljs-comment">// calc(2 / var(--ml-div) * 100%)</span>
 </code></pre>
 
           </div>

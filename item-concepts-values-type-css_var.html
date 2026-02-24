@@ -97,11 +97,11 @@
 
           <div class="kss-description">
             <p>Their names begin with <code>$</code> written in lower camelCase and may contain numbers. They can be used almost everywhere, even as part of a complex value, for example in fractions:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;W1/$div&#x27;</span>); <span class="hljs-comment">// calc(1 / var(--ml-div) * 100%);</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'W1/$div'</span>); <span class="hljs-comment">// calc(1 / var(--ml-div) * 100%);</span>
 </code></pre>
 <p>To specify a fallback, use <code>?</code>. In the fallback, you can specify any value, including another variable with fallback:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;W-$myCard?200&#x27;</span>); <span class="hljs-comment">// var(--ml-myCard, 200px)</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;W-$myCard?$defWd?150&#x27;</span>); <span class="hljs-comment">// var(--ml-myCard, var(--ml-defWd, 150px))</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'W-$myCard?200'</span>); <span class="hljs-comment">// var(--ml-myCard, 200px)</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'W-$myCard?$defWd?150'</span>); <span class="hljs-comment">// var(--ml-myCard, var(--ml-defWd, 150px))</span>
 </code></pre>
 
           </div>

@@ -97,35 +97,35 @@
 
           <div class="kss-description">
             <p>In this subsection, keywords that are used in several utilities are stored. To use a set of keywords from here, specify the corresponding map key, in the <code>keywords</code> setting of utility.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with  (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with  (
 	<span class="hljs-variable">$utils-data</span>: (
-		<span class="hljs-string">&#x27;utils&#x27;</span>: (
-			<span class="hljs-string">&#x27;registry&#x27;</span>: (
-				<span class="hljs-string">&#x27;Mxw&#x27;</span>: (
-					<span class="hljs-string">&#x27;keywords&#x27;</span>: (<span class="hljs-string">&#x27;sizing&#x27;</span>, <span class="hljs-string">&#x27;my-sizing&#x27;</span>),
+		<span class="hljs-string">'utils'</span>: (
+			<span class="hljs-string">'registry'</span>: (
+				<span class="hljs-string">'Mxw'</span>: (
+					<span class="hljs-string">'keywords'</span>: (<span class="hljs-string">'sizing'</span>, <span class="hljs-string">'my-sizing'</span>),
 				),
-				<span class="hljs-string">&#x27;Flb&#x27;</span>: (
-					<span class="hljs-string">&#x27;keywords&#x27;</span>: (<span class="hljs-string">&#x27;sizing&#x27;</span>, <span class="hljs-string">&#x27;my-sizing&#x27;</span>),
+				<span class="hljs-string">'Flb'</span>: (
+					<span class="hljs-string">'keywords'</span>: (<span class="hljs-string">'sizing'</span>, <span class="hljs-string">'my-sizing'</span>),
 				),
 			),
-			<span class="hljs-string">&#x27;keywords&#x27;</span>: (
+			<span class="hljs-string">'keywords'</span>: (
 				// adds new keywords to the existing set
-				<span class="hljs-string">&#x27;box-alignment&#x27;</span>: (
-					<span class="hljs-string">&#x27;sf&#x27;</span>: safe,
-					<span class="hljs-string">&#x27;u&#x27;</span>: unsafe,
+				<span class="hljs-string">'box-alignment'</span>: (
+					<span class="hljs-string">'sf'</span>: safe,
+					<span class="hljs-string">'u'</span>: unsafe,
 				),
-				<span class="hljs-string">&#x27;my-sizing&#x27;</span>: (
-					<span class="hljs-string">&#x27;sm&#x27;</span>: <span class="hljs-number">22rem</span>,
-					<span class="hljs-string">&#x27;md&#x27;</span>: <span class="hljs-number">44rem</span>,
+				<span class="hljs-string">'my-sizing'</span>: (
+					<span class="hljs-string">'sm'</span>: <span class="hljs-number">22rem</span>,
+					<span class="hljs-string">'md'</span>: <span class="hljs-number">44rem</span>,
 				),
 			),
 		),
 	),
 );
 
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Mxw-sm&#x27;</span>); <span class="hljs-comment">// 22rem</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Flb-md&#x27;</span>); <span class="hljs-comment">// 44rem</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Jc-c;sf&#x27;</span>); <span class="hljs-comment">// center safe</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Mxw-sm'</span>); <span class="hljs-comment">// 22rem</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Flb-md'</span>); <span class="hljs-comment">// 44rem</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Jc-c;sf'</span>); <span class="hljs-comment">// center safe</span>
 </code></pre>
 <p>See the full list of keywords <a href="section-general_reference.html#kssref-general_reference-kw">here</a>.</p>
 

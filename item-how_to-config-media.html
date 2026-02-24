@@ -97,40 +97,40 @@
 
           <div class="kss-description">
             <p>For long media queries, you can create a short alias. Such alias is called custom media query. Use <code>$at-rures-data</code> map in the configuration. <em>Note</em> when using custom media query, a hyphen is added to their names.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with (
 	<span class="hljs-variable">$at-rules-data</span>: (
-		<span class="hljs-string">&#x27;media&#x27;</span>: (
-			<span class="hljs-string">&#x27;custom&#x27;</span>: (
-				<span class="hljs-string">&#x27;myMq&#x27;</span>: <span class="hljs-string">&#x27;(orientation: landscape) and (min-height: 20rem)&#x27;</span>,
+		<span class="hljs-string">'media'</span>: (
+			<span class="hljs-string">'custom'</span>: (
+				<span class="hljs-string">'myMq'</span>: <span class="hljs-string">'(orientation: landscape) and (min-height: 20rem)'</span>,
 			),
 		),
 	),
 );
 
-<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;@:-myMq_D-f&#x27;</span>);
+<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'@:-myMq_D-f'</span>);
 
 <span class="hljs-comment">// CSS</span>
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">orientation</span>: landscape) <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-height</span>: <span class="hljs-number">20rem</span>) {
+<span class="hljs-keyword">@media</span> (orientation: landscape) <span class="hljs-keyword">and</span> (min-height: <span class="hljs-number">20rem</span>) {
   .\@\:-myMq_D-f {
     <span class="hljs-attribute">display</span>: flex;
   }
 }
 </code></pre>
 <p>You can also add a new media feature. They are stored in the same registry as the utilities, in the <code>media</code> section. Added as well as utilities.</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;mlut/tools&#x27;</span> as ml with (
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@use</span> <span class="hljs-string">'mlut/tools'</span> as ml with (
 	<span class="hljs-variable">$utils-data</span>: (
-		<span class="hljs-string">&#x27;media&#x27;</span>: (
-			<span class="hljs-string">&#x27;registry&#x27;</span>: (
-				<span class="hljs-string">&#x27;st&#x27;</span>: <span class="hljs-attribute">scripting</span>,
+		<span class="hljs-string">'media'</span>: (
+			<span class="hljs-string">'registry'</span>: (
+				<span class="hljs-string">'st'</span>: scripting,
 			),
 		),
 	),
 );
 
-<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">&#x27;@:st-n_D&#x27;</span>);
+<span class="hljs-keyword">@include</span> ml.apply(<span class="hljs-string">'@:st-n_D'</span>);
 
 <span class="hljs-comment">// CSS</span>
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">scripting</span>: none) {
+<span class="hljs-keyword">@media</span> (scripting: none) {
   .\@\:st-n_D {
     <span class="hljs-attribute">display</span>: block;
   }

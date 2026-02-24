@@ -97,14 +97,14 @@
 
           <div class="kss-description">
             <p>Converts values in the gradient functions. Schema:</p>
-<pre class="hljs"><code class="language-scss">(&#x27;gradient&#x27;: (
-	&#x27;keyword&#x27;, &#x27;color&#x27;, &#x27;cust-prop&#x27;, &#x27;Pl&#x27;, &#x27;number&#x27;, &#x27;angle&#x27;, &#x27;global-kw&#x27;
+<pre class="hljs"><code class="language-scss">('gradient': (
+	<span class="hljs-string">'keyword'</span>, <span class="hljs-string">'color'</span>, <span class="hljs-string">'cust-prop'</span>, <span class="hljs-string">'Pl'</span>, <span class="hljs-string">'number'</span>, <span class="hljs-string">'angle'</span>, <span class="hljs-string">'global-kw'</span>
 ))
 </code></pre>
 <p>Usage:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;-Gdrl-b;r,black,#ff0&#x27;</span>); <span class="hljs-comment">// repeating-linear-gradient(to bottom right, black, #ff0)</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;-Msgl-50d,blue;3r,cc;80p&#x27;</span>); <span class="hljs-comment">// linear-gradient(-50deg, blue 3rem, currentColor 80%)</span>
-<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;-Gdc45d,#000;0.5g,yellow&#x27;</span>); <span class="hljs-comment">// conic-gradient(from 45deg, #000 0.5grad, yellow)</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'-Gdrl-b;r,black,#ff0'</span>); <span class="hljs-comment">// repeating-linear-gradient(to bottom right, black, #ff0)</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'-Msgl-50d,blue;3r,cc;80p'</span>); <span class="hljs-comment">// linear-gradient(-50deg, blue 3rem, currentColor 80%)</span>
+<span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'-Gdc45d,#000;0.5g,yellow'</span>); <span class="hljs-comment">// conic-gradient(from 45deg, #000 0.5grad, yellow)</span>
 </code></pre>
 
           </div>

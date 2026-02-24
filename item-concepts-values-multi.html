@@ -97,13 +97,13 @@
 
           <div class="kss-description">
             <p>For any utility you can specify multiple values. Instead of a blank used <code>;</code>:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Bd3;sec0;d&#x27;</span>); <span class="hljs-comment">// 3px #0c6 dotted</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Bd3;sec0;d'</span>); <span class="hljs-comment">// 3px #0c6 dotted</span>
 </code></pre>
 <p>In some utilities, you can specify several lists of values. To do this, use the same separator as in CSS: <code>/</code> or <code>,</code></p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;Bdrd1r;2/5p&#x27;</span>); <span class="hljs-comment">// 1rem 2px / 5%</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'Bdrd1r;2/5p'</span>); <span class="hljs-comment">// 1rem 2px / 5%</span>
 </code></pre>
 <p>The separator for multi-list is specified in the <code>multi-list-separator</code> utility option. Please note that each value is converted separately. The prevent-conversion token <code>=</code> also applies to each value in the list separately:</p>
-<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">&#x27;M1r;=10x&#x27;</span>); <span class="hljs-comment">// 1rem 10x</span>
+<pre class="hljs"><code class="language-scss"><span class="hljs-keyword">@debug</span> ml.uv(<span class="hljs-string">'M1r;=10x'</span>); <span class="hljs-comment">// 1rem 10x</span>
 </code></pre>
 
           </div>
