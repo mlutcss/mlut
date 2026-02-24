@@ -6,6 +6,12 @@
 [![](https://img.shields.io/npm/v/@mlut/core.svg)](https://www.npmjs.com/package/@mlut/core)
 [![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/mlutcss)](https://x.com/mlutcss)
 
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<a style="display:inline-block;vertical-align:top" href="https://www.tinylaunch.com/launch/10127" target="_blank" rel="noopener"><img src="https://tinylaunch.com/tinylaunch_badge_1.svg" alt="TinyLaunch Badge" style="width:275px; vertical-align:top" /></a>
+<a style="display:inline-block;vertical-align:top" href="https://microlaunch.net/p/mlut?utm_source=badge-winner-microlaunch&utm_medium=badge" target="_blank"><img src="https://wild-dust-0517.microlaunch.workers.dev/badges/potd/ml_potd_badge_v4.svg" alt="Microlaunch - Launch, get feedback, exposure and first customers over a month" style="width:270px;vertical-align:top;"/></a>
+<a style="display:inline-block;vertical-align:top" href="https://productradar.ru/product/mlut?utm_source=badge" target="_blank"><img src="https://productradar.ru/badge?period=week&amp;rank=2&amp;theme=black" alt="Награда Продукт недели #2 | Product Radar" style="width:272px;vertical-align:top; object-fit: initial; border: none; margin:0;"></a>
+</div>
+
 The best CSS framework for custom websites and creative coding. <br> Make CSS exciting again!
 
 ## Table of Contents

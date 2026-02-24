@@ -10,7 +10,7 @@ The [mlut](https://github.com/mlutcss/mlut) plugins for Rollup, Vite and Webpack
 npm i -D @mlut/plugins sass-embedded
 ```
 
-When using this package, you will need to install Sass separately. We recommend [sass-embedded](https://www.npmjs.com/package/sass-embedded), but regular [sass](https://www.npmjs.com/package/sass) is also suitable.
+You don't need the main `mlut` package to use the plugins. When using this package, you will need to install Sass separately. We recommend [sass-embedded](https://www.npmjs.com/package/sass-embedded), but regular [sass](https://www.npmjs.com/package/sass) is also suitable.
 
 This allows you to control the versions of all your dependencies, and to choose which Sass implementation to use.
 
@@ -39,6 +39,7 @@ export default {
 
 ```js
 // vite.config.js
+import { defineConfig } from 'vite';
 import { vite } from '@mlut/plugins';
 
 const mlut = vite({
