@@ -377,7 +377,7 @@ Options:
           <div class="kss-description">
             <pre class="hljs"><code class="language-">npm i -D @mlut/plugins sass-embedded
 </code></pre>
-<p>When using this package, you will need to install Sass separately. We recommend <a href="https://www.npmjs.com/package/sass-embedded">sass-embedded</a>, but regular <a href="https://www.npmjs.com/package/sass">sass</a> is also suitable.</p>
+<p>You don't need the main <code>mlut</code> package to use the plugins. When using this package, you will need to install Sass separately. We recommend <a href="https://www.npmjs.com/package/sass-embedded">sass-embedded</a>, but regular <a href="https://www.npmjs.com/package/sass">sass</a> is also suitable.</p>
 <p>This allows you to control the versions of all your dependencies, and to choose which Sass implementation to use.</p>
 
           </div>
@@ -584,6 +584,7 @@ Options:
           <div class="kss-description">
             <p>Update the config:</p>
 <pre class="hljs"><code class="language-js"><span class="hljs-comment">// vite.config.js</span>
+<span class="hljs-keyword">import</span> { defineConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vite&#x27;</span>;
 <span class="hljs-keyword">import</span> { vite } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@mlut/plugins&#x27;</span>;
 
 <span class="hljs-keyword">const</span> mlut = vite({
@@ -673,7 +674,7 @@ Options:
 
 
         <div class="kss-source kss-style">
-          Source: <code>content/main.css</code>, line 298
+          Source: <code>content/main.css</code>, line 299
         </div>
 
     </section>
