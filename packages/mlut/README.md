@@ -285,6 +285,7 @@ Available [here](https://docs.mlut.style/) or can be run locally. Documentation 
 - CSS counters in Atomic CSS — Part 1: [EN](https://blog.stackademic.com/css-counters-in-atomic-css-part-1-51c4127c5aab), [RU](https://tproger.ru/articles/css-counters-v-podhode-atomic-css---chast-1)
 - CSS counters in Atomic CSS — Part 2: [EN](https://blog.stackademic.com/css-counters-in-atomic-css-part-2-d6fca66ce974), [RU](https://tproger.ru/articles/css-counters-v-podhode-atomic-css---chast-2)
 - How to combine utilities and handwritten styles in Atomic CSS?: [EN](https://dev.to/ramimak/how-to-combine-utilities-and-handwritten-styles-in-atomic-css-95e), [RU](https://habr.com/ru/articles/990428/)
+- Atomic CSS - layout and ease of being: [RU](https://habr.com/ru/articles/981714/)
 - How to make one plugin for all frontend bundlers at once: [RU](https://habr.com/ru/articles/856028/)
 - I hired a junior dev for my open source project. This is what happened: [RU](https://habr.com/ru/articles/962468/)
 
