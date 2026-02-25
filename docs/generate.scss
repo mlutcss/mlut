@@ -78,10 +78,10 @@ $states-section-name: (
 			$map: map.set($map, 'properties', ml.util-prop($util, 'utils', true));
 		}
 	} @else if $type == 'sub' {
-		$result: '<table class="Bdb-;#ccc_:tr:!lc:td">';
+		$result: '<table class="Bdt-;#ccc_:tr+tr::td">';
 		$cell-css: '-Py1u';
 	} @else {
-		$result: '<table class="Bdb-;#ccc_:tr:!lc:td -Py2u_:tr:!oc:td -My5u">';
+		$result: '<table class="Bdt-;#ccc_:tr+tr::td -Py2u_:tr:!oc:td -My5u">';
 		$cell-css: '';
 	}
 
@@ -128,7 +128,7 @@ $states-section-name: (
 	@return null;
 }
 
-@include ml.apply('-All-sr_& Mb6u_& Bdb-;#ccc_:tr:!lc:td -Py2u_:tr:!oc:td M0_:pre');
+@include ml.apply('-All-sr_& Mb6u_& Bdt-;#ccc_:tr+tr::td -Py2u_:tr:!oc:td M0_:pre');
 
 @each $util, $options in map.get(ml.$utils-db, 'utils', 'registry') {
 /*
