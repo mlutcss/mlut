@@ -12,7 +12,7 @@
 </a>
 
 <a style="display:inline-block;vertical-align:top" href="https://microlaunch.net/p/mlut?utm_source=badge-winner-microlaunch&utm_medium=badge" target="_blank">
-	<img src="https://wild-dust-0517.microlaunch.workers.dev/badges/potd/ml_potd_badge_v4.svg" alt="Microlaunch - Launch, get feedback, exposure and first customers over a month" style="width:272px;vertical-align:top;"/>
+	<img src="https://wild-dust-0517.microlaunch.workers.dev/microlaunch-winner-badges/ml_gold_light_v4.svg" alt="Microlaunch - Launch, get feedback, exposure and first customers over a month" style="width:272px;vertical-align:top;"/>
 </a>
 
 <a style="display:inline-block;vertical-align:top" href="https://productradar.ru/product/mlut?utm_source=badge" target="_blank">
