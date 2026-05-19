@@ -47,7 +47,7 @@
 		"csso": "^5.0.5",
 		"esbuild": "^0.25.0",
 		"lightningcss": "^1.25.1",
-		"postcss": "^8.4.38",
+		"postcss": "^8.5.10",
 		"typescript": "^5.8.0"
 	},
 	"dependencies": {

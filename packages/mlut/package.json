@@ -46,7 +46,7 @@
 		"@types/csso": "^5.0.4",
 		"@types/node": "^20.10.5",
 		"autoprefixer": "^10.4.19",
-		"postcss": "^8.4.39",
+		"postcss": "^8.5.10",
 		"typescript": "^4.8.0"
 	},
 	"dependencies": {
