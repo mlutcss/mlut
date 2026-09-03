@@ -1953,6 +1953,13 @@ $utils-db: (
 			'infinite': (
 				'i': infinite,
 			),
+			'animation': (
+				'mSp': spin 1.5s ease infinite,
+				'mNf': notify 1.5s ease infinite,
+				'mBt': beat 4s cubic-bezier(0.37, 0, 0.63, 1) infinite,
+				'mBr': breath 2s ease-in-out infinite,
+				'mBn': bounce 1s infinite
+			),
 			'font-size': (
 				'sl': smaller,
 				// so as not to occupy `lg`
