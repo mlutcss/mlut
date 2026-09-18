@@ -1642,6 +1642,19 @@ $utils-db: (
 					'': none,
 				),
 			),
+			'Fds': (
+				'properties': field-sizing,
+				'keywords': (
+					'': content,
+					'c': content,
+					'f': fixed,
+					'ih': inherit,
+					'ini': initial,
+					'rvr': revert,
+					'rvrl': revert-layer,
+					'ust': unset
+				),
+			),
 			'Acnc': (
 				'properties': accent-color,
 				'conversion': 'color',
