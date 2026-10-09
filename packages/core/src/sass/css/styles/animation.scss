@@ -1,0 +1,67 @@
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes notify {
+	0%,
+	70% {
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	100% {
+		transform: scale(1.8);
+		opacity: 0;
+	}
+}
+
+@keyframes beat {
+	0%,
+	100% {
+		opacity: 1;
+	}
+
+	25% {
+		opacity: 0.6;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	75% {
+		opacity: 0.5;
+	}
+}
+
+@keyframes breath {
+	0%,
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	50% {
+		transform: scale(0.95);
+		opacity: 0.5;
+	}
+}
+
+@keyframes bounce {
+	0%,
+	100% {
+		transform: translateY(-25%) scale(1);
+		animation-timing-function: cubic-bezier(0.7, 0, 0.85, 0.6);
+	}
+
+	50% {
+		transform: translateY(0) scale(1.05, 0.95);
+		animation-timing-function: cubic-bezier(0.15, 0, 0.3, 1);
+	}
+}
