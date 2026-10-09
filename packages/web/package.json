@@ -1,0 +1,50 @@
+{
+	"name": "@mlut/web",
+	"version": "1.0.0",
+	"description": "mlut package that can be included as a script on web page",
+	"author": "mr150",
+	"type": "module",
+	"license": "MIT",
+	"homepage": "https://mlut.style/",
+	"main": "./dist/index.js",
+	"keywords": [
+		"mlut",
+		"atomic css",
+		"functional css",
+		"utility-first",
+		"cdn",
+		"browser",
+		"web"
+	],
+	"repository": {
+		"type": "git",
+		"directory": "packages/web",
+		"url": "https://github.com/mlutcss/mlut.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mlutcss/mlut/issues"
+	},
+	"exports": {
+		".": {
+			"default": "./dist/index.js"
+		}
+	},
+	"scripts": {
+		"build": "rm -rf dist && rollup -c"
+	},
+	"files": [
+		"dist"
+	],
+	"devDependencies": {
+		"@mlut/core": "^2.5.1",
+		"@rollup/plugin-alias": "^6.0.0",
+		"@rollup/plugin-node-resolve": "^15.0.1",
+		"@rollup/plugin-terser": "^1.0.0",
+		"@rollup/plugin-typescript": "^12.3.0",
+		"path-browserify-esm": "^1.0.6",
+		"rollup": "^4.59.0",
+		"rollup-plugin-polyfill-node": "^0.13.0",
+		"sass": "^1.93.0",
+		"typescript": "^5.8.0"
+	}
+}
