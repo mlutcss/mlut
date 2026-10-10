@@ -79,29 +79,41 @@
 <main class="kss-main" aria-label="Content">
   <article>
 
-    <div id="kssref-start-main-install" class="kss-section kss-section--depth-3 is-fullscreen">
+    <div id="kssref-start-web" class="kss-section kss-section--depth-2 is-fullscreen">
 
       <div class="kss-style">
-        <h3 class="kss-title kss-title--level-3">
-          <a class="kss-title__permalink" href="#kssref-start-main-install">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-start-web">
             <span class="kss-title__ref">
-              1.1.1
+              1.2
               <span class="kss-title__permalink-hash">
-                  #start.main.install
+                  #start.web
               </span>
             </span>
-            Installation
+            Web package
           </a>
-        </h3>
+        </h2>
 
 
           <div class="kss-description">
-            <h3>NPM</h3>
-<pre class="hljs"><code class="language-">npm i mlut -D
+            <p>The web package contains mlut core bundle and the script that can be used on a web page.</p>
+<h3>Installation</h3>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/@mlut/web@latest/dist/script.js"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
-<h3>CDN</h3>
-<p>CSS only with demo theme:</p>
-<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://unpkg.com/mlut@latest/dist/mlut-demo-theme.min.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span>
+<h3>Usage</h3>
+<p>Add the mlut script to your page and just use classes in the markup:</p>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"D-g Gtc-t3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"Bd P2u"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Simple text<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+</code></pre>
+<p>You can also use Sass config with the special <code>style</code> tag</p>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/scss"</span>&gt;</span><span class="css">
+  <span class="hljs-keyword">@use</span> <span class="hljs-string">"@mlut/core/tools"</span> with (
+    $<span class="hljs-attribute">breakpoints:</span> (
+      <span class="hljs-string">'xxl'</span>: <span class="hljs-number">1600px</span>,
+    ),
+  );
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
 </code></pre>
 
           </div>
@@ -111,7 +123,7 @@
 
 
         <div class="kss-source kss-style">
-          Source: <code>content/main.css</code>, line 22
+          Source: <code>content/main.css</code>, line 98
         </div>
 
     </div>
