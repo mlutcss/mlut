@@ -8,7 +8,7 @@ The [mlut](https://github.com/mlutcss/mlut) package that can be included as a sc
 
 Add the script to your page:
 ```html
-<script src="https://unpkg.com/@mlut/web"></script>
+<script src="https://unpkg.com/@mlut/web@latest/dist/index.js"></script>
 ```
 
 And just use classes in the markup:
