@@ -18,9 +18,16 @@ function debounce<T>(fn: (...args: T[]) => unknown, timeout: number) {
 	};
 }
 
+function replaceHtmlChars(str: string) {
+	return str
+		.replaceAll('&amp;', '&')
+		.replaceAll('&lt;', '<')
+		.replaceAll('&gt;', '>');
+}
+
 const writeCss = debounce(async () => {
 	const markup = `"${document.documentElement.className}"\n${document.body.outerHTML}`;
-	jitEngine.putContent(pageName, markup);
+	jitEngine.putContent(pageName, replaceHtmlChars(markup));
 	styleElm.innerHTML = await jitEngine.generateCss();
 }, 250);
 
