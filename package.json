@@ -10,7 +10,7 @@
 	],
 	"scripts": {
 		"dev": "npx gulp -f gulpfile.cjs",
-		"build:packages": "npm run build --workspace=@mlut/core && npm run build --workspace=mlut && npx gulp -f gulpfile.cjs sass && npm run build --workspace=@mlut/plugins",
+		"build:packages": "npm run build --workspace=@mlut/core && npm run build --workspace=mlut && npx gulp -f gulpfile.cjs sass && npm run build --workspace=@mlut/plugins && npm run build --workspace=@mlut/web",
 		"build:docs": "npm run build --workspace=@mlut/core && npx gulp -f gulpfile.cjs sass-mk-doc",
 		"build:mlut": "npm run build --workspace=mlut && npx gulp -f gulpfile.cjs sass",
 		"build:core": "npm run build --workspace=@mlut/core",

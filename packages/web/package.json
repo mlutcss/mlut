@@ -1,12 +1,12 @@
 {
 	"name": "@mlut/web",
 	"version": "1.0.0",
-	"description": "mlut package that can be included as a script on web page",
+	"description": "mlut package that can be used on a web page",
 	"author": "mr150",
 	"type": "module",
 	"license": "MIT",
 	"homepage": "https://mlut.style/",
-	"main": "./dist/index.js",
+	"main": "./dist/script.js",
 	"keywords": [
 		"mlut",
 		"atomic css",
