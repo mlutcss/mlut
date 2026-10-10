@@ -30,7 +30,9 @@
 		}
 	},
 	"scripts": {
-		"build": "rm -rf dist && rollup -c"
+		"build:main": "rm -rf dist && rollup -c",
+		"build:script": "rm -rf dist && export SCRIPT_BUILD=true && rollup -c",
+		"build": "rm -rf dist && rollup -c && export SCRIPT_BUILD=true && rollup -c"
 	},
 	"files": [
 		"dist"
