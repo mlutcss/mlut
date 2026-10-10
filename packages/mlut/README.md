@@ -4,6 +4,7 @@
 
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/mlutcss/mlut/test.yml?branch=master)](https://github.com/mlutcss/mlut/actions/workflows/test.yml)
 [![](https://img.shields.io/npm/v/@mlut/core.svg)](https://www.npmjs.com/package/@mlut/core)
+![made-by-humans](https://img.shields.io/badge/made_by-humans-green)
 [![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/mlutcss)](https://x.com/mlutcss)
 
 <div style="display: flex; flex-wrap: wrap; gap: 8px">
@@ -160,12 +161,13 @@ Addons may contains any tools, settings and styles. Addons now at the **preview*
 | [mlut](https://github.com/mlutcss/mlut/blob/master/packages/mlut) | The main package for working with CLI |
 | [@mlut/core](https://github.com/mlutcss/mlut/blob/master/packages/core) | The mlut core that contains Sass tools, CSS library and JIT engine |
 | [@mlut/plugins](https://github.com/mlutcss/mlut/blob/master/packages/plugins) | The mlut plugins for Rollup, Vite and Webpack |
+| [@mlut/web](https://github.com/mlutcss/mlut/blob/master/packages/web) | The package that can be used on a web page |
 
 ## Getting Started ##
 There are 2 ways to start using mlut:
 
-- toolkit: with CLI or plugin
-- assembled CSS distributive
+- script on a web page
+- CLI or plugin
 
 ### Installation ###
 
@@ -176,29 +178,29 @@ npm i mlut -D
 
 #### CDN ####
 
-CSS only with demo theme:
 ```html
-<link href="https://unpkg.com/mlut@latest/dist/mlut-demo-theme.min.css" rel="stylesheet">
+<script src="https://unpkg.com/@mlut/web@latest/dist/script.js" type="module"></script>
 ```
 
 ### Usage ###
 
-#### Distributive ####
+#### Script ####
 
-You can get assembled mlut code and include it to your project. There are some ways to get a distributive.
-
-- just plug in with CDN
-- if used `npm`, files are in `node_modules/mlut/dist/`
-
-Add the files to your page like here:
-```html
-<link href="css/mlut-demo-theme.min.css" rel="stylesheet">
-```
-And just use classes in the markup:
+Add the mlut script to your page and just use classes in the markup:
 ```html
 <div class="D-g Gtc-t3">
   <div class="Bd P2u">
     <h3>Simple text</h3>
+```
+You can also use Sass config with the special `style` tag
+```html
+<style type="text/scss">
+  @use "@mlut/core/tools" with (
+    $breakpoints: (
+      'xxl': 1600px,
+    ),
+  );
+</style>
 ```
 
 #### CLI ####
@@ -306,3 +308,4 @@ Available [here](https://docs.mlut.style/) or can be run locally. Documentation 
 
 ## License ##
 MIT
+		

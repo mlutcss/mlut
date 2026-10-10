@@ -4,6 +4,7 @@
 
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/mlutcss/mlut/test.yml?branch=master)](https://github.com/mlutcss/mlut/actions/workflows/test.yml)
 [![](https://img.shields.io/npm/v/@mlut/core.svg)](https://www.npmjs.com/package/@mlut/core)
+![made-by-humans](https://img.shields.io/badge/made_by-humans-green)
 [![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/mlutcss)](https://x.com/mlutcss)
 
 <div style="display: flex; flex-wrap: wrap; gap: 8px">
@@ -174,6 +175,7 @@ Addons may contains any tools, settings and styles. Addons now at the **preview*
 | [mlut](https://github.com/mlutcss/mlut/blob/master/packages/mlut) | The main package for working with CLI |
 | [@mlut/core](https://github.com/mlutcss/mlut/blob/master/packages/core) | The mlut core that contains Sass tools, CSS library and JIT engine |
 | [@mlut/plugins](https://github.com/mlutcss/mlut/blob/master/packages/plugins) | The mlut plugins for Rollup, Vite and Webpack |
+| [@mlut/web](https://github.com/mlutcss/mlut/blob/master/packages/web) | The package that can be used on a web page |
 
 </div>
 </section>

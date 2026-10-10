@@ -3,8 +3,8 @@ Getting started
 
 There are 2 ways to start using mlut:
 
-- toolkit: with CLI or plugin
-- assembled CSS distributive
+- script on a web page
+- CLI or plugin
 
 Weight: 0
 
@@ -14,51 +14,16 @@ Styleguide: start
 /*
 Main package
 
-The main package contains CLI and assembled CSS distributive
+The main package contains core and CLI.
 
-Styleguide: start.main
-*/
+### Installation ###
 
-/*
-Installation
-
-### NPM ###
 ```
 npm i mlut -D
 ```
 
-### CDN ###
-CSS only with demo theme:
-```html
-<link href="https://unpkg.com/mlut@latest/dist/mlut-demo-theme.min.css" rel="stylesheet">
-```
+### Usage ###
 
-Weight: 0
-
-Styleguide: start.main.install
-*/
-
-/*
-Usage
-
-### Distributive ###
-You can get assembled mlut code and include it to your project. There are some ways to get a distributive.
-
-- just plug in with CDN
-- if used `npm`, files are in `node_modules/@mlut/core/dist/`
-
-Add the files to your page like here:
-```html
-<link href="css/mlut-demo-theme.min.css" rel="stylesheet">
-```
-And just use classes in the markup:
-```html
-<div class="D-g Gtc-t3">
-  <div class="Bd P2u">
-    <h3>Simple text</h3>
-```
-
-### Toolkit ###
 You can use the toolkit in 2 modes
 
 - **JIT**: generate utilities on demand. The JIT engine scans your markup and generates only the utilities you use. This is current and recommended mode of working with mlut. Here you can use our CLI or a plugin for bundlers
@@ -127,9 +92,41 @@ Add the compiled CSS to your template, then start adding mlut classes to your ma
 </html>
 ```
 
-Weight: 1
+Styleguide: start.main
+*/
 
-Styleguide: start.main.usage
+/*
+Web package
+
+The web package contains mlut core bundle and the script that can be used on a web page.
+
+### Installation ###
+
+```html
+<script src="https://unpkg.com/@mlut/web@latest/dist/script.js" type="module"></script>
+```
+
+### Usage ###
+
+Add the mlut script to your page and just use classes in the markup:
+
+```html
+<div class="D-g Gtc-t3">
+  <div class="Bd P2u">
+    <h3>Simple text</h3>
+```
+You can also use Sass config with the special `style` tag
+```html
+<style type="text/scss">
+  @use "@mlut/core/tools" with (
+    $breakpoints: (
+      'xxl': 1600px,
+    ),
+  );
+</style>
+```
+
+Styleguide: start.web
 */
 
 /*

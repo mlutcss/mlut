@@ -1,0 +1,9 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"rootDir": "./src",
+		"module": "node16",
+		"declaration": false,
+		"outDir": "./dist",
+	}
+}
