@@ -8,7 +8,7 @@ The [mlut](https://github.com/mlutcss/mlut) package that can be used on a web pa
 
 Add the script to your page:
 ```html
-<script src="https://unpkg.com/@mlut/web@latest/dist/script.js" type="module"></script>
+<script src="https://unpkg.com/@mlut/web" type="module"></script>
 ```
 
 And just use classes in the markup:

@@ -179,7 +179,7 @@ npm i mlut -D
 #### CDN ####
 
 ```html
-<script src="https://unpkg.com/@mlut/web@latest/dist/script.js" type="module"></script>
+<script src="https://unpkg.com/@mlut/web" type="module"></script>
 ```
 
 ### Usage ###
@@ -188,9 +188,10 @@ npm i mlut -D
 
 Add the mlut script to your page and just use classes in the markup:
 ```html
-<div class="D-g Gtc-t3">
-  <div class="Bd P2u">
-    <h3>Simple text</h3>
+<div class="P2u Bd-s">
+  <h1 class="Fns3r C-red">mlut web</h1>
+  <p class="Fnst-i">CDN version is very useful for atomic CSS framework</p>
+</div>
 ```
 You can also use Sass config with the special `style` tag
 ```html
