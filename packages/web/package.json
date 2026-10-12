@@ -1,12 +1,12 @@
 {
 	"name": "@mlut/web",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"description": "mlut package that can be used on a web page",
 	"author": "mr150",
 	"type": "module",
 	"license": "MIT",
 	"homepage": "https://mlut.style/",
-	"main": "./dist/script.js",
+	"main": "./dist/index.js",
 	"keywords": [
 		"mlut",
 		"atomic css",
@@ -26,11 +26,11 @@
 	},
 	"exports": {
 		".": {
-			"default": "./dist/index.js"
+			"default": "./dist/core.js"
 		}
 	},
 	"scripts": {
-		"build:main": "rm -rf dist && rollup -c",
+		"build:core": "rm -rf dist && rollup -c",
 		"build:script": "rm -rf dist && export SCRIPT_BUILD=true && rollup -c",
 		"build": "rm -rf dist && rollup -c && export SCRIPT_BUILD=true && rollup -c"
 	},
@@ -45,7 +45,6 @@
 		"@rollup/plugin-typescript": "^12.3.0",
 		"path-browserify-esm": "^1.0.6",
 		"rollup": "^4.59.0",
-		"rollup-plugin-polyfill-node": "^0.13.0",
 		"sass": "^1.93.0",
 		"typescript": "^5.8.0"
 	}

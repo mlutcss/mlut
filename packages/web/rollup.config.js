@@ -6,7 +6,7 @@ import alias from '@rollup/plugin-alias';
 
 const __dirname = new URL('.', import.meta.url).pathname;
 const isScriptBuild = !!process.env.SCRIPT_BUILD;
-const inputPath = isScriptBuild ? 'src/script.ts' : 'src/index.ts';
+const inputPath = isScriptBuild ? 'src/index.ts' : 'src/core.ts';
 
 const plugins = [
 	nodeResolve(),
