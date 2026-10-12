@@ -1,6 +1,6 @@
 {
 	"name": "@mlut/web",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "mlut package that can be used on a web page",
 	"author": "mr150",
 	"type": "module",
