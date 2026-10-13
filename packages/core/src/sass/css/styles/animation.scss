@@ -1,3 +1,19 @@
+/*
+Animations
+
+Helper tools for creating basic animations — such as rotation, notification, "heartbeat," "breathing," and bounce—implemented using the `@keyframes` directive and the corresponding values ​​for the `animation` property.
+
+.An-mSp - spin
+.An-mNf - notify
+.An-mBt - beat
+.An-mBr - breath
+.An-mBn - bounce
+
+Markup: ../../../docs/examples/css_lib-helpers/animations/animations.hbs
+
+Styleguide: css_lib.styles.animation
+*/
+
 @keyframes spin {
 	from {
 		transform: rotate(0deg);
