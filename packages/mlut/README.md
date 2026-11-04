@@ -283,7 +283,7 @@ Available [here](https://docs.mlut.style/) or can be run locally. Documentation 
 ## Articles ##
 - Atomic CSS Deep Dive: [EN](https://dev.to/mr150/atomic-css-deep-dive-1hee), [RU](https://habr.com/ru/articles/833712/)
 - [mlut - a new word in the Utility-First CSS approach](https://dev.to/mr150/mlut-a-new-word-in-the-utility-first-css-approach-gbl)
-- Interactive lesson: [EN](https://htmlacademy.org/tutorials/17), [RU](https://htmlacademy.ru/demos/183/step/17)
+- Interactive course: [EN](https://htmlacademy.org/tutorials/17), [RU](https://htmlacademy.ru/channels/mlut)
 - Man or boy test in CSS: [EN](https://javascript.plainenglish.io/man-or-boy-test-in-css-9c343c6817c8), [RU](https://tproger.ru/articles/man-or-boy-test-v-css)
 - CSS counters in Atomic CSS — Part 1: [EN](https://blog.stackademic.com/css-counters-in-atomic-css-part-1-51c4127c5aab), [RU](https://tproger.ru/articles/css-counters-v-podhode-atomic-css---chast-1)
 - CSS counters in Atomic CSS — Part 2: [EN](https://blog.stackademic.com/css-counters-in-atomic-css-part-2-d6fca66ce974), [RU](https://tproger.ru/articles/css-counters-v-podhode-atomic-css---chast-2)
