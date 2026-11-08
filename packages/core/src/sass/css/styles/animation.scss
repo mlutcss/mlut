@@ -1,3 +1,5 @@
+@use '../../tools' as ml;
+
 /*
 Animations
 
@@ -14,7 +16,7 @@ Markup: ../../../docs/examples/css_lib-helpers/animations/animations.hbs
 Styleguide: css_lib.styles.animation
 */
 
-@keyframes spin {
+@keyframes #{ml.$css-var-prefix}spin {
 	from {
 		transform: rotate(0deg);
 	}
@@ -24,7 +26,7 @@ Styleguide: css_lib.styles.animation
 	}
 }
 
-@keyframes notify {
+@keyframes #{ml.$css-var-prefix}notify {
 	0%,
 	70% {
 		transform: scale(1);
@@ -37,7 +39,7 @@ Styleguide: css_lib.styles.animation
 	}
 }
 
-@keyframes beat {
+@keyframes #{ml.$css-var-prefix}beat {
 	0%,
 	100% {
 		opacity: 1;
@@ -56,7 +58,7 @@ Styleguide: css_lib.styles.animation
 	}
 }
 
-@keyframes breath {
+@keyframes #{ml.$css-var-prefix}breath {
 	0%,
 	100% {
 		transform: scale(1);
@@ -69,7 +71,7 @@ Styleguide: css_lib.styles.animation
 	}
 }
 
-@keyframes bounce {
+@keyframes #{ml.$css-var-prefix}bounce {
 	0%,
 	100% {
 		transform: translateY(-25%) scale(1);
