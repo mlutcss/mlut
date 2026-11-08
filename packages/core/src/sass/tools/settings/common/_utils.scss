@@ -1642,6 +1642,14 @@ $utils-db: (
 					'': none,
 				),
 			),
+			'Fils': (
+				'properties': field-sizing,
+				'keywords': (
+					'': content,
+					'c': content,
+					'f': fixed
+				),
+			),
 			'Acnc': (
 				'properties': accent-color,
 				'conversion': 'color',
@@ -1952,6 +1960,13 @@ $utils-db: (
 			),
 			'infinite': (
 				'i': infinite,
+			),
+			'animation': (
+				'mSp': #{ml.$css-var-prefix}spin 1.5s linear infinite,
+				'mNt': #{ml.$css-var-prefix}notify 1.5s ease infinite,
+				'mBt': #{ml.$css-var-prefix}beat 4s cubic-bezier(0.37, 0, 0.63, 1) infinite,
+				'mBr': #{ml.$css-var-prefix}breath 2s ease-in-out infinite,
+				'mBn': #{ml.$css-var-prefix}bounce 1s infinite
 			),
 			'font-size': (
 				'sl': smaller,
